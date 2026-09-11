@@ -1,11 +1,26 @@
-import React from 'react';
+import React from "react";
 
 export function AmanahLogo({ className = "w-8 h-8" }: { className?: string }) {
   return (
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      viewBox="0 0 256 256" 
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 128 128"
       className={className}
       aria-label="Amanah Drive Logo"
+      fill="none"
     >
-      <image width="256" height="256" href="data:image/png;base64,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 конку1=
+      <defs>
+        <linearGradient id="amdriLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#14b8a6" />
+          <stop offset="50%" stopColor="#0d9488" />
+          <stop offset="100%" stopColor="#0f766e" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M 106.0 43.5 L 104.0 43.5 L 97.5 34.0 L 87.0 25.5 L 78.0 21.5 L 69.0 20.5 L 68.0 19.5 L 53.0 20.5 L 39.0 26.5 L 27.5 37.0 L 23.0 43.5 L 13.5 40.0 L 19.5 30.0 L 30.0 19.5 L 38.0 14.5 L 52.0 9.5 L 69.0 8.5 L 70.0 9.5 L 76.0 9.5 L 83.0 11.5 L 99.0 20.5 L 106.5 28.0 L 113.5 39.0 L 113.0 40.5 L 106.0 43.5 Z M 29.0 106.5 L 21.0 99.5 L 17.5 95.0 L 10.5 80.0 L 9.5 71.0 L 8.5 70.0 L 8.5 56.0 L 9.5 55.0 L 10.5 47.0 L 13.0 43.5 L 17.0 44.5 L 20.5 47.0 L 20.5 53.0 L 25.0 56.5 L 43.0 57.5 L 45.5 59.0 L 42.5 69.0 L 41.0 70.5 L 30.0 68.5 L 29.0 67.5 L 22.0 67.5 L 19.5 71.0 L 21.5 81.0 L 26.5 90.0 L 32.5 97.0 L 29.0 106.5 Z M 99.0 106.5 L 96.5 105.0 L 94.5 97.0 L 102.5 87.0 L 106.5 78.0 L 107.5 71.0 L 105.0 67.5 L 98.0 67.5 L 97.0 68.5 L 86.0 70.5 L 84.5 69.0 L 81.5 59.0 L 85.0 57.5 L 103.0 56.5 L 106.5 54.0 L 106.5 47.0 L 108.0 45.5 L 114.0 43.5 L 116.5 47.0 L 117.5 55.0 L 118.5 56.0 L 117.5 75.0 L 114.5 85.0 L 110.5 93.0 L 105.5 100.0 L 99.0 106.5 Z M 83.0 115.5 L 80.5 112.0 L 71.5 84.0 L 69.0 80.5 L 66.0 81.5 L 56.5 81.0 L 47.5 108.0 L 44.0 114.5 L 41.0 114.5 L 31.5 109.0 L 48.5 60.0 L 55.0 52.5 L 59.0 50.5 L 68.0 50.5 L 71.0 51.5 L 77.5 58.0 L 79.5 65.0 L 81.5 68.0 L 94.5 107.0 L 94.0 110.5 L 83.0 115.5 Z M 65.5 73.0 L 70.5 69.0 L 70.5 63.0 L 69.5 61.0 L 66.0 58.5 L 61.0 58.5 L 56.5 63.0 L 56.5 69.0 L 62.0 73.5 L 65.5 73.0 Z M 71.0 118.5 L 57.0 118.5 L 56.0 117.5 L 48.0 116.5 L 52.5 103.0 L 73.0 102.5 L 75.5 106.0 L 78.5 116.0 L 71.0 118.5 Z"
+        fill="url(#amdriLogoGrad)"
+        fillRule="evenodd"
+      />
+    </svg>
+  );
+}
