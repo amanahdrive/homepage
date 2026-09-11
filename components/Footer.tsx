@@ -7,11 +7,11 @@ import { MessageCircle, Phone, MapPin, Shield, Award, CheckCircle2 } from "lucid
 
 export default function Footer() {
   return (
-    <footer className="bg-[#121317] border-t border-[#212226] pt-16 pb-12 relative text-slate-300">
+    <footer className="bg-[#121317] border-t border-[#212226] pt-10 pb-8 sm:pt-16 sm:pb-12 relative text-slate-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-10 pb-8 sm:pb-12 border-b border-white/10">
           
           {/* Col 1: Brand & Credibility (4 cols) */}
           <div className="lg:col-span-4 space-y-5">

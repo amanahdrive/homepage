@@ -91,18 +91,25 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-container);
 }
 
-/* Google Antigravity Button Standards (8px radius, no pill shape) */
+/* Google Antigravity Button Standards (8px radius, responsive density) */
 .antigravity-btn-primary {
   background-color: var(--palette-grey-1200);
   color: #ffffff;
   border-radius: var(--radius-control);
   font-weight: 500;
-  font-size: 14px;
-  padding: 10px 20px;
+  font-size: 13px;
+  padding: 8px 16px;
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .antigravity-btn-primary {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
 }
 
 .antigravity-btn-primary:hover {
@@ -118,12 +125,19 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
   border-radius: var(--radius-control);
   font-weight: 500;
-  font-size: 14px;
-  padding: 10px 20px;
+  font-size: 13px;
+  padding: 8px 16px;
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .antigravity-btn-teal {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
 }
 
 .antigravity-btn-teal:hover {
@@ -140,13 +154,20 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--theme-outline-variant);
   border-radius: var(--radius-control);
   font-weight: 500;
-  font-size: 14px;
-  padding: 10px 20px;
+  font-size: 13px;
+  padding: 8px 16px;
   backdrop-filter: blur(6px);
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .antigravity-btn-secondary {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
 }
 
 .antigravity-btn-secondary:hover {
@@ -176,20 +197,28 @@ h1, h2, h3, h4, h5, h6 {
   border-color: rgba(33, 34, 38, 0.2);
 }
 
-/* Eyebrow Label (6px crisp badge, no pill) */
+/* Eyebrow Label (6px crisp badge, compact on mobile) */
 .antigravity-chip {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 3px 8px;
+  gap: 5px;
+  padding: 2px 7px;
   border-radius: var(--radius-badge);
   background-color: var(--palette-grey-15);
   border: 1px solid var(--theme-outline-variant);
   color: var(--palette-grey-800);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .antigravity-chip {
+    gap: 6px;
+    padding: 3px 8px;
+    font-size: 11px;
+  }
 }
 
 /* Clean background grid pattern */

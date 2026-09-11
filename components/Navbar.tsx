@@ -33,9 +33,9 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* Antigravity Notice Strip */}
-      <div className="bg-[#f8f9fc] text-[#45474d] text-xs py-1.5 px-4 text-center border-b border-[rgba(33,34,38,0.06)] flex items-center justify-center gap-2 whitespace-nowrap overflow-hidden">
-        <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold bg-[#E6F4F2] text-[#0F7A73] border border-[#0F7A73]/20 shrink-0">
-          <ShieldCheck className="w-3 h-3 mr-1 shrink-0" /> Standar Resmi Palembang
+      <div className="bg-[#f8f9fc] text-[#45474d] text-[11px] sm:text-xs py-1 sm:py-1.5 px-3 sm:px-4 text-center border-b border-[rgba(33,34,38,0.06)] flex items-center justify-center gap-2 whitespace-nowrap overflow-hidden">
+        <span className="inline-flex items-center px-1.5 sm:px-2 py-0.5 rounded-md text-[9px] sm:text-[10px] font-semibold bg-[#E6F4F2] text-[#0F7A73] border border-[#0F7A73]/20 shrink-0">
+          <ShieldCheck className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-1 shrink-0" /> Standar Resmi Palembang
         </span>
         <span className="hidden sm:inline font-medium text-[12px] whitespace-nowrap">
           Kursus Mengemudi Mobil Palembang • Fasilitas Gratis Antar-Jemput ke Rumah • Dual Safety Assist
@@ -44,7 +44,7 @@ export default function Navbar() {
           href={generateWhatsAppUrl("Halo Kak Lia, saya ingin tanya ketersediaan jadwal & promo kursus minggu ini.")}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#0F7A73] hover:text-[#092E2B] font-semibold underline underline-offset-2 ml-1 text-[12px] shrink-0 whitespace-nowrap"
+          className="text-[#0F7A73] hover:text-[#092E2B] font-semibold underline underline-offset-2 ml-1 text-[11px] sm:text-[12px] shrink-0 whitespace-nowrap"
         >
           Konsultasi Jadwal &rarr;
         </a>
@@ -52,22 +52,22 @@ export default function Navbar() {
 
       {/* Floating Sleek Nav */}
       <nav
-        className={`transition-all duration-300 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-2.5`}
+        className={`transition-all duration-300 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-1.5 sm:pt-2.5`}
       >
         <div
-          className={`flex items-center justify-between px-4 sm:px-5 py-2 rounded-xl transition-all duration-300 ${
+          className={`flex items-center justify-between px-3 sm:px-5 py-1.5 sm:py-2 rounded-xl transition-all duration-300 ${
             scrolled
               ? "bg-white/95 backdrop-blur-md border border-[rgba(33,34,38,0.1)] shadow-sm"
               : "bg-white/80 backdrop-blur-sm border border-[rgba(33,34,38,0.06)]"
           }`}
         >
           {/* Brand Identity */}
-          <Link href="/" className="flex items-center gap-2.5 group shrink-0 whitespace-nowrap">
-            <div className="w-8 h-8 rounded-lg bg-[#f8f9fc] border border-[rgba(33,34,38,0.08)] flex items-center justify-center p-1 transition-all group-hover:border-[#0F7A73] shrink-0">
-              <AmanahLogo className="w-5 h-5" variant="symbol" />
+          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 group shrink-0 whitespace-nowrap">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#f8f9fc] border border-[rgba(33,34,38,0.08)] flex items-center justify-center p-1 transition-all group-hover:border-[#0F7A73] shrink-0">
+              <AmanahLogo className="w-4 h-4 sm:w-5 sm:h-5" variant="symbol" />
             </div>
-            <div className="flex items-center gap-2 whitespace-nowrap shrink-0">
-              <span className="font-extrabold text-sm sm:text-base tracking-tight text-[#121317] whitespace-nowrap leading-none">
+            <div className="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap shrink-0">
+              <span className="font-extrabold text-xs sm:text-base tracking-tight text-[#121317] whitespace-nowrap leading-none">
                 AMANAH <span className="text-[#0F7A73]">DRIVE</span>
               </span>
               <span className="text-[9px] uppercase font-bold tracking-wider bg-[#f0f1f5] text-[#45474d] px-1.5 py-0.5 rounded-md border border-[rgba(33,34,38,0.06)] shrink-0 hidden md:inline-block">
@@ -142,18 +142,20 @@ export default function Navbar() {
 
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
-          <div className="sm:hidden mt-2 bg-white/95 backdrop-blur-md rounded-xl border border-[rgba(33,34,38,0.1)] p-4 shadow-xl space-y-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block text-xs font-medium text-[#45474d] hover:text-[#121317] py-2 px-3 rounded-lg hover:bg-[#f8f9fc] transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
-            <div className="pt-2 border-t border-[rgba(33,34,38,0.06)] flex items-center justify-between text-xs text-[#45474d]">
+          <div className="sm:hidden mt-1.5 bg-white/95 backdrop-blur-md rounded-xl border border-[rgba(33,34,38,0.1)] p-3 shadow-xl space-y-1">
+            <div className="grid grid-cols-2 gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-xs font-medium text-[#45474d] hover:text-[#121317] py-1.5 px-2.5 rounded-lg hover:bg-[#f8f9fc] transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+            <div className="pt-2 border-t border-[rgba(33,34,38,0.06)] flex items-center justify-between text-[11px] text-[#45474d] px-1">
               <span className="font-mono">{CONTACT_INFO.phoneDisplay}</span>
               <a
                 href={generateWhatsAppUrl("Halo Kak Lia, saya mau tanya kursus.")}

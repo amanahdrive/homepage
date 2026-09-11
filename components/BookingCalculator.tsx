@@ -46,41 +46,41 @@ export default function BookingCalculator() {
   };
 
   return (
-    <section id="kalkulator" className="py-20 sm:py-28 relative bg-white border-t border-[rgba(33,34,38,0.06)]">
+    <section id="kalkulator" className="py-10 sm:py-24 relative bg-white border-t border-[rgba(33,34,38,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-left max-w-3xl mb-12 space-y-3">
-          <div className="flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#0F7A73]">
-            <Calculator className="w-3.5 h-3.5" />
+        <div className="text-left max-w-3xl mb-6 sm:mb-12 space-y-2 sm:space-y-3">
+          <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-mono font-semibold uppercase tracking-wider text-[#0F7A73]">
+            <Calculator className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             <span>Simulator Biaya &amp; Jadwal</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#121317] tracking-tight">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#121317] tracking-tight leading-snug">
             Kalkulator &amp; Rencana Pendaftaran Siswa
           </h2>
-          <p className="text-[#45474d] text-sm sm:text-base leading-relaxed">
+          <p className="text-[#45474d] text-xs sm:text-base leading-relaxed">
             Pilih paket, kendaraan, dan slot waktu yang paling nyaman. Dapatkan rincian estimasi biaya serta DP, lalu kirimkan langsung ke WhatsApp Kak Lia dalam satu klik.
           </p>
         </div>
 
         {/* Simulator Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-start">
           
           {/* Left: Input Selection Controls */}
-          <div className="lg:col-span-7 antigravity-card p-6 sm:p-7 bg-[#f8f9fc] border border-[rgba(33,34,38,0.08)] space-y-6">
+          <div className="lg:col-span-7 antigravity-card p-4 sm:p-7 bg-[#f8f9fc] border border-[rgba(33,34,38,0.08)] space-y-4 sm:space-y-6">
             
             {/* Step 1: Choose Package */}
             <div>
-              <label className="block text-xs font-mono font-bold uppercase tracking-wider text-[#45474d] mb-2.5">
+              <label className="block text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-[#45474d] mb-1.5 sm:mb-2.5">
                 1. Pilih Paket Kursus:
               </label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
                 {PACKAGES.map((pkg) => (
                   <button
                     key={pkg.id}
                     type="button"
                     onClick={() => setSelectedPkgId(pkg.id)}
-                    className={`p-3.5 rounded-xl text-left border transition-all ${
+                    className={`p-2.5 sm:p-3.5 rounded-xl text-left border transition-all ${
                       selectedPkgId === pkg.id
                         ? "border-[#121317] bg-[#f8f9fc] text-[#121317] shadow-sm ring-1 ring-[#121317]"
                         : "border-[rgba(33,34,38,0.08)] bg-white text-[#45474d] hover:border-[rgba(33,34,38,0.2)]"
@@ -89,12 +89,12 @@ export default function BookingCalculator() {
                     <div className="flex items-center justify-between">
                       <span className="font-bold text-xs sm:text-sm text-[#121317]">{pkg.name}</span>
                       {pkg.popular && (
-                        <span className="text-[10px] bg-[#121317] text-white px-2 py-0.5 rounded-md font-mono font-bold">
+                        <span className="text-[9px] sm:text-[10px] bg-[#121317] text-white px-1.5 sm:px-2 py-0.5 rounded-md font-mono font-bold">
                           Populer
                         </span>
                       )}
                     </div>
-                    <div className="text-xs text-[#0F7A73] font-bold mt-1 tabular-nums">
+                    <div className="text-[11px] sm:text-xs text-[#0F7A73] font-bold mt-0.5 sm:mt-1 tabular-nums">
                       {formatRupiah(pkg.price)}
                     </div>
                   </button>
@@ -104,10 +104,10 @@ export default function BookingCalculator() {
 
             {/* Step 2: Choose Vehicle */}
             <div>
-              <label className="block text-xs font-mono font-bold uppercase tracking-wider text-[#45474d] mb-2.5">
+              <label className="block text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-[#45474d] mb-1.5 sm:mb-2.5">
                 2. Pilihan Kendaraan Latihan:
               </label>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-2.5">
                 {[
                   { name: "Ayla (Manual)", desc: "City Car Lincah" },
                   { name: "Xenia (Manual)", desc: "MPV Keluarga" },
@@ -117,7 +117,7 @@ export default function BookingCalculator() {
                     key={v.name}
                     type="button"
                     onClick={() => setVehicle(v.name)}
-                    className={`p-3 rounded-xl text-left border transition-all ${
+                    className={`p-2.5 sm:p-3 rounded-xl text-left border transition-all ${
                       vehicle === v.name
                         ? "border-[#121317] bg-[#f8f9fc] text-[#121317] ring-1 ring-[#121317]"
                         : "border-[rgba(33,34,38,0.08)] bg-white text-[#45474d] hover:border-[rgba(33,34,38,0.2)]"
@@ -132,10 +132,10 @@ export default function BookingCalculator() {
 
             {/* Step 3: Preferred Time */}
             <div>
-              <label className="block text-xs font-mono font-bold uppercase tracking-wider text-[#45474d] mb-2.5">
+              <label className="block text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-[#45474d] mb-1.5 sm:mb-2.5">
                 3. Jam Latihan Favorit:
               </label>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-2.5">
                 {[
                   { label: "Pagi (09:00 - 12:30)", id: "Pagi Segar" },
                   { label: "Sore (15:30 - 17:00)", id: "Sore Favorit" },
@@ -145,7 +145,7 @@ export default function BookingCalculator() {
                     key={t.label}
                     type="button"
                     onClick={() => setSlotCategory(t.label)}
-                    className={`p-3 rounded-xl text-left border transition-all ${
+                    className={`p-2.5 sm:p-3 rounded-xl text-left border transition-all ${
                       slotCategory === t.label
                         ? "border-[#121317] bg-[#f8f9fc] text-[#121317] ring-1 ring-[#121317]"
                         : "border-[rgba(33,34,38,0.08)] bg-white text-[#45474d] hover:border-[rgba(33,34,38,0.2)]"
@@ -159,9 +159,9 @@ export default function BookingCalculator() {
             </div>
 
             {/* Step 4: Target Start & Name */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
-                <label className="block text-xs font-mono font-bold uppercase tracking-wider text-[#45474d] mb-2">
+                <label className="block text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-[#45474d] mb-1.5 sm:mb-2">
                   Nama Anda (Opsional):
                 </label>
                 <input
@@ -169,18 +169,18 @@ export default function BookingCalculator() {
                   placeholder="Contoh: Rahmat Hidayat"
                   value={studentName}
                   onChange={(e) => setStudentName(e.target.value)}
-                  className="w-full bg-[#f8f9fc] border border-[rgba(33,34,38,0.1)] rounded-xl px-4 py-2.5 text-xs text-[#121317] placeholder-[#9aa0a6] focus:outline-none focus:border-[#121317]"
+                  className="w-full bg-[#f8f9fc] border border-[rgba(33,34,38,0.1)] rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 text-xs text-[#121317] placeholder-[#9aa0a6] focus:outline-none focus:border-[#121317]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono font-bold uppercase tracking-wider text-[#45474d] mb-2">
+                <label className="block text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-[#45474d] mb-1.5 sm:mb-2">
                   Rencana Mulai Belajar:
                 </label>
                 <select
                   value={targetStart}
                   onChange={(e) => setTargetStart(e.target.value)}
-                  className="w-full bg-[#f8f9fc] border border-[rgba(33,34,38,0.1)] rounded-xl px-4 py-2.5 text-xs text-[#121317] focus:outline-none focus:border-[#121317]"
+                  className="w-full bg-[#f8f9fc] border border-[rgba(33,34,38,0.1)] rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 text-xs text-[#121317] focus:outline-none focus:border-[#121317]"
                 >
                   <option value="Secepatnya (Besok / Lusa)">Secepatnya (Besok / Lusa)</option>
                   <option value="Minggu Ini">Minggu Ini</option>
@@ -194,18 +194,18 @@ export default function BookingCalculator() {
           </div>
 
           {/* Right: Antigravity Inverse Summary Card (Iconic Dark Obsidian Card) */}
-          <div className="lg:col-span-5 antigravity-card-inverse p-6 sm:p-7 border border-[#212226] space-y-5 shadow-xl">
+          <div className="lg:col-span-5 antigravity-card-inverse p-4 sm:p-7 border border-[#212226] space-y-3.5 sm:space-y-5 shadow-xl">
             
-            <div className="flex items-center justify-between pb-4 border-b border-white/10">
+            <div className="flex items-center justify-between pb-3 sm:pb-4 border-b border-white/10">
               <span className="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
-                <Sparkles className="w-4 h-4 text-amber-400" /> Ringkasan Pendaftaran
+                <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400" /> Ringkasan Pendaftaran
               </span>
-              <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-white/10 text-emerald-300 border border-white/20">
+              <span className="text-[9px] sm:text-[10px] font-mono font-bold px-1.5 sm:px-2 py-0.5 rounded-md bg-white/10 text-emerald-300 border border-white/20">
                 Estimasi Resmi
               </span>
             </div>
 
-            <div className="space-y-3.5 text-xs">
+            <div className="space-y-2.5 sm:space-y-3.5 text-xs">
               <div className="flex justify-between items-center text-slate-300">
                 <span>Paket Pilihan:</span>
                 <strong className="text-white font-bold">{currentPkg.name}</strong>
@@ -228,13 +228,13 @@ export default function BookingCalculator() {
               </div>
 
               {/* Total Price Callout */}
-              <div className="pt-4 border-t border-white/10 space-y-1">
+              <div className="pt-3 sm:pt-4 border-t border-white/10 space-y-1">
                 <span className="text-slate-400 text-xs">Total Biaya Paket:</span>
-                <div className="text-3xl font-extrabold text-white tracking-tight tabular-nums">
+                <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight tabular-nums">
                   {formatRupiah(currentPkg.price)}
                 </div>
                 {currentPkg.price > 0 && (
-                  <p className="text-[11px] text-teal-300">
+                  <p className="text-[10px] sm:text-[11px] text-teal-300">
                     Cukup DP <strong>{formatRupiah(roundedDP)}</strong> untuk mengunci slot jadwal &amp; armada.
                   </p>
                 )}
@@ -242,11 +242,11 @@ export default function BookingCalculator() {
             </div>
 
             {/* Action CTA Button */}
-            <div className="space-y-2.5 pt-2">
+            <div className="space-y-2 pt-1 sm:pt-2">
               <button
                 type="button"
                 onClick={handleBooking}
-                className="w-full py-3 px-5 rounded-lg bg-white hover:bg-[#f0f1f5] text-[#121317] font-bold text-xs flex items-center justify-center gap-2 shadow-lg transition-all"
+                className="w-full py-2.5 sm:py-3 px-4 sm:px-5 rounded-lg bg-white hover:bg-[#f0f1f5] text-[#121317] font-bold text-xs flex items-center justify-center gap-2 shadow-lg transition-all"
               >
                 <div className="relative w-4 h-4 rounded-md overflow-hidden border border-black/20 shrink-0">
                   <Image

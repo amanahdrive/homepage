@@ -15,25 +15,25 @@ export default function SlotSchedule() {
   };
 
   return (
-    <section id="jadwal" className="py-20 sm:py-28 relative bg-[#f8f9fc] border-t border-[rgba(33,34,38,0.06)]">
+    <section id="jadwal" className="py-10 sm:py-24 relative bg-[#f8f9fc] border-t border-[rgba(33,34,38,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-left max-w-3xl mb-12 space-y-3">
-          <div className="flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#0F7A73]">
-            <Clock className="w-3.5 h-3.5" />
+        <div className="text-left max-w-3xl mb-6 sm:mb-12 space-y-2 sm:space-y-3">
+          <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-mono font-semibold uppercase tracking-wider text-[#0F7A73]">
+            <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             <span>Pilihan Jam Latihan Fleksibel</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#121317] tracking-tight">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#121317] tracking-tight leading-snug">
             Pilihan 6 Slot Waktu Harian (09.00 - 22.00 WIB)
           </h2>
-          <p className="text-[#45474d] text-sm sm:text-base leading-relaxed">
+          <p className="text-[#45474d] text-xs sm:text-base leading-relaxed">
             Tidak perlu khawatir terbentur jam kantor atau kuliah. Anda bebas memilih slot pagi yang teduh, sore hari, hingga slot malam hari yang tenang dan bebas macet.
           </p>
         </div>
 
         {/* Slot Grid in Clean Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 mb-6 sm:mb-10">
           {TIME_SLOTS.map((slot) => {
             const Icon = getSlotIcon(slot.id);
             const isSelected = selectedSlot.id === slot.id;
@@ -42,27 +42,27 @@ export default function SlotSchedule() {
               <div
                 key={slot.id}
                 onClick={() => setSelectedSlot(slot)}
-                className={`antigravity-card p-5 cursor-pointer transition-all ${
+                className={`antigravity-card p-3.5 sm:p-5 cursor-pointer transition-all ${
                   isSelected
                     ? "border-[#121317] shadow-md ring-1 ring-[#121317]"
                     : "border-[rgba(33,34,38,0.08)] bg-white hover:border-[rgba(33,34,38,0.2)]"
                 }`}
               >
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2.5">
+                <div className="flex items-center justify-between mb-2 sm:mb-3">
+                  <div className="flex items-center gap-2 sm:gap-2.5">
                     <div
-                      className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${
+                      className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center transition-colors ${
                         isSelected
                           ? "bg-[#121317] text-white"
                           : "bg-[#f8f9fc] text-[#45474d] border border-[rgba(33,34,38,0.06)]"
                       }`}
                     >
-                      <Icon className="w-4 h-4" />
+                      <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
-                    <span className="font-bold text-[#121317] text-sm">{slot.label}</span>
+                    <span className="font-bold text-[#121317] text-xs sm:text-sm">{slot.label}</span>
                   </div>
                   <span
-                    className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-md border ${
+                    className={`text-[9px] sm:text-[10px] font-mono font-bold px-1.5 sm:px-2 py-0.5 rounded-md border ${
                       slot.id >= 5
                         ? "bg-indigo-50 text-indigo-700 border-indigo-200"
                         : "bg-[#E6F4F2] text-[#0F7A73] border-[#0F7A73]/20"
@@ -72,12 +72,12 @@ export default function SlotSchedule() {
                   </span>
                 </div>
 
-                <div className="text-xl font-bold text-[#121317] mb-1 tracking-tight tabular-nums">
+                <div className="text-lg sm:text-xl font-bold text-[#121317] mb-0.5 sm:mb-1 tracking-tight tabular-nums">
                   {slot.time}
                 </div>
-                <p className="text-xs text-[#45474d] mb-3">{slot.desc}</p>
+                <p className="text-[11px] sm:text-xs text-[#45474d] mb-2.5 sm:mb-3">{slot.desc}</p>
 
-                <div className="pt-2.5 border-t border-[rgba(33,34,38,0.06)] flex items-center justify-between text-[11px]">
+                <div className="pt-2 sm:pt-2.5 border-t border-[rgba(33,34,38,0.06)] flex items-center justify-between text-[10px] sm:text-[11px]">
                   <span className="text-[#9aa0a6] font-mono">Durasi:</span>
                   <span className="text-[#0F7A73] font-bold">90 Menit Efektif</span>
                 </div>
@@ -87,11 +87,11 @@ export default function SlotSchedule() {
         </div>
 
         {/* Selected Slot Callout Card */}
-        <div className="max-w-2xl mx-auto antigravity-card p-6 sm:p-7 bg-white border border-[rgba(33,34,38,0.08)] text-center space-y-4 rounded-xl shadow-sm">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-[#f8f9fc] text-[#121317] text-xs font-mono font-bold border border-[rgba(33,34,38,0.08)]">
-            <Sparkles className="w-3.5 h-3.5 text-amber-500" /> Slot Dipilih:
+        <div className="max-w-2xl mx-auto antigravity-card p-4 sm:p-7 bg-white border border-[rgba(33,34,38,0.08)] text-center space-y-3 sm:space-y-4 rounded-xl shadow-sm">
+          <div className="inline-flex items-center gap-1.5 px-2 sm:px-2.5 py-0.5 rounded-md bg-[#f8f9fc] text-[#121317] text-[10px] sm:text-xs font-mono font-bold border border-[rgba(33,34,38,0.08)]">
+            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-500" /> Slot Dipilih:
           </div>
-          <h3 className="text-2xl font-extrabold text-[#121317] tracking-tight tabular-nums">
+          <h3 className="text-xl sm:text-2xl font-extrabold text-[#121317] tracking-tight tabular-nums">
             {selectedSlot.label} &mdash; {selectedSlot.time}
           </h3>
           <p className="text-xs sm:text-sm text-[#45474d] max-w-md mx-auto">
@@ -103,7 +103,7 @@ export default function SlotSchedule() {
             )}
             target="_blank"
             rel="noopener noreferrer"
-            className="antigravity-btn-primary py-2.5 px-6 text-xs gap-2 rounded-lg shadow-sm"
+            className="antigravity-btn-primary py-2.5 px-5 sm:px-6 text-xs gap-2 rounded-lg shadow-sm"
           >
             <div className="relative w-4 h-4 rounded-md overflow-hidden border border-white/40 shrink-0">
               <Image

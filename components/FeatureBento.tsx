@@ -48,54 +48,54 @@ export default function FeatureBento() {
   ];
 
   return (
-    <section id="keunggulan" className="py-20 sm:py-28 relative bg-[#f8f9fc] border-y border-[rgba(33,34,38,0.06)]">
+    <section id="keunggulan" className="py-10 sm:py-24 relative bg-[#f8f9fc] border-y border-[rgba(33,34,38,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-left max-w-3xl mb-12 space-y-3">
-          <div className="flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#0F7A73]">
-            <Sparkles className="w-3.5 h-3.5" />
+        <div className="text-left max-w-3xl mb-6 sm:mb-12 space-y-2 sm:space-y-3">
+          <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-mono font-semibold uppercase tracking-wider text-[#0F7A73]">
+            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             <span>Standar Keunggulan Belajar</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#121317] tracking-tight">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#121317] tracking-tight leading-snug">
             Mengapa Amanah Drive Pilihan Utama di Palembang?
           </h2>
-          <p className="text-[#45474d] text-sm sm:text-base leading-relaxed">
+          <p className="text-[#45474d] text-xs sm:text-base leading-relaxed">
             Kami memadukan keselamatan fisik, ketenangan mental, dan metode pembelajaran bertahap agar siapa pun dapat mengemudi mandiri tanpa rasa cemas di jalan raya.
           </p>
         </div>
 
         {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6">
           {features.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="antigravity-card p-6 flex flex-col justify-between"
+                className="antigravity-card p-4 sm:p-6 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#f0f1f5] border border-[rgba(33,34,38,0.06)] flex items-center justify-center text-[#121317]">
-                      <Icon className="w-5 h-5 text-[#0F7A73]" />
+                  <div className="flex items-center justify-between mb-3 sm:mb-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-[#f0f1f5] border border-[rgba(33,34,38,0.06)] flex items-center justify-center text-[#121317]">
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#0F7A73]" />
                     </div>
-                    <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded-md bg-[#f0f1f5] text-[#45474d] border border-[rgba(33,34,38,0.06)]">
+                    <span className="text-[10px] sm:text-[11px] font-mono font-bold px-2 py-0.5 rounded-md bg-[#f0f1f5] text-[#45474d] border border-[rgba(33,34,38,0.06)]">
                       {item.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#121317] mb-2 tracking-tight">
+                  <h3 className="text-base sm:text-lg font-bold text-[#121317] mb-1.5 sm:mb-2 tracking-tight">
                     {item.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-[#45474d] leading-relaxed mb-5">
+                  <p className="text-xs sm:text-sm text-[#45474d] leading-relaxed mb-3 sm:mb-5">
                     {item.desc}
                   </p>
                 </div>
 
-                <ul className="space-y-2 pt-4 border-t border-[rgba(33,34,38,0.06)]">
+                <ul className="space-y-1.5 sm:space-y-2 pt-3 sm:pt-4 border-t border-[rgba(33,34,38,0.06)]">
                   {item.points.map((pt, pIdx) => (
-                    <li key={pIdx} className="flex items-center gap-2 text-xs text-[#45474d]">
+                    <li key={pIdx} className="flex items-center gap-2 text-[11px] sm:text-xs text-[#45474d]">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981] shrink-0" />
                       <span>{pt}</span>
                     </li>

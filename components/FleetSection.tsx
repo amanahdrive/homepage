@@ -4,52 +4,52 @@ import { Car, ShieldCheck, CheckCircle2, MessageCircle } from "lucide-react";
 
 export default function FleetSection() {
   return (
-    <section id="armada" className="py-20 sm:py-28 relative bg-white border-t border-[rgba(33,34,38,0.06)]">
+    <section id="armada" className="py-10 sm:py-24 relative bg-white border-t border-[rgba(33,34,38,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Editorial Section Header */}
-        <div className="text-left max-w-3xl mb-12 space-y-3">
-          <div className="flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#0F7A73]">
-            <Car className="w-3.5 h-3.5" />
+        <div className="text-left max-w-3xl mb-6 sm:mb-12 space-y-2 sm:space-y-3">
+          <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-mono font-semibold uppercase tracking-wider text-[#0F7A73]">
+            <Car className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             <span>Kategori Armada Latihan Resmi</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#121317] tracking-tight">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#121317] tracking-tight leading-snug">
             Pilihan Armada Latihan Nyaman &amp; Terawat
           </h2>
-          <p className="text-[#45474d] text-sm sm:text-base leading-relaxed">
+          <p className="text-[#45474d] text-xs sm:text-base leading-relaxed">
             Seluruh armada operasional Amanah Drive dilengkapi kontrol <strong className="text-[#0F7A73]">Pedal Rem Pengaman Tambahan (Dual Safety Assist)</strong> di sisi pendamping, AC dingin, serta perawatan mesin berkala untuk kenyamanan dan keamanan belajar maksimal.
           </p>
         </div>
 
         {/* Fleet Grid (Clean 12px container, no pill badges) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6">
           {FLEET.map((car, idx) => (
             <div
               key={idx}
-              className="antigravity-card p-6 flex flex-col justify-between"
+              className="antigravity-card p-4 sm:p-6 flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="px-2 py-0.5 rounded-md bg-[#E6F4F2] text-[#0F7A73] font-mono font-bold text-xs">
+                <div className="flex items-center justify-between mb-2 sm:mb-3">
+                  <span className="px-2 py-0.5 rounded-md bg-[#E6F4F2] text-[#0F7A73] font-mono font-bold text-[10px] sm:text-xs">
                     {car.type}
                   </span>
-                  <span className="text-[11px] font-mono text-[#45474d] bg-[#f0f1f5] px-2 py-0.5 rounded-md border border-[rgba(33,34,38,0.06)]">
+                  <span className="text-[10px] sm:text-[11px] font-mono text-[#45474d] bg-[#f0f1f5] px-2 py-0.5 rounded-md border border-[rgba(33,34,38,0.06)]">
                     {car.plate}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-[#121317] mb-1">
+                <h3 className="text-lg sm:text-xl font-bold text-[#121317] mb-0.5 sm:mb-1">
                   {car.name}
                 </h3>
-                <p className="text-xs text-[#0F7A73] font-medium mb-3">Warna: {car.color}</p>
+                <p className="text-[11px] sm:text-xs text-[#0F7A73] font-medium mb-2 sm:mb-3">Warna: {car.color}</p>
 
-                <p className="text-xs sm:text-sm text-[#45474d] leading-relaxed mb-5">
+                <p className="text-xs sm:text-sm text-[#45474d] leading-relaxed mb-3 sm:mb-5">
                   {car.desc}
                 </p>
 
-                <div className="space-y-2 pt-3 border-t border-[rgba(33,34,38,0.06)] mb-4">
+                <div className="space-y-1.5 sm:space-y-2 pt-2.5 sm:pt-3 border-t border-[rgba(33,34,38,0.06)] mb-3 sm:mb-4">
                   {car.features.map((feat, fIdx) => (
-                    <div key={fIdx} className="flex items-center gap-2 text-xs text-[#45474d]">
+                    <div key={fIdx} className="flex items-center gap-2 text-[11px] sm:text-xs text-[#45474d]">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981] shrink-0" />
                       <span>{feat}</span>
                     </div>
@@ -57,8 +57,8 @@ export default function FleetSection() {
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-[rgba(33,34,38,0.06)] flex items-center justify-between">
-                <span className="text-[11px] text-[#0F7A73] font-medium flex items-center gap-1.5">
+              <div className="pt-2.5 sm:pt-3 border-t border-[rgba(33,34,38,0.06)] flex items-center justify-between">
+                <span className="text-[10px] sm:text-[11px] text-[#0F7A73] font-medium flex items-center gap-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#0F7A73] shrink-0" />
                   Dual Safety Assist
                 </span>
