@@ -69,10 +69,10 @@ export default function CurriculumRoadmap() {
               Tanda Apresiasi Kelulusan &amp; Penguasaan Praktik
             </div>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-[#121317] tracking-tight">
-              Sertifikat Kelulusan Resmi CV Amanah Drive Mandiri
+              Sertifikat Kelulusan Resmi CV Amanah Drive
             </h3>
             <p className="text-xs sm:text-sm text-[#45474d] leading-relaxed">
-              Setiap siswa yang menuntaskan kurikulum praktik berhak menerima Sertifikat Kelulusan Resmi internal dari CV Amanah Drive Mandiri berstempel basah keaslian, disertai Lembar Panduan Evaluasi Mandiri yang merangkum pencapaian teknik manuver, tanjakan, dan parkir dari instruktur pendamping.
+              Setiap siswa yang menuntaskan kurikulum praktik berhak menerima Sertifikat Kelulusan Resmi internal dari CV Amanah Drive berstempel basah keaslian, disertai Lembar Panduan Evaluasi Belajar yang merangkum pencapaian teknik manuver, tanjakan, dan parkir dari instruktur pendamping.
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-[#45474d]">
               <div className="flex items-center gap-1.5">
@@ -96,7 +96,7 @@ export default function CurriculumRoadmap() {
             <div className="space-y-1 py-1">
               <p className="text-[11px] text-[#45474d]">Diberikan secara resmi kepada:</p>
               <p className="text-sm font-bold text-[#121317] tracking-wide">[ Nama Siswa Lulus ]</p>
-              <p className="text-[10px] text-[#10B981] font-mono font-medium">Status: Menyelesaikan Praktik Mandiri</p>
+              <p className="text-[10px] text-[#10B981] font-mono font-medium">Status: Lulus Kurikulum Praktik Mengemudi</p>
             </div>
 
             <div className="pt-2 border-t border-[rgba(33,34,38,0.06)] flex items-center justify-between">

@@ -42,7 +42,7 @@ export default function FeatureBento() {
       icon: Award,
       title: "Sertifikat Kelulusan Resmi CV",
       badge: "Apresiasi & Evaluasi",
-      desc: "Setelah menyelesaikan seluruh materi kurikulum praktik, siswa menerima Sertifikat Kelulusan resmi CV Amanah Drive Mandiri berstempel basah beserta lembar evaluasi mandiri.",
+      desc: "Setelah menyelesaikan seluruh materi kurikulum praktik, siswa menerima Sertifikat Kelulusan resmi CV Amanah Drive berstempel basah beserta lembar evaluasi berkendara.",
       points: ["Bukti fisik kelulusan materi praktik", "Catatan evaluasi perkembangan belajar", "Diterbitkan resmi oleh CV Amanah Drive"],
     },
   ];

@@ -306,7 +306,7 @@ export const FAQS = [
 ];
 
 export const CONTACT_INFO = {
-  companyName: "Amanah Drive Palembang (CV Amanah Drive Mandiri)",
+  companyName: "Amanah Drive Palembang (CV Amanah Drive)",
   tagline: "Kursus Mengemudi Profesional & Bergaransi No. 1 Palembang",
   phoneDisplay: "0813-7790-961",
   phoneRaw: "628137790961",

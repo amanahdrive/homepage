@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Amanah Drive Palembang — Kursus Mengemudi Mobil & SIM A Resmi",
   description:
-    "Kursus mengemudi mobil terpercaya di Palembang (CV Amanah Drive Mandiri). Instruktur sabar berpengalaman anti-bentak, armada berpedal rem pengaman tambahan (Dual Safety Assist), jadwal fleksibel 09.00-22.00 WIB, layanan antar-jemput, & pendampingan pembuatan SIM A resmi sampai terbit.",
+    "Kursus mengemudi mobil terpercaya di Palembang (CV Amanah Drive). Instruktur sabar berpengalaman anti-bentak, armada berpedal rem pengaman tambahan (Dual Safety Assist), jadwal fleksibel 09.00-22.00 WIB, layanan antar-jemput, & pendampingan pembuatan SIM A resmi sampai terbit.",
   keywords: [
     "kursus mengemudi palembang",
     "les mobil palembang",
@@ -17,11 +17,11 @@ export const metadata: Metadata = {
     "kursus mobil malam palembang",
     "sim a palembang",
     "amanah drive palembang",
-    "cv amanah drive mandiri",
+    "cv amanah drive",
     "kursus stir mobil terdekat palembang",
     "les mengemudi mobil matic palembang",
   ],
-  authors: [{ name: "CV Amanah Drive Mandiri" }],
+  authors: [{ name: "CV Amanah Drive" }],
   creator: "Amanah Drive",
   metadataBase: new URL("https://amanahdrive.my.id"),
   alternates: {
@@ -69,7 +69,7 @@ export default function RootLayout({
         "@type": "DrivingSchool",
         "@id": "https://amanahdrive.my.id/#organization",
         "name": "Amanah Drive Palembang",
-        "legalName": "CV Amanah Drive Mandiri",
+        "legalName": "CV Amanah Drive",
         "url": "https://amanahdrive.my.id",
         "logo": "https://amanahdrive.my.id/assets/logo-amdri-circle.png",
         "image": "https://amanahdrive.my.id/assets/amdri-banner.jpg",

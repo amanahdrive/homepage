@@ -22,7 +22,7 @@ export default function Hero() {
           <div className="flex justify-center">
             <span className="antigravity-chip">
               <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
-              <span>Akademi Mengemudi Palembang • CV Amanah Drive Mandiri</span>
+              <span>Akademi Mengemudi Palembang • Amanah Drive</span>
             </span>
           </div>
 
@@ -119,7 +119,7 @@ export default function Hero() {
                 </div>
                 <div className="text-left pr-1">
                   <p className="text-[10px] font-mono text-[#0F7A73] uppercase font-bold leading-none">Badan Usaha Resmi CV</p>
-                  <p className="text-xs font-extrabold text-[#121317] leading-tight">CV Amanah Drive Mandiri</p>
+                  <p className="text-xs font-extrabold text-[#121317] leading-tight">CV Amanah Drive</p>
                 </div>
               </div>
 

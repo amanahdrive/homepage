@@ -20,7 +20,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              Lembaga pelatihan mengemudi profesional di bawah naungan CV Amanah Drive Mandiri, Kota Palembang. Mengedepankan keselamatan melalui armada Dual Safety Assist (kontrol pedal rem pengaman tambahan), instruktur beretika tinggi, dan pendampingan pembuatan SIM A resmi sampai tuntas.
+              Lembaga pelatihan mengemudi profesional di bawah naungan CV Amanah Drive, Kota Palembang. Mengedepankan keselamatan melalui armada Dual Safety Assist (kontrol pedal rem pengaman tambahan), instruktur beretika tinggi, dan pendampingan pembuatan SIM A resmi sampai tuntas.
             </p>
 
             <div className="flex flex-wrap items-center gap-2 pt-1">
