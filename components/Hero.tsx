@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { generateWhatsAppUrl, STUDENT_CARE } from "@/lib/constants";
-import { ShieldCheck, MessageCircle, Calendar, CheckCircle2, Navigation, Sliders, Car, TrendingUp, Moon, Award } from "lucide-react";
+import { ShieldCheck, Calendar, CheckCircle2, Navigation, Sliders, Car, TrendingUp, Moon } from "lucide-react";
 
 export default function Hero() {
   const capabilities = [
@@ -70,9 +69,47 @@ export default function Hero() {
           </div>
         </div>
 
+        {/* Hero Image Showcase (amdri-banner.jpg) */}
+        <div className="max-w-5xl mx-auto mb-14 sm:mb-16">
+          <div className="antigravity-card p-2 sm:p-3 overflow-hidden bg-white shadow-[0_16px_48px_-12px_rgba(0,0,0,0.08)] border border-[rgba(33,34,38,0.08)] rounded-2xl sm:rounded-3xl">
+            <div className="relative aspect-[2752/1536] sm:aspect-[16/9] w-full rounded-xl sm:rounded-2xl overflow-hidden bg-[#0F7A73]/5 border border-[rgba(33,34,38,0.04)]">
+              <Image
+                src="/assets/amdri-banner.jpg"
+                alt="Amanah Drive Palembang — Kursus Mengemudi Mobil Gratis Antar Jemput"
+                fill
+                priority
+                quality={95}
+                className="object-cover object-center transition-transform duration-700 hover:scale-[1.01]"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1100px"
+              />
+            </div>
+
+            {/* Clean Sub-Banner Meta Bar */}
+            <div className="mt-2.5 pt-2 px-2 border-t border-[rgba(33,34,38,0.06)] flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#45474d]">
+              <div className="flex items-center gap-2 flex-wrap justify-center sm:justify-start">
+                <span className="w-2 h-2 rounded-full bg-[#10B981] shrink-0" />
+                <span className="font-mono text-[11px] text-[#121317] font-bold">
+                  Armada Latihan Resmi:
+                </span>
+                <span className="text-[11px] text-[#45474d]">
+                  Daihatsu Ayla &bull; Toyota Agya &bull; Toyota Avanza &bull; Daihatsu Xenia &bull; Suzuki Ertiga
+                </span>
+              </div>
+
+              <div className="flex items-center gap-3 text-[11px] font-mono text-[#0F7A73] shrink-0">
+                <span className="font-semibold">Dual Safety Assist</span>
+                <span>&bull;</span>
+                <span className="font-semibold">Full AC Dingin</span>
+                <span>&bull;</span>
+                <span className="font-semibold text-[#121317]">CV Amanah Drive</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Antigravity Capability Bouncers Strip */}
-        <div className="mb-16">
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 sm:gap-4 max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 sm:gap-4">
             {capabilities.map((item, idx) => {
               const Icon = item.icon;
               return (
@@ -89,62 +126,6 @@ export default function Hero() {
                 </div>
               );
             })}
-          </div>
-        </div>
-
-        {/* Antigravity Banner Media Showcase */}
-        <div className="max-w-5xl mx-auto">
-          <div className="antigravity-card p-2 sm:p-3 overflow-hidden">
-            <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full rounded-xl overflow-hidden bg-[#f0f1f5] border border-[rgba(33,34,38,0.06)]">
-              <Image
-                src="/assets/amdri-banner.jpg"
-                alt="Armada Mobil Latihan Amanah Drive Palembang"
-                fill
-                priority
-                className="object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
-              />
-
-              {/* Gradient Overlay for subtle readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#121317]/80 via-transparent to-black/20 pointer-events-none" />
-
-              {/* Official Seal Stamp (Cap Amanah Drive) */}
-              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md rounded-xl p-2 sm:p-2.5 border border-white/60 shadow-lg flex items-center gap-2.5">
-                <div className="relative w-9 h-9 sm:w-11 sm:h-11 shrink-0">
-                  <Image
-                    src="/assets/cap-amanah.png"
-                    alt="Cap Stempel Resmi Amanah Drive"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <div className="text-left pr-1">
-                  <p className="text-[10px] font-mono text-[#0F7A73] uppercase font-bold leading-none">Badan Usaha Resmi CV</p>
-                  <p className="text-xs font-extrabold text-[#121317] leading-tight">CV Amanah Drive</p>
-                </div>
-              </div>
-
-              {/* Bottom Info Bar inside Banner */}
-              <div className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-3 text-white">
-                <div className="max-w-md">
-                  <span className="inline-block text-[10px] font-mono uppercase tracking-wider bg-white/20 backdrop-blur-md px-2.5 py-0.5 rounded-full mb-1.5 border border-white/30">
-                    Armada Aman Dual Safety Assist
-                  </span>
-                  <p className="text-sm sm:text-base font-bold text-white drop-shadow-sm">
-                    Daihatsu Ayla &amp; Xenia ber-AC dingin dengan pedal rem pengaman tambahan di sisi instruktur.
-                  </p>
-                </div>
-
-                <a
-                  href={generateWhatsAppUrl("Halo Kak Lia, saya ingin tanya jadwal latihan minggu ini.")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="antigravity-btn-primary bg-white text-[#121317] hover:bg-[#f0f1f5] text-xs py-2 px-4 shrink-0 shadow-lg"
-                >
-                  <MessageCircle className="w-3.5 h-3.5 text-[#0F7A73] fill-[#0F7A73]/20 mr-1.5" />
-                  <span>Tanya Jadwal via WA</span>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
 
