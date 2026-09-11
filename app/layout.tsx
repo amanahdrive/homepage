@@ -131,48 +131,6 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth">
       <head>
-        {/* Meta Pixel Base & Guard: Inisialisasi fbevents.js resmi, matikan autoConfig (SubscribedButtonClick), & cegah double firing */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              !function(f,b,e,v,n,t,s) {
-                if (f.fbq) return;
-                n = f.fbq = function() {
-                  // 1. Blokir TOTAL SubscribedButtonClick bawaan Meta Ads
-                  if (arguments[1] === 'SubscribedButtonClick' || arguments[0] === 'SubscribedButtonClick') return;
-
-                  // 2. Cegah double firing PageView
-                  if (arguments[1] === 'PageView') {
-                    if (f.__amdri_pageview_fired) return;
-                    f.__amdri_pageview_fired = true;
-                  }
-
-                  // 3. Cegah double firing EngagedUser (hanya 1x per sesi)
-                  if (arguments[1] === 'EngagedUser') {
-                    if (f.__amdri_engaged_fired) return;
-                    f.__amdri_engaged_fired = true;
-                  }
-
-                  n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-                };
-                if (!f._fbq) f._fbq = n;
-                n.push = n;
-                n.loaded = !0;
-                n.version = '2.0';
-                n.queue = [];
-                t = b.createElement(e);
-                t.async = !0;
-                t.src = v;
-                s = b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t, s);
-              }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-
-              fbq('set', 'autoConfig', false, '2242382719666891');
-              fbq('init', '2242382719666891');
-              fbq('track', 'PageView');
-            `,
-          }}
-        />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -199,18 +157,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        {/* End Google Tag Manager (noscript) */}
-        {/* Meta Pixel (noscript) */}
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=2242382719666891&ev=PageView&noscript=1"
-            alt=""
-          />
-        </noscript>
-        {/* End Meta Pixel (noscript) */}
         {children}
       </body>
     </html>
