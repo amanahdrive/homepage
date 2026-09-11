@@ -86,35 +86,23 @@ export default function CurriculumRoadmap() {
             </div>
           </div>
 
-          {/* Certificate Badge Visual Preview with Real Stamp */}
-          <div className="p-4 sm:p-5 border border-[rgba(33,34,38,0.08)] bg-[#f8f9fc] rounded-xl shrink-0 w-full sm:w-80 relative overflow-hidden text-center space-y-2.5 sm:space-y-3 shadow-sm">
-            <div className="flex items-center justify-between border-b border-[rgba(33,34,38,0.06)] pb-2 sm:pb-2.5">
-              <span className="text-[10px] sm:text-[11px] font-mono text-[#0F7A73] font-bold">SERTIFIKAT KELULUSAN</span>
-              <span className="text-[9px] sm:text-[10px] text-[#9aa0a6] font-mono">Palembang</span>
+          {/* Real Certificate Visual Preview */}
+          <div className="shrink-0 w-full sm:w-[380px] lg:w-[420px] rounded-xl overflow-hidden border border-[rgba(33,34,38,0.1)] bg-slate-50 shadow-sm hover:shadow-md transition-shadow">
+            <div className="relative aspect-[1024/723] w-full bg-slate-100">
+              <Image
+                src="/assets/sertifikat-resmi.webp"
+                alt="Contoh Fisik Asli Sertifikat Kelulusan Resmi Siswa CV Amanah Drive Palembang"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, 420px"
+              />
             </div>
-
-            <div className="space-y-0.5 sm:space-y-1 py-1">
-              <p className="text-[10px] sm:text-[11px] text-[#45474d]">Diberikan secara resmi kepada:</p>
-              <p className="text-xs sm:text-sm font-bold text-[#121317] tracking-wide">[ Nama Siswa Lulus ]</p>
-              <p className="text-[9px] sm:text-[10px] text-[#10B981] font-mono font-medium">Status: Lulus Kurikulum Praktik Mengemudi</p>
-            </div>
-
-            <div className="pt-2 border-t border-[rgba(33,34,38,0.06)] flex items-center justify-between">
-              <div className="text-left text-[9px] sm:text-[10px] text-[#45474d]">
-                <span>Pendamping Praktik</span>
-                <p className="text-[#121317] font-bold">Tim Instruktur Resmi</p>
-              </div>
-
-              {/* Official Red Stamp Overlay */}
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12 shrink-0">
-                <Image
-                  src="/assets/cap-amanah.png"
-                  alt="Stempel Basah Amanah Drive"
-                  width={48}
-                  height={48}
-                  className="object-contain rotate-[-12deg]"
-                />
-              </div>
+            <div className="px-3.5 py-2.5 bg-white border-t border-[rgba(33,34,38,0.06)] flex items-center justify-between text-[10px] sm:text-[11px] text-[#45474d]">
+              <span className="font-mono text-[#0F7A73] font-semibold flex items-center gap-1">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#10B981]" />
+                Nomor Registrasi Terverifikasi
+              </span>
+              <span className="text-[#9aa0a6] font-mono text-[9px] sm:text-[10px]">Stempel Basah CV Amanah Drive</span>
             </div>
           </div>
 

@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/assets/amdri-banner.jpg",
+        url: "/assets/amdri-banner.webp",
         width: 1200,
         height: 630,
         alt: "Amanah Drive - Kursus Mengemudi Mobil Palembang Gratis Antar Jemput",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "Amanah Drive — Kursus Mengemudi Mobil Palembang Gratis Antar Jemput",
     description:
       "Kursus mengemudi mobil no. 1 di Palembang dengan fasilitas gratis antar-jemput. Dual Safety Assist, instruktur sabar berpengalaman, & jadwal fleksibel.",
-    images: ["/assets/amdri-banner.jpg"],
+    images: ["/assets/amdri-banner.webp"],
   },
   icons: {
     icon: "/favicon.svg",
@@ -74,8 +74,8 @@ export default function RootLayout({
         "name": "Amanah Drive Palembang",
         "legalName": "CV Amanah Drive",
         "url": "https://amanahdrive.my.id",
-        "logo": "https://amanahdrive.my.id/assets/logo-amdri-circle.png",
-        "image": "https://amanahdrive.my.id/assets/amdri-banner.jpg",
+        "logo": "https://amanahdrive.my.id/assets/logo-amdri-symbol.webp",
+        "image": "https://amanahdrive.my.id/assets/amdri-banner.webp",
         "description":
           "Kursus mengemudi mobil profesional di Palembang dengan fasilitas gratis antar jemput ke rumah, instruktur sabar berpengalaman, armada berpedal rem pengaman tambahan (Dual Safety Assist), dan jadwal fleksibel 09.00 - 22.00 WIB.",
         "telephone": "+628137790961",

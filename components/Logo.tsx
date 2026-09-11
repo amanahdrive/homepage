@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
 
 interface LogoProps {
@@ -11,18 +11,18 @@ export function AmanahLogo({ className = "w-8 h-8", variant = "symbol", alt = "A
   const getSrc = () => {
     switch (variant) {
       case "landscape-white":
-        return "/assets/logo-amdri-landscape-white.png";
+        return "/assets/logo-amdri-landscape-white.webp";
       case "landscape-black":
-        return "/assets/logo-amdri-landscape-black.png";
+        return "/assets/logo-amdri-landscape-black.webp";
       case "landscape":
-        return "/assets/logo-amdri-landscape.png";
+        return "/assets/logo-amdri-landscape.webp";
       case "symbol-white":
-        return "/assets/logo-amdri-symbol-white.png";
+        return "/assets/logo-amdri-symbol-white.webp";
       case "symbol-black":
-        return "/assets/logo-amdri-symbol-black.png";
+        return "/assets/logo-amdri-symbol-black.webp";
       case "symbol":
       default:
-        return "/assets/logo-amdri-symbol.png";
+        return "/assets/logo-amdri-symbol.webp";
     }
   };
 
@@ -52,12 +52,12 @@ export function AmanahLogoLandscape({
   const getSrc = () => {
     switch (variant) {
       case "landscape-white":
-        return "/assets/logo-amdri-landscape-white.png";
+        return "/assets/logo-amdri-landscape-white.webp";
       case "landscape-black":
-        return "/assets/logo-amdri-landscape-black.png";
+        return "/assets/logo-amdri-landscape-black.webp";
       case "landscape":
       default:
-        return "/assets/logo-amdri-landscape.png";
+        return "/assets/logo-amdri-landscape.webp";
     }
   };
 

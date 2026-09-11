@@ -69,16 +69,16 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Hero Image Showcase (amdri-banner.jpg) */}
+        {/* Hero Image Showcase (amdri-banner.webp) */}
         <div className="max-w-5xl mx-auto mb-7 sm:mb-14">
           <div className="p-1.5 sm:p-2.5 bg-white shadow-sm border border-[rgba(33,34,38,0.08)] rounded-xl">
             <div className="relative aspect-[2752/1536] sm:aspect-[16/9] w-full rounded-lg overflow-hidden bg-[#0F7A73]/5 border border-[rgba(33,34,38,0.04)]">
               <Image
-                src="/assets/amdri-banner.jpg"
+                src="/assets/amdri-banner.webp"
                 alt="Amanah Drive Palembang — Kursus Mengemudi Mobil Gratis Antar Jemput"
                 fill
                 priority
-                quality={95}
+                quality={90}
                 className="object-cover object-center transition-transform duration-700 hover:scale-[1.01]"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1100px"
               />

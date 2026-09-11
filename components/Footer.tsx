@@ -167,9 +167,11 @@ export default function Footer() {
 
         {/* Bottom copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-slate-500">
-          <p>© {new Date().getFullYear()} Amanah Drive Palembang. Seluruh Hak Cipta Dilindungi.</p>
-          <p className="flex items-center gap-1">
-            Standar Keselamatan Berkendara Kota Palembang • Anti Emosi &amp; Beretika
+          <p>{new Date().getFullYear()} Amanah Drive Palembang. Seluruh Hak Cipta Dilindungi.</p>
+          <p className="flex items-center gap-1.5">
+            <span>Standar Keselamatan Berkendara Kota Palembang</span>
+            <span className="inline-block w-1 h-1 rounded-full bg-slate-600"></span>
+            <span>Anti Emosi &amp; Beretika</span>
           </p>
         </div>
 

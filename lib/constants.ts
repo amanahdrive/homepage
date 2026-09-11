@@ -79,7 +79,7 @@ export const PACKAGES: PackageItem[] = [
     normalPrice: 2000000,
     hasSim: false,
     popular: true,
-    tag: "Paling Populer ⭐",
+    tag: "Paling Populer",
     desc: "Kurikulum paling komprehensif. Dari nol mutlak hingga mahir total di jalan sempit, flyover, mall, parkir paralel sempit, dan malam hari.",
     features: [
       "10 Sesi Latihan Menyeluruh (@90 menit)",
@@ -100,7 +100,7 @@ export const PACKAGES: PackageItem[] = [
     price: 2350000,
     normalPrice: 2700000,
     hasSim: true,
-    tag: "All-in-One Terbaik 👑",
+    tag: "All-in-One Terbaik",
     desc: "Paket pamungkas terbaik! 10 sesi komplit dari nol sampai jago luar-dalam PLUS pengurusan SIM A tuntas tanpa ribet.",
     features: [
       "Seluruh Fasilitas Paket Pro (10 Sesi Lengkap)",
@@ -128,7 +128,7 @@ export const PACKAGES: PackageItem[] = [
       "Instruktur Senior Berpengalaman",
       "Konsultasi Kebutuhan Gratis via WhatsApp",
     ],
-    recommendedFor: "Pemilik mobil baru yang ingin adaptasi mobil sendiri dengan aman.",
+    recommendedFor: "Bagi yang ingin melatih mobil pribadi atau rute khusus harian.",
   },
 ];
 
@@ -148,7 +148,7 @@ export const INSTRUCTORS = [
     exp: "5+ Tahun Pengalaman",
     speciality: "Spesialis Siswa Pemula, Sangat Ramah & Sabar Tanpa Menekan",
     quote: "Kunci mengemudi itu tenang. Grogi itu wajar, tugas saya mendampingi sampai kamu merasa stir itu bagian dari tubuhmu.",
-    avatar: "/staff_models/Syawal.png",
+    avatar: "/staff_models/Syawal.webp",
   },
   {
     name: "Kak Risky",
@@ -156,7 +156,7 @@ export const INSTRUCTORS = [
     exp: "4+ Tahun Pengalaman",
     speciality: "Ahli Trik Parkir Paralel Sempit, Mall & Tanjakan Ekstrem",
     quote: "Parkir dan tanjakan itu soal rumus dan feeling. Sekali paham ritmenya, kamu nggak akan pernah panik lagi.",
-    avatar: "/staff_models/Risky.png",
+    avatar: "/staff_models/Risky.webp",
   },
   {
     name: "Kak Alpi",
@@ -164,7 +164,7 @@ export const INSTRUCTORS = [
     exp: "4+ Tahun Pengalaman",
     speciality: "Spesialis Jalan Protokol Padat, Putar Balik & Kecepatan Responsif",
     quote: "Palembang lalu lintasnya dinamis. Saya ajarkan cara membaca gerak kendaraan lain agar selalu selamat.",
-    avatar: "/staff_models/Alpi.png",
+    avatar: "/staff_models/Alpi.webp",
   },
 ];
 
@@ -172,7 +172,7 @@ export const STUDENT_CARE = {
   name: "Kak Lia (Nur Awalia)",
   role: "Student Care & Konsultasi Resmi",
   desc: "Koordinator pendaftaran, pendampingan berkas SIM A, dan jadwal latihan fleksibel siswa Amanah Drive.",
-  avatar: "/staff_models/Lia.png",
+  avatar: "/staff_models/Lia.webp",
   phoneDisplay: "0813-7790-961",
   status: "Online WhatsApp",
 };
