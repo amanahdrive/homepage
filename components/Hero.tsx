@@ -22,7 +22,7 @@ export default function Hero() {
           <div className="flex justify-center">
             <span className="antigravity-chip">
               <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
-              <span>Akademi Mengemudi Palembang • Amanah Drive</span>
+              <span>Kursus Mengemudi Mobil Palembang • Gratis Antar-Jemput</span>
             </span>
           </div>
 
@@ -31,7 +31,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-base sm:text-lg text-[#45474d] max-w-2xl mx-auto leading-relaxed">
-            Metode latihan bertahap dari nol mutlak hingga mahir di jalan protokol padat, tanjakan flyover, dan parkir mall. Didukung instruktur sabar tanpa emosi &amp; pendampingan SIM A resmi.
+            Metode latihan bertahap dari nol mutlak hingga mahir di jalan protokol padat, tanjakan flyover, dan parkir mall. Didukung fasilitas gratis antar-jemput ke rumah &amp; instruktur sabar tanpa emosi.
           </p>
 
           {/* Action CTAs */}
@@ -57,15 +57,15 @@ export default function Hero() {
           <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 pt-4 text-xs text-[#45474d]">
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#10B981]" />
+              <span>Gratis Antar-Jemput ke Rumah</span>
+            </span>
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-[#10B981]" />
               <span>Pedal Rem Pengaman Tambahan</span>
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#10B981]" />
               <span>Instruktur Sabar Tanpa Nada Tinggi</span>
-            </span>
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-[#10B981]" />
-              <span>Pendampingan SIM A Sampai Terbit</span>
             </span>
           </div>
         </div>

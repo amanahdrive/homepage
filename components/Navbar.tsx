@@ -38,7 +38,7 @@ export default function Navbar() {
           <ShieldCheck className="w-3 h-3 mr-1 shrink-0" /> Standar Resmi Palembang
         </span>
         <span className="hidden sm:inline font-medium text-[12px] whitespace-nowrap">
-          Sistem Rem Pengaman Tambahan (Dual Safety Assist) &amp; Pendampingan SIM A Resmi.
+          Kursus Mengemudi Mobil Palembang • Fasilitas Gratis Antar-Jemput ke Rumah • Dual Safety Assist
         </span>
         <a
           href={generateWhatsAppUrl("Halo Kak Lia, saya ingin tanya ketersediaan jadwal & promo kursus minggu ini.")}

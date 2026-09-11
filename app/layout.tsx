@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Amanah Drive Palembang — Kursus Mengemudi Mobil & SIM A Resmi",
+  title: "Amanah Drive — Kursus Mengemudi Mobil Palembang Gratis Antar Jemput",
   description:
-    "Kursus mengemudi mobil terpercaya di Palembang (CV Amanah Drive). Instruktur sabar berpengalaman anti-bentak, armada berpedal rem pengaman tambahan (Dual Safety Assist), jadwal fleksibel 09.00-22.00 WIB, layanan antar-jemput, & pendampingan pembuatan SIM A resmi sampai terbit.",
+    "Kursus mengemudi mobil Palembang dengan fasilitas gratis antar-jemput ke rumah (CV Amanah Drive). Instruktur sabar berpengalaman anti-bentak, armada berpedal rem pengaman tambahan (Dual Safety Assist), dan jadwal fleksibel 09.00-22.00 WIB.",
   keywords: [
-    "kursus mengemudi palembang",
+    "kursus mengemudi mobil palembang gratis antar jemput",
+    "kursus mengemudi palembang gratis antar jemput",
+    "les mobil palembang antar jemput",
+    "kursus stir mobil palembang gratis antar jemput",
     "les mobil palembang",
     "belajar mobil palembang",
     "kursus stir mobil palembang",
@@ -28,9 +31,9 @@ export const metadata: Metadata = {
     canonical: "https://amanahdrive.my.id",
   },
   openGraph: {
-    title: "Amanah Drive Palembang — Kursus Mengemudi Mobil & SIM A Resmi",
+    title: "Amanah Drive — Kursus Mengemudi Mobil Palembang Gratis Antar Jemput",
     description:
-      "Cepat mahir, tenang & percaya diri di jalan raya Palembang. Didampingi instruktur sabar tanpa emosi, armada aman berpedal rem pengaman tambahan (Dual Safety Assist), & bimbingan SIM A resmi tuntas.",
+      "Kursus mengemudi mobil terbaik di Palembang dengan fasilitas gratis antar-jemput ke rumah. Didampingi instruktur sabar tanpa emosi, armada aman Dual Safety Assist, & jadwal fleksibel pagi s/d malam.",
     url: "https://amanahdrive.my.id",
     siteName: "Amanah Drive Palembang",
     locale: "id_ID",
@@ -40,15 +43,15 @@ export const metadata: Metadata = {
         url: "/assets/amdri-banner.jpg",
         width: 1200,
         height: 630,
-        alt: "Amanah Drive Palembang - Kursus Mengemudi Mobil Profesional",
+        alt: "Amanah Drive - Kursus Mengemudi Mobil Palembang Gratis Antar Jemput",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Amanah Drive Palembang — Kursus Mengemudi Mobil & SIM A Resmi",
+    title: "Amanah Drive — Kursus Mengemudi Mobil Palembang Gratis Antar Jemput",
     description:
-      "Kursus mengemudi mobil profesional di Palembang. Dual Safety Assist, instruktur sabar berpengalaman, & pendampingan SIM A resmi tuntas.",
+      "Kursus mengemudi mobil no. 1 di Palembang dengan fasilitas gratis antar-jemput. Dual Safety Assist, instruktur sabar berpengalaman, & jadwal fleksibel.",
     images: ["/assets/amdri-banner.jpg"],
   },
   icons: {
@@ -74,7 +77,7 @@ export default function RootLayout({
         "logo": "https://amanahdrive.my.id/assets/logo-amdri-circle.png",
         "image": "https://amanahdrive.my.id/assets/amdri-banner.jpg",
         "description":
-          "Kursus mengemudi mobil profesional di Palembang dengan instruktur sabar berpengalaman, armada berpedal rem pengaman tambahan (Dual Safety Assist), jadwal fleksibel 09.00 - 22.00 WIB, dan bimbingan SIM A resmi.",
+          "Kursus mengemudi mobil profesional di Palembang dengan fasilitas gratis antar jemput ke rumah, instruktur sabar berpengalaman, armada berpedal rem pengaman tambahan (Dual Safety Assist), dan jadwal fleksibel 09.00 - 22.00 WIB.",
         "telephone": "+628137790961",
         "priceRange": "IDR 600.000 - IDR 2.350.000",
         "paymentAccepted": "Cash, Bank Transfer BRI",

@@ -307,7 +307,7 @@ export const FAQS = [
 
 export const CONTACT_INFO = {
   companyName: "Amanah Drive Palembang (CV Amanah Drive)",
-  tagline: "Kursus Mengemudi Profesional & Bergaransi No. 1 Palembang",
+  tagline: "Kursus Mengemudi Mobil Palembang Gratis Antar Jemput",
   phoneDisplay: "0813-7790-961",
   phoneRaw: "628137790961",
   address: "Kota Palembang, Sumatera Selatan (Area Layanan: Bukit, Demang, Sudirman, Gandus, Sukarami, Plaju & sekitarnya)",
