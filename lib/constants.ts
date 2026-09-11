@@ -46,7 +46,7 @@ export const PACKAGES: PackageItem[] = [
       "Pengenalan Cockpit & Pedal Rem/Kopling",
       "Teknik Start-Stop Halus & Haluan Jalan",
       "Latihan Parkir Standar & Tanjakan Dasar",
-      "Armada Berpedal Rem Pengaman Tambahan",
+      "Armada Nyaman Ber-AC Dingin & Terawat",
       "Layanan Antar-Jemput Area Tertentu",
       "Sertifikat Kelulusan Resmi Amanah Drive",
     ],
@@ -65,7 +65,7 @@ export const PACKAGES: PackageItem[] = [
       "Semua Fasilitas Paket Basic (5 Sesi @90 menit)",
       "Pengurusan SIM A Resmi Sampai Selesai",
       "Bimbingan & Simulasi Ujian Teori / Praktik SIM",
-      "Armada Berpedal Rem Pengaman Tambahan",
+      "Armada Nyaman Ber-AC Dingin & Terawat",
       "Jadwal Fleksibel (Pagi s/d Malam)",
       "Sertifikat Kelulusan Resmi Amanah Drive",
     ],
@@ -107,7 +107,7 @@ export const PACKAGES: PackageItem[] = [
       "Pengurusan SIM A Resmi Tuntas Didampingi",
       "Simulasi Lengkap Ujian Praktek SIM",
       "Penguasaan Rute Tersulit di Kota Palembang",
-      "Armada Berpedal Rem Pengaman & AC Dingin",
+      "Armada Nyaman & Full AC Dingin",
       "Bebas Pilih Instruktur & Request Rute",
       "Sertifikat Kelulusan & Catatan Evaluasi",
     ],
@@ -183,7 +183,7 @@ export const FLEET = [
     type: "City Car (Manual)",
     plate: "BG 1156 IN",
     color: "Silver Metallic",
-    features: ["Pedal Rem Pengaman Tambahan", "AC Dingin Nyaman", "Power Steering Ringan", "Dimensi Compact & Lincah"],
+    features: ["Pendampingan Penuh Instruktur", "AC Dingin Nyaman", "Power Steering Ringan", "Dimensi Compact & Lincah"],
     desc: "Mobil latihan paling favorit untuk pemula dari nol. Ringan dikendalikan, visibilitas jalan luas, dan sangat mudah untuk latihan manuver awal serta parkir.",
   },
   {
@@ -191,7 +191,7 @@ export const FLEET = [
     type: "City Car (Manual)",
     plate: "BG 1842 QA",
     color: "White Pearl",
-    features: ["Pedal Rem Pengaman Tambahan", "Handling Presisi", "Full AC Dingin", "Manuver Siku & U-Turn"],
+    features: ["Didampingi Instruktur Sabar", "Handling Presisi", "Full AC Dingin", "Manuver Siku & U-Turn"],
     desc: "Unit hatchback lincah dengan radius putar kecil, ideal untuk mengasah feeling haluan jalan sempit dan putar balik jalan protokol.",
   },
   {
@@ -199,7 +199,7 @@ export const FLEET = [
     type: "MPV Keluarga (Manual)",
     plate: "BG 1309 AP",
     color: "Silver Metallic",
-    features: ["Pedal Rem Pengaman Tambahan", "Kabin Lega 7-Seater", "Tanjakan Flyover Responsif", "Feeling Dimensi Panjang"],
+    features: ["Pendampingan Instruktur Siaga", "Kabin Lega 7-Seater", "Tanjakan Flyover Responsif", "Feeling Dimensi Panjang"],
     desc: "Standar mobil keluarga Indonesia. Melatih kepercayaan diri mengendalikan mobil berpenumpang banyak dan stabil di tanjakan flyover.",
   },
   {
@@ -207,7 +207,7 @@ export const FLEET = [
     type: "MPV Keluarga (Manual)",
     plate: "BG 1524 RD",
     color: "Silver Metallic",
-    features: ["Pedal Rem Pengaman Tambahan", "Kabin Lega & AC Dingin", "AC Double Blower", "Latihan Dimensi MPV"],
+    features: ["Instruktur Berpengalaman Siaga", "Kabin Lega & AC Dingin", "AC Double Blower", "Latihan Dimensi MPV"],
     desc: "Cocok untuk melatih kepekaan mobil berdimensi panjang. Mempersiapkan Anda agar siap membawa mobil keluarga di jalan raya padat.",
   },
   {
@@ -215,7 +215,7 @@ export const FLEET = [
     type: "Comfort MPV (Manual)",
     plate: "BG 1735 ZD",
     color: "Champagne Gold",
-    features: ["Pedal Rem Pengaman Tambahan", "Kopling Halus & Empuk", "Suspensi Nyaman", "Latihan Parkir Paralel"],
+    features: ["Pendampingan Intensif Instruktur", "Kopling Halus & Empuk", "Suspensi Nyaman", "Latihan Parkir Paralel"],
     desc: "Karakter pedal kopling yang empuk dan halus, sangat nyaman untuk pemula yang ingin melatih feeling stop-and-go di kemacetan Palembang.",
   },
   {
@@ -284,7 +284,7 @@ export const TESTIMONIALS = [
     status: "Mahasiswa Universitas Sriwijaya",
     pkg: "Paket Pro + SIM A",
     rating: 5,
-    text: "Paling mantap karena jadwalnya fleksibel banget! Saya ambil slot malam jam 18.30 setelah selesai kuliah. Mobilnya dingin, rem pengaman instruktur bikin tenang, dan SIM A langsung beres dibimbing tuntas. Sangat recommended buat anak muda Palembang!",
+    text: "Paling mantap karena jadwalnya fleksibel banget! Saya ambil slot malam jam 18.30 setelah selesai kuliah. Mobilnya dingin, pendampingan instruktur yang selalu siaga bikin tenang, dan SIM A langsung beres dibimbing tuntas. Sangat recommended buat anak muda Palembang!",
   },
   {
     name: "Hj. Ratna Juwita",
@@ -308,8 +308,8 @@ export const FAQS = [
     a: "Sangat bisa! Lebih dari 80% siswa kami adalah pemula mutlak yang belum pernah menginjak pedal sama sekali. Metode kami dirancang bertahap dari pemahaman dasar hingga mahir, dengan pendampingan yang sabar dan tanpa emosi.",
   },
   {
-    q: "Bagaimana jika terjadi senggolan atau kecelakaan saat latihan?",
-    a: "Keamanan Anda adalah prioritas utama kami. Seluruh armada Amanah Drive dilengkapi kontrol pedal rem pengaman tambahan di sisi instruktur (Dual Safety Assist). Instruktur kami memiliki kontrol penuh untuk menghentikan kendaraan seketika jika ada potensi bahaya, sehingga proses latihan 100% aman, tenang, dan bebas risiko insiden.",
+    q: "Bagaimana jaminan keamanan bagi pemula saat latihan di jalan raya?",
+    a: "Keamanan dan kenyamanan Anda adalah prioritas utama kami. Setiap sesi latihan didampingi langsung oleh instruktur berpengalaman yang selalu siap siaga membaca situasi jalan, memandu manuver setir, serta mengarahkan tindakan pengereman secara tenang dan antisipatif, sehingga proses belajar berlangsung aman dan percaya diri.",
   },
   {
     q: "Apakah jadwal latihan bisa diganti jika ada urusan mendadak?",

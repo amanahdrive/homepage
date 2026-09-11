@@ -23,13 +23,13 @@ export default function Footer() {
             </Link>
 
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              Lembaga pelatihan mengemudi profesional di bawah naungan CV Amanah Drive, Kota Palembang. Mengedepankan keselamatan melalui armada Dual Safety Assist (kontrol pedal rem pengaman tambahan), instruktur beretika tinggi, dan pendampingan pembuatan SIM A resmi sampai tuntas.
+              Lembaga pelatihan mengemudi profesional di bawah naungan CV Amanah Drive, Kota Palembang. Mengedepankan keselamatan melalui instruktur sabar beretika tinggi, armada nyaman terawat, dan pendampingan pembuatan SIM A resmi sampai tuntas.
             </p>
 
             <div className="flex flex-wrap items-center gap-2 pt-1">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/10 text-teal-300 text-[11px] font-mono border border-white/15">
                 <Shield className="w-3.5 h-3.5 text-[#14B8A6]" />
-                <span>Dual Safety Assist</span>
+                <span>Instruktur Sabar</span>
               </span>
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/5 text-slate-300 text-[11px] font-mono border border-white/10">
                 <Award className="w-3.5 h-3.5 text-amber-400" />

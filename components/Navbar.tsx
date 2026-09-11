@@ -39,7 +39,7 @@ export default function Navbar() {
           <ShieldCheck className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-1 shrink-0" /> Standar Resmi Palembang
         </span>
         <span className="hidden sm:inline font-medium text-[12px] whitespace-nowrap">
-          Kursus Mengemudi Mobil Palembang • Fasilitas Gratis Antar-Jemput ke Rumah • Dual Safety Assist
+          Kursus Mengemudi Mobil Palembang • Fasilitas Gratis Antar-Jemput ke Rumah • Instruktur Sabar &amp; Berpengalaman
         </span>
         <a
           href={generateWhatsAppUrl("Halo Kak Lia, saya ingin tanya ketersediaan jadwal & promo kursus minggu ini.")}

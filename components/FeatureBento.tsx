@@ -1,14 +1,14 @@
 import React from "react";
-import { ShieldAlert, HeartHandshake, FileCheck2, Clock, Car, Award, Sparkles, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, HeartHandshake, FileCheck2, Clock, Car, Award, Sparkles, CheckCircle2 } from "lucide-react";
 
 export default function FeatureBento() {
   const features = [
     {
-      icon: ShieldAlert,
-      title: "Pedal Rem Pengaman Tambahan",
-      badge: "Dual Safety Assist",
-      desc: "Seluruh mobil latihan kami dilengkapi kontrol pedal rem pengaman tambahan di sisi instruktur. Menghilangkan risiko panik atau salah injak pedal saat melatih reflek di jalan raya.",
-      points: ["Intervensi rem instan dari instruktur", "Siswa rileks tanpa rasa cemas menabrak", "Aman untuk simulasi jalan padat"],
+      icon: ShieldCheck,
+      title: "Pendampingan Intensif & Siaga",
+      badge: "Protokol Keamanan",
+      desc: "Instruktur berpengalaman duduk mendampingi di sisi Anda dengan kewaspadaan penuh, siap memandu koreksi setir, mengarahkan haluan, dan mengantisipasi situasi lalu lintas secara tenang dan responsif.",
+      points: ["Instruktur sigap mendampingi setiap detik", "Siswa tenang tanpa rasa cemas di jalan raya", "Panduan antisipasi risiko & etika jalan raya"],
     },
     {
       icon: HeartHandshake,

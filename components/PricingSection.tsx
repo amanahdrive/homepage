@@ -37,7 +37,7 @@ export default function PricingSection() {
             Pilihan Paket Kursus &amp; Biaya Resmi
           </h2>
           <p className="text-[#45474d] text-xs sm:text-base leading-relaxed">
-            Semua paket sudah termasuk mobil ber-AC dingin, bensin (BBM), pendampingan instruktur sabar, kontrol pedal rem pengaman tambahan (Dual Safety Assist), dan sertifikat kelulusan resmi Amanah Drive. Bebas biaya tersembunyi.
+            Semua paket sudah termasuk mobil ber-AC dingin, bensin (BBM), pendampingan penuh instruktur sabar tanpa emosi, serta sertifikat kelulusan resmi Amanah Drive. Bebas biaya tersembunyi.
           </p>
 
           {/* Segmented Filter Control */}

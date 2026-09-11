@@ -8,7 +8,7 @@ import { pushToDataLayer } from "@/lib/gtm";
 export default function Hero() {
   const capabilities = [
     { icon: Navigation, label: "Manuver Stir", desc: "Haluan Siku & U-Turn" },
-    { icon: ShieldCheck, label: "Rem Pengaman", desc: "Dual Safety Assist" },
+    { icon: ShieldCheck, label: "Pendamping Siaga", desc: "Instruktur Sabar Siaga" },
     { icon: Sliders, label: "Feeling Kopling", desc: "Halus Tanpa Hentakan" },
     { icon: Car, label: "Parkir Paralel", desc: "Rumus Sempit & Mall" },
     { icon: TrendingUp, label: "Tanjakan Flyover", desc: "Stop & Go Tanpa Mundur" },
@@ -77,7 +77,7 @@ export default function Hero() {
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981]" />
-              <span>Pedal Rem Pengaman Tambahan</span>
+              <span>Kondisi Mobil Prima &amp; AC Dingin</span>
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981]" />
@@ -113,7 +113,7 @@ export default function Hero() {
               </div>
 
               <div className="flex items-center gap-2 sm:gap-3 text-[10px] sm:text-[11px] font-mono text-[#0F7A73] shrink-0">
-                <span className="font-semibold">Dual Safety Assist</span>
+                <span className="font-semibold">Pendampingan Penuh</span>
                 <span>&bull;</span>
                 <span className="font-semibold">Full AC Dingin</span>
                 <span>&bull;</span>

@@ -20,7 +20,7 @@ export default function FleetSection() {
             Pilihan Armada Latihan Nyaman &amp; Terawat
           </h2>
           <p className="text-[#45474d] text-xs sm:text-base leading-relaxed">
-            Seluruh armada operasional Amanah Drive dilengkapi kontrol <strong className="text-[#0F7A73]">Pedal Rem Pengaman Tambahan (Dual Safety Assist)</strong> di sisi pendamping, AC dingin, serta perawatan mesin berkala untuk kenyamanan dan keamanan belajar maksimal.
+            Seluruh armada operasional Amanah Drive dalam kondisi prima ber-AC dingin, terawat berkala, serta didampingi langsung oleh <strong className="text-[#0F7A73]">Instruktur Sabar &amp; Berpengalaman</strong> untuk kenyamanan dan keselamatan belajar maksimal.
           </p>
         </div>
 
@@ -63,7 +63,7 @@ export default function FleetSection() {
               <div className="pt-2.5 sm:pt-3 border-t border-[rgba(33,34,38,0.06)] flex items-center justify-between">
                 <span className="text-[10px] sm:text-[11px] text-[#0F7A73] font-medium flex items-center gap-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#0F7A73] shrink-0" />
-                  Dual Safety Assist
+                  Pendampingan Penuh
                 </span>
 
                 <a
