@@ -7,12 +7,12 @@ export default function TestimonialsSection() {
     <section id="testimoni" className="py-20 sm:py-28 relative bg-[#f8f9fc] border-t border-[rgba(33,34,38,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Antigravity Section Header */}
+        {/* Section Header */}
         <div className="text-left max-w-3xl mb-12 space-y-3">
-          <span className="antigravity-chip">
-            <Heart className="w-3.5 h-3.5 text-[#0F7A73]" />
+          <div className="flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#0F7A73]">
+            <Heart className="w-3.5 h-3.5" />
             <span>Cerita Nyata Siswa</span>
-          </span>
+          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#121317] tracking-tight">
             Dipercaya 1.000+ Siswa Lulus di Palembang
           </h2>
@@ -21,12 +21,12 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        {/* Testimonials Grid in Clean Antigravity Cards */}
+        {/* Testimonials Grid in Clean Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {TESTIMONIALS.map((t, idx) => (
             <div
               key={idx}
-              className="antigravity-card p-6 sm:p-7 flex flex-col justify-between bg-white"
+              className="antigravity-card p-6 flex flex-col justify-between bg-white"
             >
               <div>
                 {/* Rating stars */}
@@ -36,7 +36,7 @@ export default function TestimonialsSection() {
                       <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <span className="text-[10px] font-mono text-[#10B981] font-semibold flex items-center gap-1 bg-[#E6F4F2] px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] font-mono text-[#10B981] font-semibold flex items-center gap-1 bg-[#E6F4F2] px-2 py-0.5 rounded-md">
                     <CheckCircle2 className="w-3 h-3" /> Terverifikasi
                   </span>
                 </div>
@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
 
               <div className="pt-4 border-t border-[rgba(33,34,38,0.06)]">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-[#E6F4F2] border border-[#0F7A73]/20 flex items-center justify-center font-bold text-[#0F7A73] text-xs">
+                  <div className="w-8 h-8 rounded-md bg-[#E6F4F2] border border-[#0F7A73]/20 flex items-center justify-center font-bold text-[#0F7A73] text-xs">
                     {t.name.charAt(0)}
                   </div>
                   <div>
@@ -56,7 +56,7 @@ export default function TestimonialsSection() {
                     <p className="text-[10px] text-[#9aa0a6]">{t.status}</p>
                   </div>
                 </div>
-                <div className="mt-2.5 text-[10px] text-[#0F7A73] font-mono font-medium bg-[#E6F4F2] px-2.5 py-0.5 rounded-full inline-block">
+                <div className="mt-2.5 text-[10px] text-[#0F7A73] font-mono font-medium bg-[#E6F4F2] px-2 py-0.5 rounded-md inline-block">
                   {t.pkg}
                 </div>
               </div>

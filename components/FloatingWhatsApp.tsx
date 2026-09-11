@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
@@ -22,7 +22,7 @@ export default function FloatingWhatsApp() {
     <aside aria-label="WhatsApp Quick Contact" className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-2.5">
       {/* Tooltip / Dialogue Card */}
       {showTooltip && !isDismissed && (
-        <div className="max-w-[290px] antigravity-card p-4 shadow-xl border border-[rgba(33,34,38,0.12)] bg-white animate-fade-in relative text-left rounded-2xl">
+        <div className="max-w-[290px] antigravity-card p-4 shadow-xl border border-[rgba(33,34,38,0.12)] bg-white animate-fade-in relative text-left rounded-xl">
           <button
             onClick={() => {
               setShowTooltip(false);
@@ -35,7 +35,7 @@ export default function FloatingWhatsApp() {
           </button>
           
           <div className="flex items-center gap-2.5 mb-2">
-            <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0 border border-[rgba(33,34,38,0.1)] bg-[#f8f9fc]">
+            <div className="relative w-8 h-8 rounded-lg overflow-hidden shrink-0 border border-[rgba(33,34,38,0.1)] bg-[#f8f9fc]">
               <Image
                 src={STUDENT_CARE.avatar}
                 alt={STUDENT_CARE.name}
@@ -46,8 +46,7 @@ export default function FloatingWhatsApp() {
             <div>
               <p className="text-xs font-bold text-[#121317] leading-none">{STUDENT_CARE.name}</p>
               <div className="flex items-center gap-1.5 mt-0.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
-                <span className="text-[10px] font-mono text-[#10B981]">Online Siap Bantu</span>
+                <span className="text-[10px] font-mono text-[#0F7A73] font-semibold">Online Siap Bantu</span>
               </div>
             </div>
           </div>
@@ -60,7 +59,7 @@ export default function FloatingWhatsApp() {
             href={generateWhatsAppUrl("Halo Kak Lia, saya ingin tanya jadwal & pendaftaran kursus mengemudi.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="antigravity-btn-primary py-2 px-3 text-xs w-full flex items-center justify-center gap-1.5 text-center shadow-sm"
+            className="antigravity-btn-primary py-2 px-3 text-xs w-full flex items-center justify-center gap-1.5 text-center shadow-sm rounded-lg"
           >
             <MessageCircle className="w-3.5 h-3.5 fill-white text-transparent" />
             <span>Chat Langsung di WhatsApp</span>
@@ -73,23 +72,22 @@ export default function FloatingWhatsApp() {
         href={generateWhatsAppUrl("Halo Kak Lia, saya ingin tanya informasi kursus Amanah Drive.")}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-2.5 bg-white hover:bg-[#f8f9fc] border border-[rgba(33,34,38,0.12)] p-1.5 pr-4 rounded-full shadow-xl transition-all duration-200"
+        className="group flex items-center gap-2.5 bg-white hover:bg-[#f8f9fc] border border-[rgba(33,34,38,0.12)] p-1.5 pr-3.5 rounded-xl shadow-lg transition-all duration-200"
         aria-label="Hubungi Kak Lia via WhatsApp"
       >
-        <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-[rgba(33,34,38,0.1)] bg-[#f8f9fc]">
+        <div className="relative w-9 h-9 rounded-lg overflow-hidden shrink-0 border border-[rgba(33,34,38,0.1)] bg-[#f8f9fc]">
           <Image
             src={STUDENT_CARE.avatar}
             alt={STUDENT_CARE.name}
             fill
             className="object-cover object-top"
           />
-          <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#10B981] rounded-full border border-white" />
         </div>
         <div className="text-left hidden sm:block">
           <span className="text-[10px] font-mono text-[#0F7A73] block leading-none font-bold">Student Care</span>
           <span className="text-xs font-bold text-[#121317] group-hover:text-[#0F7A73] transition-colors">Chat Kak Lia</span>
         </div>
-        <div className="w-7 h-7 rounded-full bg-[#E6F4F2] border border-[#0F7A73]/20 flex items-center justify-center shrink-0 ml-0.5">
+        <div className="w-7 h-7 rounded-md bg-[#E6F4F2] border border-[#0F7A73]/20 flex items-center justify-center shrink-0 ml-0.5">
           <MessageCircle className="w-3.5 h-3.5 text-[#0F7A73] fill-[#0F7A73]" />
         </div>
       </a>

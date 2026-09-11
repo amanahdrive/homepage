@@ -5,11 +5,11 @@ import FeatureBento from "@/components/FeatureBento";
 import PricingSection from "@/components/PricingSection";
 import CurriculumRoadmap from "@/components/CurriculumRoadmap";
 import SlotSchedule from "@/components/SlotSchedule";
-import FleetAndInstructors from "@/components/FleetAndInstructors";
+import FleetSection from "@/components/FleetSection";
 import BookingCalculator from "@/components/BookingCalculator";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import FAQSection from "@/components/FAQSection";
 import LocationSection from "@/components/LocationSection";
+import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
@@ -22,13 +22,13 @@ export default function HomePage() {
       {/* Navigation */}
       <Navbar />
 
-      {/* Main Sections */}
+      {/* Main Sections — Structured Information Architecture */}
       <main className="flex-grow">
         <Hero />
         <FeatureBento />
         <PricingSection />
         <CurriculumRoadmap />
-        <FleetAndInstructors />
+        <FleetSection />
         <SlotSchedule />
         <BookingCalculator />
         <TestimonialsSection />

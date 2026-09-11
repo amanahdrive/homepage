@@ -49,12 +49,12 @@ export default function BookingCalculator() {
     <section id="kalkulator" className="py-20 sm:py-28 relative bg-white border-t border-[rgba(33,34,38,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Antigravity Section Header */}
+        {/* Section Header */}
         <div className="text-left max-w-3xl mb-12 space-y-3">
-          <span className="antigravity-chip">
-            <Calculator className="w-3.5 h-3.5 text-[#0F7A73]" />
+          <div className="flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#0F7A73]">
+            <Calculator className="w-3.5 h-3.5" />
             <span>Simulator Biaya &amp; Jadwal</span>
-          </span>
+          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#121317] tracking-tight">
             Kalkulator &amp; Rencana Pendaftaran Siswa
           </h2>
@@ -89,7 +89,7 @@ export default function BookingCalculator() {
                     <div className="flex items-center justify-between">
                       <span className="font-bold text-xs sm:text-sm text-[#121317]">{pkg.name}</span>
                       {pkg.popular && (
-                        <span className="text-[10px] bg-[#121317] text-white px-2 py-0.5 rounded-full font-mono font-bold">
+                        <span className="text-[10px] bg-[#121317] text-white px-2 py-0.5 rounded-md font-mono font-bold">
                           Populer
                         </span>
                       )}
@@ -200,7 +200,7 @@ export default function BookingCalculator() {
               <span className="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-amber-400" /> Ringkasan Pendaftaran
               </span>
-              <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-white/10 text-emerald-300 border border-white/20">
+              <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-white/10 text-emerald-300 border border-white/20">
                 Estimasi Resmi
               </span>
             </div>
@@ -246,9 +246,9 @@ export default function BookingCalculator() {
               <button
                 type="button"
                 onClick={handleBooking}
-                className="w-full py-3.5 px-5 rounded-full bg-white hover:bg-[#f0f1f5] text-[#121317] font-bold text-xs flex items-center justify-center gap-2 shadow-lg transition-all"
+                className="w-full py-3 px-5 rounded-lg bg-white hover:bg-[#f0f1f5] text-[#121317] font-bold text-xs flex items-center justify-center gap-2 shadow-lg transition-all"
               >
-                <div className="relative w-4 h-4 rounded-full overflow-hidden border border-black/20 shrink-0">
+                <div className="relative w-4 h-4 rounded-md overflow-hidden border border-black/20 shrink-0">
                   <Image
                     src={STUDENT_CARE.avatar}
                     alt={STUDENT_CARE.name}

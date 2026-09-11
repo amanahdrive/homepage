@@ -8,12 +8,12 @@ export default function CurriculumRoadmap() {
     <section id="kurikulum" className="py-20 sm:py-28 relative bg-[#f8f9fc] border-t border-[rgba(33,34,38,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Antigravity Section Header */}
+        {/* Section Header */}
         <div className="text-left max-w-3xl mb-12 space-y-3">
-          <span className="antigravity-chip">
-            <BookOpen className="w-3.5 h-3.5 text-[#0F7A73]" />
+          <div className="flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#0F7A73]">
+            <BookOpen className="w-3.5 h-3.5" />
             <span>Silabus Praktik Terstruktur</span>
-          </span>
+          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#121317] tracking-tight">
             Kurikulum Praktik 10 Sesi Menyeluruh
           </h2>
@@ -22,7 +22,7 @@ export default function CurriculumRoadmap() {
           </p>
         </div>
 
-        {/* Timeline Grid in Clean Antigravity Cards */}
+        {/* Timeline Grid in Clean Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
           {CURRICULUM.map((item, idx) => (
             <div
@@ -31,7 +31,7 @@ export default function CurriculumRoadmap() {
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="px-2.5 py-0.5 rounded-full bg-[#E6F4F2] text-[#0F7A73] font-mono font-bold text-xs">
+                  <span className="px-2 py-0.5 rounded-md bg-[#E6F4F2] text-[#0F7A73] font-mono font-bold text-xs">
                     {item.session}
                   </span>
                   <span className="text-[11px] text-[#9aa0a6] font-mono">
@@ -61,10 +61,10 @@ export default function CurriculumRoadmap() {
           ))}
         </div>
 
-        {/* Certificate & Evaluation Feature Showcase in Clean Antigravity Layout */}
-        <div className="antigravity-card p-6 sm:p-8 bg-white border border-[rgba(33,34,38,0.08)] flex flex-col lg:flex-row items-center justify-between gap-8 rounded-2xl">
+        {/* Certificate & Evaluation Feature Showcase */}
+        <div className="antigravity-card p-6 sm:p-8 bg-white border border-[rgba(33,34,38,0.08)] flex flex-col lg:flex-row items-center justify-between gap-8 rounded-xl">
           <div className="space-y-3 text-left max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f8f9fc] text-[#121317] text-xs font-mono font-bold border border-[rgba(33,34,38,0.08)]">
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#f8f9fc] text-[#121317] text-xs font-mono font-bold border border-[rgba(33,34,38,0.08)]">
               <Award className="w-4 h-4 text-amber-500" />
               Tanda Apresiasi Kelulusan &amp; Penguasaan Praktik
             </div>
@@ -87,7 +87,7 @@ export default function CurriculumRoadmap() {
           </div>
 
           {/* Certificate Badge Visual Preview with Real Stamp */}
-          <div className="p-5 border border-[rgba(33,34,38,0.08)] bg-[#f8f9fc] rounded-2xl shrink-0 w-full sm:w-80 relative overflow-hidden text-center space-y-3 shadow-sm">
+          <div className="p-5 border border-[rgba(33,34,38,0.08)] bg-[#f8f9fc] rounded-xl shrink-0 w-full sm:w-80 relative overflow-hidden text-center space-y-3 shadow-sm">
             <div className="flex items-center justify-between border-b border-[rgba(33,34,38,0.06)] pb-2.5">
               <span className="text-[11px] font-mono text-[#0F7A73] font-bold">SERTIFIKAT KELULUSAN</span>
               <span className="text-[10px] text-[#9aa0a6] font-mono">Palembang</span>
@@ -101,8 +101,8 @@ export default function CurriculumRoadmap() {
 
             <div className="pt-2 border-t border-[rgba(33,34,38,0.06)] flex items-center justify-between">
               <div className="text-left text-[10px] text-[#45474d]">
-                <span>Instruktur Pendamping</span>
-                <p className="text-[#121317] font-bold">Kak Syawal / Tim Instruktur</p>
+                <span>Pendamping Praktik</span>
+                <p className="text-[#121317] font-bold">Tim Instruktur Resmi</p>
               </div>
 
               {/* Official Red Stamp Overlay */}

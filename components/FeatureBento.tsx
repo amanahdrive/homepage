@@ -51,12 +51,12 @@ export default function FeatureBento() {
     <section id="keunggulan" className="py-20 sm:py-28 relative bg-[#f8f9fc] border-y border-[rgba(33,34,38,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Antigravity Section Header */}
-        <div className="text-left max-w-3xl mb-14 space-y-3">
-          <span className="antigravity-chip">
-            <Sparkles className="w-3.5 h-3.5 text-[#0F7A73]" />
-            <span>Standar Keunggulan</span>
-          </span>
+        {/* Section Header */}
+        <div className="text-left max-w-3xl mb-12 space-y-3">
+          <div className="flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#0F7A73]">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Standar Keunggulan Belajar</span>
+          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#121317] tracking-tight">
             Mengapa Amanah Drive Pilihan Utama di Palembang?
           </h2>
@@ -65,21 +65,21 @@ export default function FeatureBento() {
           </p>
         </div>
 
-        {/* Antigravity Bento Grid */}
+        {/* Feature Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="antigravity-card p-6 sm:p-7 flex flex-col justify-between"
+                className="antigravity-card p-6 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-full bg-[#f8f9fc] border border-[rgba(33,34,38,0.08)] flex items-center justify-center text-[#121317]">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#f0f1f5] border border-[rgba(33,34,38,0.06)] flex items-center justify-center text-[#121317]">
                       <Icon className="w-5 h-5 text-[#0F7A73]" />
                     </div>
-                    <span className="text-[11px] font-mono font-bold px-2.5 py-1 rounded-full bg-[#f0f1f5] text-[#45474d] border border-[rgba(33,34,38,0.06)]">
+                    <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded-md bg-[#f0f1f5] text-[#45474d] border border-[rgba(33,34,38,0.06)]">
                       {item.badge}
                     </span>
                   </div>
@@ -88,7 +88,7 @@ export default function FeatureBento() {
                     {item.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-[#45474d] leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-[#45474d] leading-relaxed mb-5">
                     {item.desc}
                   </p>
                 </div>
@@ -97,7 +97,7 @@ export default function FeatureBento() {
                   {item.points.map((pt, pIdx) => (
                     <li key={pIdx} className="flex items-center gap-2 text-xs text-[#45474d]">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981] shrink-0" />
-                      <span className="font-medium">{pt}</span>
+                      <span>{pt}</span>
                     </li>
                   ))}
                 </ul>

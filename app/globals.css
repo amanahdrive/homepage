@@ -37,10 +37,11 @@
   --theme-outline-subtle: rgba(33, 34, 38, 0.04);
 
   /* Typography & Standards */
+  /* Typography & Standards (12px container, 8px control, 6px badge - BRANDING_SYSTEM.md) */
   --font-inter: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --radius-container: 16px;
-  --radius-control: 9999px;
-  --radius-badge: 9999px;
+  --radius-container: 12px;
+  --radius-control: 8px;
+  --radius-badge: 6px;
 }
 
 html, body {
@@ -64,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
   font-feature-settings: 'tnum' on;
 }
 
-/* Google Antigravity Card Standard */
+/* Google Antigravity Card Standard (12px radius, no boxy bloat) */
 .antigravity-card {
   background-color: #ffffff;
   border: 1px solid var(--theme-outline-variant);
@@ -87,17 +88,17 @@ h1, h2, h3, h4, h5, h6 {
 .antigravity-card-inverse {
   background-color: var(--palette-grey-1200);
   color: #ffffff;
-  border-radius: 20px;
+  border-radius: var(--radius-container);
 }
 
-/* Google Antigravity Button Standards (Pill shape 9999px, 10px 24px) */
+/* Google Antigravity Button Standards (8px radius, no pill shape) */
 .antigravity-btn-primary {
   background-color: var(--palette-grey-1200);
   color: #ffffff;
   border-radius: var(--radius-control);
   font-weight: 500;
   font-size: 14px;
-  padding: 10px 24px;
+  padding: 10px 20px;
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
@@ -118,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-control);
   font-weight: 500;
   font-size: 14px;
-  padding: 10px 24px;
+  padding: 10px 20px;
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
@@ -134,13 +135,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .antigravity-btn-secondary {
-  background-color: rgba(183, 191, 217, 0.12);
+  background-color: rgba(183, 191, 217, 0.08);
   color: var(--palette-grey-1200);
   border: 1px solid var(--theme-outline-variant);
   border-radius: var(--radius-control);
   font-weight: 500;
   font-size: 14px;
-  padding: 10px 24px;
+  padding: 10px 20px;
   backdrop-filter: blur(6px);
   transition: all 0.2s ease;
   display: inline-flex;
@@ -157,30 +158,30 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(0.98);
 }
 
-/* Antigravity Bouncers (Circular Interactive Capability Chips) */
+/* Antigravity Capability Tiles (Clean 12px tiles, no circular bubble) */
 .antigravity-bouncer {
   border: 1px solid var(--theme-outline-variant);
   aspect-ratio: 1;
-  border-radius: 50%;
-  background: #b7bfd917;
+  border-radius: var(--radius-container);
+  background: #f8f9fc;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .antigravity-bouncer:hover {
-  transform: translateY(-4px) scale(1.05);
-  background: #b7bfd92e;
+  transform: translateY(-2px);
+  background: #f0f1f5;
   border-color: rgba(33, 34, 38, 0.2);
 }
 
-/* Eyebrow Chip / Badge */
+/* Eyebrow Label (6px crisp badge, no pill) */
 .antigravity-chip {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 12px;
+  padding: 3px 8px;
   border-radius: var(--radius-badge);
   background-color: var(--palette-grey-15);
   border: 1px solid var(--theme-outline-variant);

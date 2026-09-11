@@ -24,11 +24,11 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-wrap items-center gap-2 pt-1">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-teal-300 text-[11px] font-mono border border-white/15">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/10 text-teal-300 text-[11px] font-mono border border-white/15">
                 <Shield className="w-3.5 h-3.5 text-[#14B8A6]" />
                 <span>Dual Safety Assist</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 text-slate-300 text-[11px] font-mono border border-white/10">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/5 text-slate-300 text-[11px] font-mono border border-white/10">
                 <Award className="w-3.5 h-3.5 text-amber-400" />
                 <span>Sertifikat Resmi CV</span>
               </span>
@@ -56,7 +56,7 @@ export default function Footer() {
                 <a href="#kurikulum" className="hover:text-teal-300 transition-colors">Kurikulum 10 Sesi</a>
               </li>
               <li>
-                <a href="#armada" className="hover:text-teal-300 transition-colors">Armada &amp; Instruktur</a>
+                <a href="#armada" className="hover:text-teal-300 transition-colors">Pilihan Armada</a>
               </li>
               <li>
                 <a href="#jadwal" className="hover:text-teal-300 transition-colors">Pilihan Slot Waktu</a>
@@ -125,9 +125,9 @@ export default function Footer() {
               Student Care &amp; Pembayaran
             </h3>
             
-            <div className="bg-[#18191d] p-4 rounded-2xl border border-white/10 space-y-2.5">
+            <div className="bg-[#18191d] p-4 rounded-xl border border-white/10 space-y-2.5">
               <div className="flex items-center gap-2.5">
-                <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 border border-white/20">
+                <div className="relative w-9 h-9 rounded-lg overflow-hidden shrink-0 border border-white/20">
                   <Image
                     src={STUDENT_CARE.avatar}
                     alt={STUDENT_CARE.name}
@@ -154,7 +154,7 @@ export default function Footer() {
               </a>
             </div>
 
-            <div className="bg-[#18191d] p-3.5 rounded-2xl border border-white/10 text-xs space-y-1">
+            <div className="bg-[#18191d] p-3.5 rounded-xl border border-white/10 text-xs space-y-1">
               <p className="text-[11px] text-slate-400 font-mono">Rekening Resmi DP:</p>
               <p className="font-mono text-white text-xs font-bold">
                 {CONTACT_INFO.bankAccount.bank}: {CONTACT_INFO.bankAccount.number}

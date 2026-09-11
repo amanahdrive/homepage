@@ -18,12 +18,12 @@ export default function SlotSchedule() {
     <section id="jadwal" className="py-20 sm:py-28 relative bg-[#f8f9fc] border-t border-[rgba(33,34,38,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Antigravity Section Header */}
+        {/* Section Header */}
         <div className="text-left max-w-3xl mb-12 space-y-3">
-          <span className="antigravity-chip">
-            <Clock className="w-3.5 h-3.5 text-[#0F7A73]" />
-            <span>Jadwal Super Fleksibel</span>
-          </span>
+          <div className="flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#0F7A73]">
+            <Clock className="w-3.5 h-3.5" />
+            <span>Pilihan Jam Latihan Fleksibel</span>
+          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#121317] tracking-tight">
             Pilihan 6 Slot Waktu Harian (09.00 - 22.00 WIB)
           </h2>
@@ -32,7 +32,7 @@ export default function SlotSchedule() {
           </p>
         </div>
 
-        {/* Slot Grid in Clean Antigravity Cards */}
+        {/* Slot Grid in Clean Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
           {TIME_SLOTS.map((slot) => {
             const Icon = getSlotIcon(slot.id);
@@ -51,7 +51,7 @@ export default function SlotSchedule() {
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2.5">
                     <div
-                      className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${
+                      className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${
                         isSelected
                           ? "bg-[#121317] text-white"
                           : "bg-[#f8f9fc] text-[#45474d] border border-[rgba(33,34,38,0.06)]"
@@ -62,7 +62,7 @@ export default function SlotSchedule() {
                     <span className="font-bold text-[#121317] text-sm">{slot.label}</span>
                   </div>
                   <span
-                    className={`text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full border ${
+                    className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-md border ${
                       slot.id >= 5
                         ? "bg-indigo-50 text-indigo-700 border-indigo-200"
                         : "bg-[#E6F4F2] text-[#0F7A73] border-[#0F7A73]/20"
@@ -87,8 +87,8 @@ export default function SlotSchedule() {
         </div>
 
         {/* Selected Slot Callout Card */}
-        <div className="max-w-2xl mx-auto antigravity-card p-6 sm:p-7 bg-white border border-[rgba(33,34,38,0.08)] text-center space-y-4 rounded-2xl shadow-sm">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-[#121317] text-xs font-mono font-bold border border-[rgba(33,34,38,0.08)]">
+        <div className="max-w-2xl mx-auto antigravity-card p-6 sm:p-7 bg-white border border-[rgba(33,34,38,0.08)] text-center space-y-4 rounded-xl shadow-sm">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-[#f8f9fc] text-[#121317] text-xs font-mono font-bold border border-[rgba(33,34,38,0.08)]">
             <Sparkles className="w-3.5 h-3.5 text-amber-500" /> Slot Dipilih:
           </div>
           <h3 className="text-2xl font-extrabold text-[#121317] tracking-tight tabular-nums">
@@ -103,9 +103,9 @@ export default function SlotSchedule() {
             )}
             target="_blank"
             rel="noopener noreferrer"
-            className="antigravity-btn-primary py-2.5 px-6 text-xs gap-2 rounded-full shadow-sm"
+            className="antigravity-btn-primary py-2.5 px-6 text-xs gap-2 rounded-lg shadow-sm"
           >
-            <div className="relative w-4 h-4 rounded-full overflow-hidden border border-white/40 shrink-0">
+            <div className="relative w-4 h-4 rounded-md overflow-hidden border border-white/40 shrink-0">
               <Image
                 src={STUDENT_CARE.avatar}
                 alt={STUDENT_CARE.name}

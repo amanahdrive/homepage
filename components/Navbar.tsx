@@ -34,7 +34,7 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* Antigravity Notice Strip */}
       <div className="bg-[#f8f9fc] text-[#45474d] text-xs py-1.5 px-4 text-center border-b border-[rgba(33,34,38,0.06)] flex items-center justify-center gap-2 whitespace-nowrap overflow-hidden">
-        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#E6F4F2] text-[#0F7A73] border border-[#0F7A73]/20 shrink-0">
+        <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold bg-[#E6F4F2] text-[#0F7A73] border border-[#0F7A73]/20 shrink-0">
           <ShieldCheck className="w-3 h-3 mr-1 shrink-0" /> Standar Resmi Palembang
         </span>
         <span className="hidden sm:inline font-medium text-[12px] whitespace-nowrap">
@@ -50,39 +50,39 @@ export default function Navbar() {
         </a>
       </div>
 
-      {/* Floating Pill Nav */}
+      {/* Floating Sleek Nav */}
       <nav
         className={`transition-all duration-300 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-2.5`}
       >
         <div
-          className={`flex items-center justify-between px-4 sm:px-6 py-2.5 rounded-full transition-all duration-300 ${
+          className={`flex items-center justify-between px-4 sm:px-5 py-2 rounded-xl transition-all duration-300 ${
             scrolled
-              ? "bg-white/90 backdrop-blur-md border border-[rgba(33,34,38,0.1)] shadow-sm"
-              : "bg-white/70 backdrop-blur-sm border border-[rgba(33,34,38,0.06)]"
+              ? "bg-white/95 backdrop-blur-md border border-[rgba(33,34,38,0.1)] shadow-sm"
+              : "bg-white/80 backdrop-blur-sm border border-[rgba(33,34,38,0.06)]"
           }`}
         >
           {/* Brand Identity */}
           <Link href="/" className="flex items-center gap-2.5 group shrink-0 whitespace-nowrap">
-            <div className="w-8 h-8 rounded-full bg-[#f8f9fc] border border-[rgba(33,34,38,0.08)] flex items-center justify-center p-1 transition-all group-hover:border-[#0F7A73] shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-[#f8f9fc] border border-[rgba(33,34,38,0.08)] flex items-center justify-center p-1 transition-all group-hover:border-[#0F7A73] shrink-0">
               <AmanahLogo className="w-5 h-5" variant="symbol" />
             </div>
             <div className="flex items-center gap-2 whitespace-nowrap shrink-0">
               <span className="font-extrabold text-sm sm:text-base tracking-tight text-[#121317] whitespace-nowrap leading-none">
                 AMANAH <span className="text-[#0F7A73]">DRIVE</span>
               </span>
-              <span className="text-[9px] uppercase font-bold tracking-wider bg-[#f0f1f5] text-[#45474d] px-1.5 py-0.5 rounded-full border border-[rgba(33,34,38,0.06)] shrink-0 hidden md:inline-block">
+              <span className="text-[9px] uppercase font-bold tracking-wider bg-[#f0f1f5] text-[#45474d] px-1.5 py-0.5 rounded-md border border-[rgba(33,34,38,0.06)] shrink-0 hidden md:inline-block">
                 Palembang
               </span>
             </div>
           </Link>
 
-          {/* Antigravity Nav Links (Centered Pill Strip) */}
-          <div className="hidden lg:flex items-center gap-0.5 xl:gap-1 bg-[#f8f9fc] px-2.5 py-1 rounded-full border border-[rgba(33,34,38,0.06)] shrink-0">
+          {/* Nav Links (Clean Segmented Strip) */}
+          <div className="hidden lg:flex items-center gap-0.5 xl:gap-1 bg-[#f8f9fc] px-1.5 py-1 rounded-lg border border-[rgba(33,34,38,0.06)] shrink-0">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-xs font-medium text-[#45474d] hover:text-[#121317] px-2.5 xl:px-3 py-1 rounded-full hover:bg-white transition-all whitespace-nowrap"
+                className="text-xs font-medium text-[#45474d] hover:text-[#121317] px-2.5 xl:px-3 py-1 rounded-md hover:bg-white transition-all whitespace-nowrap"
               >
                 {link.name}
               </Link>
@@ -93,7 +93,7 @@ export default function Navbar() {
           <div className="hidden sm:flex items-center gap-2 xl:gap-3 shrink-0">
             <a
               href={`tel:${CONTACT_INFO.phoneRaw}`}
-              className="hidden xl:flex items-center gap-1.5 text-xs text-[#45474d] hover:text-[#121317] font-medium px-2 py-1.5 rounded-full hover:bg-[#f8f9fc] transition-colors whitespace-nowrap shrink-0"
+              className="hidden xl:flex items-center gap-1.5 text-xs text-[#45474d] hover:text-[#121317] font-medium px-2 py-1.5 rounded-lg hover:bg-[#f8f9fc] transition-colors whitespace-nowrap shrink-0"
             >
               <Phone className="w-3.5 h-3.5 text-[#0F7A73] shrink-0" />
               <span className="font-mono text-[11px] whitespace-nowrap">{CONTACT_INFO.phoneDisplay}</span>
@@ -103,9 +103,9 @@ export default function Navbar() {
               href={generateWhatsAppUrl("Halo Kak Lia, saya ingin konsultasi pendaftaran kursus Amanah Drive.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="antigravity-btn-primary py-2 px-3.5 xl:px-4 text-xs gap-1.5 rounded-full shadow-sm whitespace-nowrap shrink-0"
+              className="antigravity-btn-primary py-2 px-3.5 xl:px-4 text-xs gap-1.5 rounded-lg shadow-sm whitespace-nowrap shrink-0"
             >
-              <div className="relative w-4 h-4 rounded-full overflow-hidden border border-white/40 shrink-0">
+              <div className="relative w-4 h-4 rounded-md overflow-hidden border border-white/40 shrink-0">
                 <Image
                   src={STUDENT_CARE.avatar}
                   alt={STUDENT_CARE.name}
@@ -125,14 +125,14 @@ export default function Navbar() {
               href={generateWhatsAppUrl("Halo Kak Lia, saya ingin konsultasi pendaftaran.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 bg-[#121317] rounded-full text-white"
+              className="p-2 bg-[#121317] rounded-lg text-white"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-4 h-4 fill-white text-transparent" />
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 text-[#45474d] hover:text-[#121317] rounded-full hover:bg-[#f8f9fc] focus:outline-none"
+              className="p-1.5 text-[#45474d] hover:text-[#121317] rounded-lg hover:bg-[#f8f9fc] focus:outline-none"
               aria-label="Menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5 text-[#121317]" /> : <Menu className="w-5 h-5" />}
@@ -142,7 +142,7 @@ export default function Navbar() {
 
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
-          <div className="sm:hidden mt-2 bg-white/95 backdrop-blur-md rounded-2xl border border-[rgba(33,34,38,0.1)] p-4 shadow-xl space-y-2">
+          <div className="sm:hidden mt-2 bg-white/95 backdrop-blur-md rounded-xl border border-[rgba(33,34,38,0.1)] p-4 shadow-xl space-y-2">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
