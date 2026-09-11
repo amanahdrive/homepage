@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -46,7 +46,7 @@ export default function BookingCalculator() {
   };
 
   return (
-    <section id="kalkulator" className="py-20 sm:py-28 relative bg-[#f8f9fc] border-t border-[rgba(33,34,38,0.06)]">
+    <section id="kalkulator" className="py-20 sm:py-28 relative bg-white border-t border-[rgba(33,34,38,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Antigravity Section Header */}
@@ -67,7 +67,7 @@ export default function BookingCalculator() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Left: Input Selection Controls */}
-          <div className="lg:col-span-7 antigravity-card p-6 sm:p-7 bg-white border border-[rgba(33,34,38,0.08)] space-y-6">
+          <div className="lg:col-span-7 antigravity-card p-6 sm:p-7 bg-[#f8f9fc] border border-[rgba(33,34,38,0.08)] space-y-6">
             
             {/* Step 1: Choose Package */}
             <div>

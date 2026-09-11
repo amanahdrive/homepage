@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
@@ -23,8 +23,8 @@ export default function Navbar() {
     { name: "Paket & Biaya", href: "#paket" },
     { name: "Keunggulan", href: "#keunggulan" },
     { name: "Kurikulum 10 Sesi", href: "#kurikulum" },
-    { name: "Jadwal Slot", href: "#jadwal" },
     { name: "Armada & Instruktur", href: "#armada" },
+    { name: "Jadwal Slot", href: "#jadwal" },
     { name: "Kalkulator", href: "#kalkulator" },
     { name: "Testimoni", href: "#testimoni" },
     { name: "Lokasi", href: "#lokasi" },
@@ -38,7 +38,7 @@ export default function Navbar() {
           <ShieldCheck className="w-3 h-3 mr-1" /> Standar Resmi Palembang
         </span>
         <span className="hidden sm:inline font-medium text-[12px]">
-          100% Dual Pedal Safety Rem Ganda &amp; Pendampingan Uji SIM A Resmi.
+          Sistem Rem Pengaman Tambahan (Dual Safety Assist) &amp; Pendampingan SIM A Resmi.
         </span>
         <a
           href={generateWhatsAppUrl("Halo Kak Lia, saya ingin tanya ketersediaan jadwal & promo kursus minggu ini.")}

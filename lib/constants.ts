@@ -27,8 +27,8 @@ export const PACKAGES: PackageItem[] = [
       "Pilihan Mobil: Ayla / Xenia / Mobil Pribadi",
       "Fokus Parkir Paralel & Tanjakan Curam",
       "Melancarkan Mental di Jalan Raya Padat",
-      "Didampingi Instruktur Sabar & Bersertifikat",
-      "Sertifikat Kelulusan Amanah Drive",
+      "Didampingi Instruktur Sabar & Teruji",
+      "Sertifikat Kelulusan Resmi Amanah Drive",
     ],
     recommendedFor: "Pernah bisa stir tapi lama tidak mengemudi & butuh pelancaran.",
   },
@@ -46,9 +46,9 @@ export const PACKAGES: PackageItem[] = [
       "Pengenalan Cockpit & Pedal Rem/Kopling",
       "Teknik Start-Stop Halus & Haluan Jalan",
       "Latihan Parkir Standar & Tanjakan Dasar",
-      "Armada Dual Pedal Safety (Rem Ganda)",
+      "Armada Berpedal Rem Pengaman Tambahan",
       "Layanan Antar-Jemput Area Tertentu",
-      "Sertifikat Kelulusan Resmi",
+      "Sertifikat Kelulusan Resmi Amanah Drive",
     ],
     recommendedFor: "Pemula yang ingin menguasai dasar mobil dengan cepat dan aman.",
   },
@@ -65,9 +65,9 @@ export const PACKAGES: PackageItem[] = [
       "Semua Fasilitas Paket Basic (5 Sesi @90 menit)",
       "Pengurusan SIM A Resmi Sampai Selesai",
       "Bimbingan & Simulasi Ujian Teori / Praktik SIM",
-      "Armada Dual Pedal Safety Rem Ganda",
+      "Armada Berpedal Rem Pengaman Tambahan",
       "Jadwal Fleksibel (Pagi s/d Malam)",
-      "Sertifikat Kelulusan Resmi",
+      "Sertifikat Kelulusan Resmi Amanah Drive",
     ],
     recommendedFor: "Pemula yang butuh mahir dasar sekaligus punya SIM A resmi.",
   },
@@ -89,7 +89,7 @@ export const PACKAGES: PackageItem[] = [
       "Sesi Khusus Menyetir Malam Hari & Hujan",
       "Garansi Bimbingan Sampai Percaya Diri",
       "Gratis Antar-Jemput Area Jangkauan",
-      "Sertifikat Kompetensi Resmi Terverifikasi",
+      "Sertifikat Kelulusan Resmi CV Amanah Drive",
     ],
     recommendedFor: "Calon pengemudi dari nol yang ingin langsung percaya diri jalan kemana saja!",
   },
@@ -107,9 +107,9 @@ export const PACKAGES: PackageItem[] = [
       "Pengurusan SIM A Resmi Tuntas Didampingi",
       "Simulasi Lengkap Ujian Praktek SIM",
       "Penguasaan Rute Tersulit di Kota Palembang",
-      "Armada Dual Pedal Safety & AC Dingin",
+      "Armada Berpedal Rem Pengaman & AC Dingin",
       "Bebas Pilih Instruktur & Request Rute",
-      "Sertifikat Kelulusan & Nilai Evaluasi",
+      "Sertifikat Kelulusan & Catatan Evaluasi",
     ],
     recommendedFor: "Pilihan terbaik & paling hemat bagi yang ingin beres tuntas tanpa repot.",
   },
@@ -166,14 +166,6 @@ export const INSTRUCTORS = [
     quote: "Palembang lalu lintasnya dinamis. Saya ajarkan cara membaca gerak kendaraan lain agar selalu selamat.",
     avatar: "/staff_models/Alpi.png",
   },
-  {
-    name: "Kak Alfi",
-    role: "Technical & Clutch Control Specialist",
-    exp: "3+ Tahun Pengalaman",
-    speciality: "Spesialis Haluan Sempit, Gang Perumahan & Setengah Kopling",
-    quote: "Jangan takut mati mesin. Bersama kami, kamu akan paham titik gigit kopling sampai mengemudi terasa seringan nafas.",
-    avatar: "/staff_models/Alfi.png",
-  },
 ];
 
 export const STUDENT_CARE = {
@@ -181,7 +173,7 @@ export const STUDENT_CARE = {
   role: "Student Care & Konsultasi Resmi",
   desc: "Koordinator pendaftaran, pendampingan berkas SIM A, dan jadwal latihan fleksibel siswa Amanah Drive.",
   avatar: "/staff_models/Lia.png",
-  phoneDisplay: "0822-7909-1096",
+  phoneDisplay: "0813-7790-961",
   status: "Online WhatsApp",
 };
 
@@ -191,7 +183,7 @@ export const FLEET = [
     type: "Manual Transmission",
     plate: "BG 1156 IN",
     color: "Silver Metallic",
-    features: ["Dual Pedal Safety (Rem Ganda)", "AC Dingin Nyaman", "Power Steering Ringan", "Dimensi Compact & Lincah"],
+    features: ["Pedal Rem Pengaman Tambahan", "AC Dingin Nyaman", "Power Steering Ringan", "Dimensi Compact & Lincah"],
     desc: "Mobil latihan paling favorit untuk pemula! Ringan dikendalikan, visibilitas luas, dan sangat mudah untuk latihan manuver awal serta parkir.",
   },
   {
@@ -199,7 +191,7 @@ export const FLEET = [
     type: "Manual Transmission",
     plate: "BG 1524 RD",
     color: "Black Solid",
-    features: ["Dual Pedal Safety (Rem Ganda)", "Kabin Lega & Tenaga Responsif", "AC Double Blower", "Latihan Dimensi MPV"],
+    features: ["Pedal Rem Pengaman Tambahan", "Kabin Lega & Tenaga Responsif", "AC Double Blower", "Latihan Dimensi MPV"],
     desc: "Cocok untuk melatih kepekaan mobil berdimensi lebih panjang. Mempersiapkan Anda agar langsung siap membawa mobil keluarga keluarga.",
   },
   {
@@ -268,7 +260,7 @@ export const TESTIMONIALS = [
     status: "Mahasiswa Universitas Sriwijaya",
     pkg: "Paket Pro + SIM A",
     rating: 5,
-    text: "Paling mantap karena jadwalnya fleksibel banget! Saya ambil slot malam jam 18.30 setelah selesai kuliah. Mobilnya dingin, rem ganda bikin tenang, dan SIM A langsung beres dibimbing tuntas. Sangat recommended buat anak muda Palembang!",
+    text: "Paling mantap karena jadwalnya fleksibel banget! Saya ambil slot malam jam 18.30 setelah selesai kuliah. Mobilnya dingin, rem pengaman instruktur bikin tenang, dan SIM A langsung beres dibimbing tuntas. Sangat recommended buat anak muda Palembang!",
   },
   {
     name: "Hj. Ratna Juwita",
@@ -293,7 +285,7 @@ export const FAQS = [
   },
   {
     q: "Bagaimana jika terjadi senggolan atau kecelakaan saat latihan?",
-    a: "Keamanan Anda adalah prioritas nomor 1 kami. Seluruh armada Amanah Drive dilengkapi pedal rem & kopling ganda di sisi instruktur (Dual Pedal Safety). Instruktur kami memiliki kontrol penuh untuk menghentikan kendaraan seketika jika ada potensi bahaya, sehingga latihan 100% aman dan bebas risiko insiden.",
+    a: "Keamanan Anda adalah prioritas utama kami. Seluruh armada Amanah Drive dilengkapi kontrol pedal rem pengaman tambahan di sisi instruktur (Dual Safety Assist). Instruktur kami memiliki kontrol penuh untuk menghentikan kendaraan seketika jika ada potensi bahaya, sehingga proses latihan 100% aman, tenang, dan bebas risiko insiden.",
   },
   {
     q: "Apakah jadwal latihan bisa diganti jika ada urusan mendadak?",
@@ -314,10 +306,10 @@ export const FAQS = [
 ];
 
 export const CONTACT_INFO = {
-  companyName: "Amanah Drive Palembang",
+  companyName: "Amanah Drive Palembang (CV Amanah Drive Mandiri)",
   tagline: "Kursus Mengemudi Profesional & Bergaransi No. 1 Palembang",
-  phoneDisplay: "0822-7909-1096",
-  phoneRaw: "6282279091096",
+  phoneDisplay: "0813-7790-961",
+  phoneRaw: "628137790961",
   address: "Kota Palembang, Sumatera Selatan (Area Layanan: Bukit, Demang, Sudirman, Gandus, Sukarami, Plaju & sekitarnya)",
   instagram: "@amanahdrive.palembang",
   operationalHours: "Senin – Minggu: 08:30 – 22:00 WIB",

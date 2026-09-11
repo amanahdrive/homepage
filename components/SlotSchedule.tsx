@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -15,7 +15,7 @@ export default function SlotSchedule() {
   };
 
   return (
-    <section id="jadwal" className="py-20 sm:py-28 relative bg-white border-t border-[rgba(33,34,38,0.06)]">
+    <section id="jadwal" className="py-20 sm:py-28 relative bg-[#f8f9fc] border-t border-[rgba(33,34,38,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Antigravity Section Header */}
@@ -87,7 +87,7 @@ export default function SlotSchedule() {
         </div>
 
         {/* Selected Slot Callout Card */}
-        <div className="max-w-2xl mx-auto antigravity-card p-6 sm:p-7 bg-[#f8f9fc] border border-[rgba(33,34,38,0.08)] text-center space-y-4 rounded-2xl">
+        <div className="max-w-2xl mx-auto antigravity-card p-6 sm:p-7 bg-white border border-[rgba(33,34,38,0.08)] text-center space-y-4 rounded-2xl shadow-sm">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-[#121317] text-xs font-mono font-bold border border-[rgba(33,34,38,0.08)]">
             <Sparkles className="w-3.5 h-3.5 text-amber-500" /> Slot Dipilih:
           </div>

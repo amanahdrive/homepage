@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
 import { FLEET, INSTRUCTORS, STUDENT_CARE, generateWhatsAppUrl } from "@/lib/constants";
 import { Car, ShieldCheck, CheckCircle2, Users, Star, MessageCircle } from "lucide-react";
@@ -20,7 +20,7 @@ export default function FleetAndInstructors() {
               Pilihan Armada Latihan Nyaman &amp; Terawat
             </h2>
             <p className="text-[#45474d] text-sm sm:text-base leading-relaxed">
-              Seluruh armada Amanah Drive telah dimodifikasi sistem <strong className="text-[#0F7A73]">Dual Pedal Safety</strong> (pedal rem &amp; kopling ganda di sisi instruktur), AC dingin, serta perawatan berkala bengkel resmi untuk keamanan belajar maksimal.
+              Seluruh armada Amanah Drive dilengkapi kontrol <strong className="text-[#0F7A73]">Pedal Rem Pengaman Tambahan (Dual Safety Assist)</strong> di sisi instruktur, AC dingin, serta perawatan berkala di bengkel resmi untuk kenyamanan dan keamanan belajar maksimal.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export default function FleetAndInstructors() {
                 <div className="pt-3 border-t border-[rgba(33,34,38,0.06)]">
                   <span className="text-[11px] text-[#0F7A73] font-medium flex items-center gap-1.5">
                     <ShieldCheck className="w-3.5 h-3.5 text-[#0F7A73] shrink-0" />
-                    Kontrol Penuh Pedal Rem Tambahan Instruktur
+                    Kontrol Penuh Pedal Rem Pengaman Tambahan
                   </span>
                 </div>
               </div>
@@ -80,15 +80,15 @@ export default function FleetAndInstructors() {
               <span>Tim Instruktur &amp; Pelayanan</span>
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#121317] tracking-tight">
-              Didampingi Instruktur Sabar &amp; Bersertifikat Resmi
+              Didampingi Instruktur Senior Sabar &amp; Berpengalaman
             </h2>
             <p className="text-[#45474d] text-sm sm:text-base leading-relaxed">
-              Bukan sekadar bisa menyetir — instruktur kami berpegang pada SOP kesabaran penuh, tanpa bentakan atau nada tinggi, serta membimbing dari nol sampai siswa mandiri di jalan raya Palembang.
+              Bukan sekadar bisa menyetir — instruktur kami berpegang pada SOP kesabaran tinggi, tanpa bentakan atau nada keras, serta membimbing secara bertahap dari nol mutlak sampai siswa tenang dan percaya diri di jalan raya Palembang.
             </p>
           </div>
 
-          {/* Instructors Grid with Real Photographic Assets */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          {/* Instructors Grid with Real Photographic Assets (3 Senior Instructors) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {INSTRUCTORS.map((ins, idx) => (
               <div
                 key={idx}
@@ -96,29 +96,29 @@ export default function FleetAndInstructors() {
               >
                 <div>
                   {/* Real Portrait */}
-                  <div className="relative w-full h-64 bg-[#f8f9fc] overflow-hidden border-b border-[rgba(33,34,38,0.06)]">
+                  <div className="relative w-full h-72 bg-[#f8f9fc] overflow-hidden border-b border-[rgba(33,34,38,0.06)]">
                     <Image
                       src={ins.avatar}
                       alt={ins.name}
                       fill
                       className="object-cover object-top transition-transform duration-300 hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-70" />
                     <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-                      <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-white/90 text-[#121317] shadow-sm">
+                      <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-white/95 text-[#121317] shadow-sm">
                         {ins.exp}
                       </span>
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/90 text-[#121317] flex items-center gap-1 shadow-sm">
+                      <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white/95 text-[#121317] flex items-center gap-1 shadow-sm">
                         <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
                         5.0
                       </span>
                     </div>
                   </div>
 
-                  <div className="p-5">
-                    <h3 className="text-base font-bold text-[#121317] mb-0.5">{ins.name}</h3>
-                    <p className="text-xs text-[#0F7A73] font-mono font-medium mb-3">{ins.role}</p>
+                  <div className="p-5 sm:p-6">
+                    <h3 className="text-lg font-bold text-[#121317] mb-0.5">{ins.name}</h3>
+                    <p className="text-xs text-[#0F7A73] font-mono font-semibold mb-3">{ins.role}</p>
 
                     <div className="bg-[#f8f9fc] rounded-xl p-3 border border-[rgba(33,34,38,0.06)] mb-3">
                       <p className="text-[10px] font-mono uppercase font-bold text-[#121317] mb-0.5">Spesialisasi:</p>
@@ -131,10 +131,10 @@ export default function FleetAndInstructors() {
                   </div>
                 </div>
 
-                <div className="p-5 pt-0">
+                <div className="p-5 sm:p-6 pt-0">
                   <div className="pt-3 border-t border-[rgba(33,34,38,0.06)] flex items-center justify-between text-[11px]">
-                    <span className="text-[#9aa0a6] font-mono">Standar Kompetensi:</span>
-                    <span className="text-[#10B981] font-semibold">Terverifikasi Resmi</span>
+                    <span className="text-[#9aa0a6] font-mono">Standar Layanan:</span>
+                    <span className="text-[#0F7A73] font-semibold">Sabar &amp; Teruji</span>
                   </div>
                 </div>
               </div>

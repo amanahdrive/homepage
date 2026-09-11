@@ -28,12 +28,12 @@ export default function HomePage() {
         <FeatureBento />
         <PricingSection />
         <CurriculumRoadmap />
-        <SlotSchedule />
         <FleetAndInstructors />
+        <SlotSchedule />
         <BookingCalculator />
         <TestimonialsSection />
-        <FAQSection />
         <LocationSection />
+        <FAQSection />
       </main>
 
       {/* Sticky Bottom Actions */}

@@ -1,10 +1,10 @@
-﻿import React from "react";
+import React from "react";
 import { TESTIMONIALS } from "@/lib/constants";
 import { Star, Heart, CheckCircle2 } from "lucide-react";
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimoni" className="py-20 sm:py-28 relative bg-white border-t border-[rgba(33,34,38,0.06)]">
+    <section id="testimoni" className="py-20 sm:py-28 relative bg-[#f8f9fc] border-t border-[rgba(33,34,38,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Antigravity Section Header */}
@@ -26,7 +26,7 @@ export default function TestimonialsSection() {
           {TESTIMONIALS.map((t, idx) => (
             <div
               key={idx}
-              className="antigravity-card p-6 sm:p-7 flex flex-col justify-between"
+              className="antigravity-card p-6 sm:p-7 flex flex-col justify-between bg-white"
             >
               <div>
                 {/* Rating stars */}
@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
 
               <div className="pt-4 border-t border-[rgba(33,34,38,0.06)]">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-[#f0f1f5] border border-[rgba(33,34,38,0.08)] flex items-center justify-center font-bold text-[#121317] text-xs">
+                  <div className="w-8 h-8 rounded-full bg-[#E6F4F2] border border-[#0F7A73]/20 flex items-center justify-center font-bold text-[#0F7A73] text-xs">
                     {t.name.charAt(0)}
                   </div>
                   <div>

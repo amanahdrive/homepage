@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { Check, Star, MessageCircle, Sparkles, ArrowRight, ShieldCheck } from "lucide-react";
@@ -36,7 +36,7 @@ export default function PricingSection() {
             Pilihan Paket Kursus &amp; Biaya Resmi
           </h2>
           <p className="text-[#45474d] text-sm sm:text-base leading-relaxed">
-            Semua paket sudah termasuk mobil ber-AC dingin, bensin (BBM), pendampingan instruktur sabar, proteksi rem ganda, dan sertifikat kelulusan. Tidak ada pungutan liar.
+            Semua paket sudah termasuk mobil ber-AC dingin, bensin (BBM), pendampingan instruktur sabar, kontrol pedal rem pengaman tambahan (Dual Safety Assist), dan sertifikat kelulusan resmi Amanah Drive. Bebas biaya tersembunyi.
           </p>
 
           {/* Antigravity Pill Filter Control */}

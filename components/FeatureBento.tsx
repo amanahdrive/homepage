@@ -1,21 +1,21 @@
-﻿import React from "react";
+import React from "react";
 import { ShieldAlert, HeartHandshake, FileCheck2, Clock, Car, Award, Sparkles, CheckCircle2 } from "lucide-react";
 
 export default function FeatureBento() {
   const features = [
     {
       icon: ShieldAlert,
-      title: "Dual Pedal Safety System",
-      badge: "Garansi 100% Aman",
-      desc: "Seluruh mobil latihan kami dilengkapi pedal rem & kopling tambahan di sisi instruktur. Menghilangkan risiko panik atau salah injak pedal saat melatih reflek di jalan raya.",
-      points: ["Intervensi rem instan dari instruktur", "Siswa tidak perlu takut menabrak", "Aman untuk simulasi jalan padat"],
+      title: "Pedal Rem Pengaman Tambahan",
+      badge: "Dual Safety Assist",
+      desc: "Seluruh mobil latihan kami dilengkapi kontrol pedal rem pengaman tambahan di sisi instruktur. Menghilangkan risiko panik atau salah injak pedal saat melatih reflek di jalan raya.",
+      points: ["Intervensi rem instan dari instruktur", "Siswa rileks tanpa rasa cemas menabrak", "Aman untuk simulasi jalan padat"],
     },
     {
       icon: HeartHandshake,
       title: "Instruktur Ramah & Anti-Bentak",
-      badge: "Pendekatan Humanis",
+      badge: "Pendekatan Sabar",
       desc: "Pernah trauma dimarahi saat belajar mengemudi? Di Amanah Drive, instruktur terikat SOP kesabaran tinggi, komunikatif, dan menciptakan suasana tenang agar rasa grogi cepat hilang.",
-      points: ["Instruktur bersertifikasi resmi", "Metode empati untuk pemula & wanita", "Fokus membina rasa percaya diri"],
+      points: ["Instruktur berpengalaman & teruji", "Metode empati untuk pemula & wanita", "Fokus membina rasa percaya diri"],
     },
     {
       icon: FileCheck2,
@@ -40,10 +40,10 @@ export default function FeatureBento() {
     },
     {
       icon: Award,
-      title: "Sertifikat Kelulusan & Nilai",
-      badge: "Standar Kompetensi",
-      desc: "Setelah menyelesaikan seluruh materi kurikulum praktik, siswa menerima Sertifikat Kelulusan resmi Amanah Drive berstempel basah beserta lembar evaluasi kompetensi.",
-      points: ["Bukti kelulusan materi praktik", "Buku catatan kemajuan per sesi", "Evaluasi langsung oleh instruktur"],
+      title: "Sertifikat Kelulusan Resmi CV",
+      badge: "Apresiasi & Evaluasi",
+      desc: "Setelah menyelesaikan seluruh materi kurikulum praktik, siswa menerima Sertifikat Kelulusan resmi CV Amanah Drive Mandiri berstempel basah beserta lembar evaluasi mandiri.",
+      points: ["Bukti fisik kelulusan materi praktik", "Catatan evaluasi perkembangan belajar", "Diterbitkan resmi oleh CV Amanah Drive"],
     },
   ];
 

@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
 import { generateWhatsAppUrl, STUDENT_CARE } from "@/lib/constants";
 import { ShieldCheck, MessageCircle, Calendar, CheckCircle2, Navigation, Sliders, Car, TrendingUp, Moon, Award } from "lucide-react";
@@ -6,7 +6,7 @@ import { ShieldCheck, MessageCircle, Calendar, CheckCircle2, Navigation, Sliders
 export default function Hero() {
   const capabilities = [
     { icon: Navigation, label: "Manuver Stir", desc: "Haluan Siku & U-Turn" },
-    { icon: ShieldCheck, label: "Rem Ganda", desc: "100% Dual Pedal Safety" },
+    { icon: ShieldCheck, label: "Rem Pengaman", desc: "Dual Safety Assist" },
     { icon: Sliders, label: "Feeling Kopling", desc: "Halus Tanpa Hentakan" },
     { icon: Car, label: "Parkir Paralel", desc: "Rumus Sempit & Mall" },
     { icon: TrendingUp, label: "Tanjakan Flyover", desc: "Stop & Go Tanpa Mundur" },
@@ -22,7 +22,7 @@ export default function Hero() {
           <div className="flex justify-center">
             <span className="antigravity-chip">
               <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
-              <span>Akademi Mengemudi Palembang • Dual Pedal Safety</span>
+              <span>Akademi Mengemudi Palembang • CV Amanah Drive Mandiri</span>
             </span>
           </div>
 
@@ -57,7 +57,7 @@ export default function Hero() {
           <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 pt-4 text-xs text-[#45474d]">
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#10B981]" />
-              <span>100% Rem Ganda Instruktur</span>
+              <span>Pedal Rem Pengaman Tambahan</span>
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#10B981]" />
@@ -118,8 +118,8 @@ export default function Hero() {
                   />
                 </div>
                 <div className="text-left pr-1">
-                  <p className="text-[10px] font-mono text-[#0F7A73] uppercase font-bold leading-none">Resmi Terdaftar</p>
-                  <p className="text-xs font-extrabold text-[#121317] leading-tight">Palembang Driving Academy</p>
+                  <p className="text-[10px] font-mono text-[#0F7A73] uppercase font-bold leading-none">Badan Usaha Resmi CV</p>
+                  <p className="text-xs font-extrabold text-[#121317] leading-tight">CV Amanah Drive Mandiri</p>
                 </div>
               </div>
 
@@ -127,10 +127,10 @@ export default function Hero() {
               <div className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-3 text-white">
                 <div className="max-w-md">
                   <span className="inline-block text-[10px] font-mono uppercase tracking-wider bg-white/20 backdrop-blur-md px-2.5 py-0.5 rounded-full mb-1.5 border border-white/30">
-                    Armada Resmi Dual Pedal Safety
+                    Armada Aman Dual Safety Assist
                   </span>
                   <p className="text-sm sm:text-base font-bold text-white drop-shadow-sm">
-                    Daihatsu Ayla &amp; Xenia ber-AC dingin dengan pedal rem &amp; kopling ganda di sisi instruktur.
+                    Daihatsu Ayla &amp; Xenia ber-AC dingin dengan pedal rem pengaman tambahan di sisi instruktur.
                   </p>
                 </div>
 

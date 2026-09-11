@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { AmanahLogoLandscape } from "./Logo";
@@ -20,17 +20,17 @@ export default function Footer() {
             </Link>
 
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              Lembaga pelatihan mengemudi profesional terpercaya di Kota Palembang. Mengedepankan keselamatan melalui armada Dual Pedal Safety (rem ganda), instruktur beretika tinggi, dan pendampingan pembuatan SIM A resmi sampai tuntas.
+              Lembaga pelatihan mengemudi profesional di bawah naungan CV Amanah Drive Mandiri, Kota Palembang. Mengedepankan keselamatan melalui armada Dual Safety Assist (kontrol pedal rem pengaman tambahan), instruktur beretika tinggi, dan pendampingan pembuatan SIM A resmi sampai tuntas.
             </p>
 
             <div className="flex flex-wrap items-center gap-2 pt-1">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-teal-300 text-[11px] font-mono border border-white/15">
                 <Shield className="w-3.5 h-3.5 text-[#14B8A6]" />
-                <span>100% Dual Pedal Safety</span>
+                <span>Dual Safety Assist</span>
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 text-slate-300 text-[11px] font-mono border border-white/10">
                 <Award className="w-3.5 h-3.5 text-amber-400" />
-                <span>Sertifikat Terdaftar</span>
+                <span>Sertifikat Resmi CV</span>
               </span>
             </div>
 
@@ -56,10 +56,10 @@ export default function Footer() {
                 <a href="#kurikulum" className="hover:text-teal-300 transition-colors">Kurikulum 10 Sesi</a>
               </li>
               <li>
-                <a href="#jadwal" className="hover:text-teal-300 transition-colors">Pilihan Slot Waktu</a>
+                <a href="#armada" className="hover:text-teal-300 transition-colors">Armada &amp; Instruktur</a>
               </li>
               <li>
-                <a href="#armada" className="hover:text-teal-300 transition-colors">Armada &amp; Instruktur</a>
+                <a href="#jadwal" className="hover:text-teal-300 transition-colors">Pilihan Slot Waktu</a>
               </li>
               <li>
                 <a href="#kalkulator" className="hover:text-teal-300 transition-colors">Simulasi Biaya &amp; DP</a>
@@ -68,10 +68,10 @@ export default function Footer() {
                 <a href="#testimoni" className="hover:text-teal-300 transition-colors">Ulasan Siswa</a>
               </li>
               <li>
-                <a href="#faq" className="hover:text-teal-300 transition-colors">Tanya Jawab (FAQ)</a>
+                <a href="#lokasi" className="hover:text-teal-300 transition-colors">Area Jangkauan</a>
               </li>
               <li>
-                <a href="#lokasi" className="hover:text-teal-300 transition-colors">Area Jangkauan</a>
+                <a href="#faq" className="hover:text-teal-300 transition-colors">Tanya Jawab (FAQ)</a>
               </li>
             </ul>
           </div>
