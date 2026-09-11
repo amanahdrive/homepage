@@ -1,8 +1,8 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
+import { AmanahLogo } from "./Logo";
 import { CONTACT_INFO, generateWhatsAppUrl } from "@/lib/constants";
-import { MessageCircle, Phone, MapPin, Shield, Lock } from "lucide-react";
+import { MessageCircle, Phone, MapPin, Heart, Shield, Lock } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -15,13 +15,7 @@ export default function Footer() {
           <div className="lg:col-span-5 space-y-4">
             <Link href="/" className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-teal-900/60 border border-teal-500/30 flex items-center justify-center p-1.5">
-                <Image
-                  src="/assets/logo-amdri-symbol.png"
-                  alt="Amanah Drive Symbol"
-                  width={36}
-                  height={36}
-                  className="object-contain"
-                />
+                <AmanahLogo className="w-8 h-8" />
               </div>
               <div className="flex flex-col">
                 <span className="font-extrabold text-xl tracking-tight text-white">
