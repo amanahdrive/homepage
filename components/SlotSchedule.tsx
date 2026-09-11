@@ -6,8 +6,12 @@ import { TIME_SLOTS, STUDENT_CARE, generateWhatsAppUrl } from "@/lib/constants";
 import { Clock, MessageCircle, Moon, Sun, Sunset, Sparkles } from "lucide-react";
 import { trackWhatsAppLead, trackSlotSelect } from "@/lib/gtm";
 
-export default function SlotSchedule() {
-  const [selectedSlot, setSelectedSlot] = useState(TIME_SLOTS[3]); // Slot 4 default (Sore)
+interface SlotScheduleProps {
+  slots?: typeof TIME_SLOTS;
+}
+
+export default function SlotSchedule({ slots = TIME_SLOTS }: SlotScheduleProps) {
+  const [selectedSlot, setSelectedSlot] = useState(slots[3] || slots[0]); // Slot 4 default (Sore)
 
   const getSlotIcon = (id: number) => {
     if (id <= 2) return Sun;

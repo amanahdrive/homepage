@@ -7,13 +7,30 @@ import CurriculumRoadmap from "@/components/CurriculumRoadmap";
 import SlotSchedule from "@/components/SlotSchedule";
 import FleetSection from "@/components/FleetSection";
 import BookingCalculator from "@/components/BookingCalculator";
+import RegistrationFormSection from "@/components/RegistrationFormSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import LocationSection from "@/components/LocationSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import {
+  getPublicPackages,
+  getPublicFleet,
+  getPublicScheduleSlots,
+  getPublicSettings,
+} from "@/lib/public-data";
 
-export default function HomePage() {
+// Revalidate every 60 seconds (ISR) for fast responses and dynamic freshness
+export const revalidate = 60;
+
+export default async function HomePage() {
+  const [packages, fleet, slots, { contact, location }] = await Promise.all([
+    getPublicPackages(),
+    getPublicFleet(),
+    getPublicScheduleSlots(),
+    getPublicSettings(),
+  ]);
+
   return (
     <div className="min-h-screen bg-[#ffffff] text-[#121317] flex flex-col selection:bg-[#121317] selection:text-white relative font-sans">
       {/* Background Antigravity Radial Dot Pattern */}
@@ -26,13 +43,18 @@ export default function HomePage() {
       <main className="flex-grow">
         <Hero />
         <FeatureBento />
-        <PricingSection />
+        <PricingSection packages={packages} />
         <CurriculumRoadmap />
-        <FleetSection />
-        <SlotSchedule />
+        <FleetSection fleet={fleet as any} />
+        <SlotSchedule slots={slots as any} />
         <BookingCalculator />
+        <RegistrationFormSection
+          packages={packages}
+          fleet={fleet as any}
+          slots={slots as any}
+        />
         <TestimonialsSection />
-        <LocationSection />
+        <LocationSection location={location} contact={contact} />
         <FAQSection />
       </main>
 

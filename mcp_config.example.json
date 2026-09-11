@@ -1,4 +1,4 @@
-﻿{
+{
   "mcpServers": {
     "supabase-postgres": {
       "command": "npx",
@@ -30,6 +30,11 @@
       "headers": {
         "Authorization": "Bearer YOUR_VERCEL_TOKEN"
       }
+    },
+    "gtm": {
+      "serverUrl": "https://mcp.gtmeditor.com",
+      "httpUrl": "https://mcp.gtmeditor.com",
+      "url": "https://mcp.gtmeditor.com"
     }
   }
 }

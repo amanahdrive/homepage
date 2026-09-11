@@ -131,6 +131,42 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth">
       <head>
+        {/* Meta Pixel Guard: Matikan Total Deteksi Tombol Otomatis (SubscribedButtonClick) & Cegah Double Firing */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                window._fbq = window._fbq || [];
+                var origFbq = window.fbq;
+
+                // Proxy fbq untuk memblokir event otomatis yang tidak diinginkan & mencegah duplikasi
+                window.fbq = function() {
+                  // 1. Blokir TOTAL SubscribedButtonClick bawaan Meta Ads
+                  if (arguments[0] === 'trackCustom' && arguments[1] === 'SubscribedButtonClick') return;
+                  if (arguments[0] === 'track' && arguments[1] === 'SubscribedButtonClick') return;
+                  if (arguments[1] === 'SubscribedButtonClick') return;
+
+                  // 2. Cegah double firing event EngagedUser (hanya tembak 1x per sesi)
+                  if (arguments[1] === 'EngagedUser') {
+                    if (window.__amdri_engaged_fired) return;
+                    window.__amdri_engaged_fired = true;
+                  }
+
+                  // 3. Teruskan ke library fbq asli atau antrian
+                  if (origFbq) {
+                    return origFbq.apply(this, arguments);
+                  } else {
+                    (window.fbq.q = window.fbq.q || []).push(arguments);
+                  }
+                };
+                window.fbq.q = (origFbq && origFbq.q) || [];
+
+                // Matikan autoConfig untuk Pixel ID 2242382719666891
+                window.fbq('set', 'autoConfig', false, '2242382719666891');
+              })();
+            `,
+          }}
+        />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{

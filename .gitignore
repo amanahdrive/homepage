@@ -36,4 +36,6 @@ next-env.d.ts
 # IDE & MCP local configurations (contain private access tokens)
 .cursor/
 mcp_config.json
+.gtm-tokens.json
 .agents/plugins/*/mcp_config.json
+

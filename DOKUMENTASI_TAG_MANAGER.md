@@ -33,12 +33,15 @@ Kode Google Tag Manager telah ditanamkan langsung pada arsitektur Next.js di fil
 
 ## 2. Daftar Lengkap Event Tag yang Terpasang
 
-Setiap kali pengunjung mengklik tombol WhatsApp atau tombol penting lainnya di homepage, website akan secara otomatis mendorong (*push*) data ke `dataLayer`.
+Pemisahan fungsi event conversion:
+- **`generate_lead` (GA4) / `Lead` (Meta Ads)**: **KHUSUS untuk Form Submit pendaftaran kursus online**.
+- **`contact` (GA4 & Meta Ads)**: **Dikhususkan untuk semua tombol/tautan yang mengarah ke WhatsApp**.
 
 | Nama Event DataLayer | Trigger / Lokasi Interaksi | Deskripsi & Tujuan |
 | :--- | :--- | :--- |
-| **`generate_lead`** | **Semua tombol WhatsApp di seluruh halaman** | Event konversi utama untuk Google Analytics 4 (GA4) dan Google Ads. |
-| **`contact`** | **Otomatis terkirim bersamaan dengan `generate_lead`** | Dikhususkan untuk **Meta Ads (Facebook Pixel)** sebagai standard event `Contact` atau `Lead`. |
+| **`generate_lead`** | **Submit formulir pendaftaran booking kursus di homepage** | **Event Lead Utama**: Terpicu saat calon siswa mengisi dan mengirim form pendaftaran resmi. Membawa data paket, estimasi biaya, pilihan mobil, dan slot waktu. |
+| **`submit_application`** | **Submit formulir pendaftaran booking kursus** | Event pendamping GA4 untuk pelacakan aplikasi/formulir reservasi. |
+| **`contact`** | **Semua tombol & tautan yang mengarah ke WhatsApp** | **Event Contact**: Terpicu saat pengunjung mengklik tombol chat konsultasi WA di seluruh bagian homepage (Hero, Navbar, Pricing, Fleet, Slot, Location, FAQ, Footer, Floating WA). |
 | **`contact_phone`** | Klik nomor telepon / hotline seluler | Melacak calon siswa yang memilih telepon langsung daripada chat. |
 | **`calculate_cost`** | Pengisian formulir simulasi paket di Booking Calculator | Melacak siswa yang menghitung estimasi biaya kursus & DP. |
 | **`select_schedule_slot`**| Klik salah satu dari 6 kartu slot jam latihan | Melacak preferensi waktu latihan siswa (pagi, sore, malam). |
@@ -49,9 +52,9 @@ Setiap kali pengunjung mengklik tombol WhatsApp atau tombol penting lainnya di h
 
 ---
 
-## 3. Rincian Sumber Titik Interaksi (`lead_source`) Tombol WhatsApp
+## 3. Rincian Sumber Titik Interaksi (`lead_source`) Tombol WhatsApp (Event `contact`)
 
-Semua tombol WhatsApp di bawah ini mengirimkan event **`generate_lead`** dan **`contact`**, dibedakan berdasarkan parameter `lead_source`:
+Semua tombol WhatsApp di bawah ini mengirimkan event **`contact`** (bukan Lead), dibedakan berdasarkan parameter `lead_source`:
 
 1. **`navbar_desktop`**: Tombol "Chat Kak Lia" pada header / navbar layar komputer.
 2. **`navbar_mobile_button`**: Ikon tombol hijau WhatsApp pada header tampilan HP.
@@ -71,31 +74,48 @@ Semua tombol WhatsApp di bawah ini mengirimkan event **`generate_lead`** dan **`
 
 ## 4. Struktur Data (DataLayer Payload Schema)
 
-### Contoh Payload saat Tombol WhatsApp Diklik:
+### A. Contoh Payload saat Tombol WhatsApp Diklik (Event `contact`):
 ```javascript
+// Dikhususkan untuk tombol WA & interaksi chat (Meta Contact Event)
 window.dataLayer.push({
-  event: "generate_lead",
-  event_name: "generate_lead",
-  lead_type: "whatsapp",
+  event: "contact",
+  event_name: "contact",
+  event_id: "ev_1789150503_abc123",
+  contact_method: "whatsapp",
   lead_source: "pricing_card",
   button_text: "Daftar via WhatsApp",
-  package_id: "pro-sim",
   package_name: "Paket Pro + SIM A",
   package_price: 2350000,
-  sessions: 10,
-  has_sim: true,
+  vehicle_type: "Daihatsu Ayla",
+  selected_slot: "Slot 4 (15:30 - 17:00)",
   target_phone: "+628137790961",
   currency: "IDR",
   value: 2350000
 });
+```
 
-// Bersamaan dengan event contact untuk Meta Ads:
+### B. Contoh Payload saat Formulir Booking Dikirim (Event `generate_lead`):
+```javascript
+// KHUSUS untuk submission formulir pendaftaran kursus resmi (Meta Lead Event)
 window.dataLayer.push({
-  event: "contact",
-  event_name: "contact",
-  contact_method: "whatsapp",
-  lead_source: "pricing_card",
-  button_text: "Daftar via WhatsApp",
+  event: "generate_lead",
+  event_name: "generate_lead",
+  event_id: "ev_1789150503_xyz789",
+  lead_source: "registration_form",
+  lead_type: "online_form",
+  package_name: "Paket Pro + SIM A",
+  value: 2350000,
+  currency: "IDR",
+  vehicle: "Toyota Avanza (Manual)",
+  slot_time: "15:30 - 17:00 WIB"
+});
+
+window.dataLayer.push({
+  event: "submit_application",
+  event_name: "submit_application",
+  event_id: "ev_1789150503_xyz789",
+  lead_source: "registration_form",
+  package_name: "Paket Pro + SIM A",
   value: 2350000,
   currency: "IDR"
 });
@@ -103,117 +123,76 @@ window.dataLayer.push({
 
 ---
 
-## 5. Panduan Penerapan di Google Tag Manager (Langkah demi Langkah)
+## 5. Konfigurasi GTM yang Telah Aktif & Terbit (LIVE)
 
-### Langkah A: Buat Variabel DataLayer (Data Layer Variables)
-Buka Google Tag Manager (`GTM-P92C4W7Z`) &rarr; Menu **Variables** &rarr; Bagian **User-Defined Variables** &rarr; Klik **New**:
+Tag Manager container **`GTM-P92C4W7Z`** telah dikonfigurasikan secara otomatis dengan versi **`v1.0.0 - Meta Ads & Event Tracking Setup`** (Live Version 2) di dalam folder **`Meta Pixel`**:
 
-1. **Variabel Sumber Lead:**
-   - Name: `dlv - lead_source`
-   - Variable Type: **Data Layer Variable**
-   - Data Layer Variable Name: `lead_source`
-   - Data Layer Version: Version 2
+### A. Tags Terpasang:
+| Tag Name | Type | Firing Trigger | Keterangan |
+| :--- | :--- | :--- | :--- |
+| **`Meta - Base Pixel`** | Custom HTML | `All Pages` | Inisialisasi Meta Pixel ID `2242382719666891` & event `PageView`. |
+| **`Meta - Contact Event`** | Custom HTML | `CE - contact` | Firing event standard `Contact` Meta Ads saat tombol WA diklik. |
+| **`Meta - Lead Event`** | Custom HTML | `CE - generate_lead` | Firing event standard `Lead` Meta Ads KHUSUS saat formulir pendaftaran dikirim. |
+| **`Meta - Maps Click Event`** | Custom HTML | `CE - view_location`<br>`Click - Google Maps` | Firing event custom `MapsClick` dan standard `FindLocation` saat link Maps diklik. |
+| **`Meta - Behavioral Event`** | Custom HTML | `All Pages` | Melacak engagement perilaku pengunjung secara otomatis:<br>• **Time on Page**: 15s, 30s, 60s (`TimeOnPage_15s`, `TimeOnPage_30s`, `TimeOnPage_60s`)<br>• **Scroll Depth**: 50% & 90% (`ScrollDepth_50`, `ScrollDepth_90`)<br>• **Maps Interaction**: Deteksi klik rute lokasi<br>• **Engaged User**: `EngagedUser` (aktif >30s atau scroll >50%). |
 
-2. **Variabel Nama Paket:**
-   - Name: `dlv - package_name`
-   - Variable Type: **Data Layer Variable**
-   - Data Layer Variable Name: `package_name`
+### B. Triggers Terpasang:
+| Trigger Name | Type | Event / Filter |
+| :--- | :--- | :--- |
+| **`All Pages`** | Page View | Semua halaman |
+| **`CE - generate_lead`** | Custom Event | `{{_event}} equals generate_lead` (Triggered by Form Booking) |
+| **`CE - contact`** | Custom Event | `{{_event}} equals contact` (Triggered by WhatsApp Clicks) |
+| **`CE - view_location`** | Custom Event | `{{_event}} equals view_location` |
+| **`Click - Google Maps`** | Link Click | `{{Click URL}} contains google.com/maps` |
 
-3. **Variabel Nilai / Value (Harga):**
-   - Name: `dlv - value`
-   - Variable Type: **Data Layer Variable**
-   - Data Layer Variable Name: `value`
-
-4. **Variabel Mata Uang (Currency):**
-   - Name: `dlv - currency`
-   - Variable Type: **Data Layer Variable**
-   - Data Layer Variable Name: `currency`
-
----
-
-### Langkah B: Buat Trigger di GTM
-
-Buka menu **Triggers** &rarr; Klik **New**:
-
-1. **Trigger WhatsApp Lead:**
-   - Trigger Name: `Custom Event - generate_lead`
-   - Trigger Type: **Custom Event**
-   - Event name: `generate_lead`
-   - This trigger fires on: **All Custom Events**
-
-2. **Trigger Meta Contact:**
-   - Trigger Name: `Custom Event - contact`
-   - Trigger Type: **Custom Event**
-   - Event name: `contact`
-   - This trigger fires on: **All Custom Events**
-
-3. **Trigger Booking Calculator:**
-   - Trigger Name: `Custom Event - calculate_cost`
-   - Trigger Type: **Custom Event**
-   - Event name: `calculate_cost`
+### C. Variables Terpasang:
+| Variable Name | Type | Nilai / Return |
+| :--- | :--- | :--- |
+| **`CONST - Meta Pixel ID`** | Constant | `2242382719666891` |
+| **`DLV - lead_source`** | Data Layer Variable | `lead_source` (Version 2) |
+| **`DLV - value`** | Data Layer Variable | `value` (Version 2) |
+| **Built-in Variables** | System | `Click URL`, `Click Text`, `Click Classes`, `Click ID`, `Scroll Depth Threshold`, `Scroll Depth Units`, `Scroll Direction`, `Page URL`, `Referrer` |
 
 ---
 
-### Langkah C: Buat Tag untuk Google Analytics 4 (GA4)
+## 6. Meta Conversions API (CAPI) & Deduplikasi Otomatis
 
-Buka menu **Tags** &rarr; Klik **New**:
+Website ini kini mengadopsi integrasi **Dual Tracking (Browser Pixel + Server CAPI)** berstandar enterprise dari Meta.
 
-1. **Konfigurasi Tag:**
-   - Tag Name: `GA4 Event - Generate Lead (WhatsApp)`
-   - Tag Type: **Google Analytics: GA4 Event**
-   - Measurement ID: Masukkan ID GA4 Anda (misal `G-XXXXXXXXXX`)
-   - Event Name: `generate_lead`
-   - **Event Parameters**:
-     | Parameter Name | Value |
-     | :--- | :--- |
-     | `lead_source` | `{{dlv - lead_source}}` |
-     | `package_name` | `{{dlv - package_name}}` |
-     | `value` | `{{dlv - value}}` |
-     | `currency` | `{{dlv - currency}}` |
-2. **Triggering:**
-   - Pilih trigger: `Custom Event - generate_lead`
-3. Klik **Save**.
+### Arsitektur Alur CAPI:
+1. Saat pengunjung melakukan aksi:
+   * Website menghasilkan **`event_id`** unik (misal: `ev_1789150503_abc123`).
+   * **Jalur Browser (Pixel via GTM)**: Mengirimkan event ke Meta Pixel dengan parameter `{ eventID: event_id }`.
+   * **Jalur Server (Next.js `/api/capi`)**: Mengirimkan payload ke `https://graph.facebook.com/v21.0/2242382719666891/events` dengan `event_id` yang sama, beserta Client IP, User Agent, Cookies `_fbp`/`_fbc`, dan user phone/first name bila tersedia.
+2. **Deduplikasi Meta**: Meta Ads Manager menerima kedua sinyal, mencocokkan `event_name` dan `event_id`, lalu menggabungkannya menjadi 1 konversi berkualitas tinggi (*Event Match Quality Score 8-10/10*).
+3. **Anti-AdBlock**: Jika pengunjung menggunakan AdBlocker atau Safari iOS yang memblokir script Pixel di browser, event tetap 100% tercatat melalui jalur Server CAPI.
 
----
-
-### Langkah D: Buat Tag untuk Meta Ads (Facebook Pixel)
-
-Jika Anda menggunakan template resmi Meta Pixel di GTM (Facebook Pixel by Facebook Archive):
-
-#### 1. Tag Event `Lead` (Meta Ads)
-- Tag Name: `Meta Pixel - Lead`
-- Tag Type: **Facebook Pixel**
-- Facebook Pixel ID: Masukkan ID Pixel Meta Anda
-- Standard Event: **Lead**
-- Object Properties:
-  - `content_name`: `{{dlv - package_name}}`
-  - `content_category`: `{{dlv - lead_source}}`
-  - `value`: `{{dlv - value}}`
-  - `currency`: `{{dlv - currency}}`
-- Triggering: Pilih `Custom Event - generate_lead`
-
-#### 2. Tag Event `Contact` (Meta Ads)
-- Tag Name: `Meta Pixel - Contact`
-- Tag Type: **Facebook Pixel**
-- Standard Event: **Contact**
-- Object Properties:
-  - `content_category`: `{{dlv - lead_source}}`
-- Triggering: Pilih `Custom Event - contact`
+### Pemisahan Event yang Terhubung ke Meta CAPI:
+| Event Meta | Trigger Interaksi | Parameter Custom Data | Catatan Khusus |
+| :--- | :--- | :--- | :--- |
+| **`Lead`** | **Submit formulir pendaftaran booking kursus** | `content_name`, `value`, `currency: IDR`, `lead_source`, `phone`, `first_name` | **HANYA untuk form submit** |
+| **`Contact`** | **Semua klik tombol WhatsApp / konsultasi / telpon** | `content_name`, `lead_source`, `currency: IDR`, `phone` | **Untuk semua link WhatsApp** |
+| **`FindLocation`** | Klik "Buka di Google Maps" / tautan lokasi | `content_name: 'Amanah Drive Palembang'` | Menandai minat lokasi offline |
+| **`SubmitApplication`**| Submit formulir pendaftaran booking kursus | `content_name: 'Form Pendaftaran Kursus'`, `value` | Event pendamping aplikasi |
 
 ---
 
-## 6. Cara Verifikasi & Testing (Debug Mode)
+## 7. Cara Verifikasi & Testing (Debug Mode)
 
 1. **Tag Assistant GTM:**
-   - Di Google Tag Manager, klik tombol **Preview** di pojok kanan atas.
-   - Masukkan URL website Anda: `https://amanahdrive.my.id` (atau `http://localhost:3000` jika sedang diuji lokal).
-   - Klik salah satu tombol WhatsApp di halaman (misalnya tombol di kartu paket atau floating button).
-   - Di tab Tag Assistant, verifikasi bahwa event `generate_lead` dan `contact` muncul di bar sebelah kiri dan Tag GA4 / Meta Pixel Anda berstatus **Fired**.
+   - Di Google Tag Manager (`https://tagmanager.google.com/#/container/accounts/6376396243/containers/263890439/workspaces/3`), klik tombol **Preview** di pojok kanan atas.
+   - Masukkan URL website Anda: `https://amanahdrive.my.id` (atau `http://localhost:3000` saat pengetesan lokal).
+   - Klik salah satu tombol WhatsApp atau Maps di halaman.
+   - Di tab Tag Assistant, verifikasi bahwa tags `Meta - Contact Event`, `Meta - Lead Event`, dan `Meta - Maps Click Event` berstatus **Fired** dengan variabel `{{DLV - event_id}}`.
 
 2. **Meta Pixel Helper (Chrome Extension):**
-   - Pasang ekstensi Chrome *Meta Pixel Helper*.
-   - Saat mengklik tombol WA, periksa ikon ekstensi berubah menjadi hijau dan event `Lead` / `Contact` tercatat lengkap beserta parameternya.
+   - Pasang ekstensi Chrome [Meta Pixel Helper](https://chromewebstore.google.com/detail/meta-pixel-helper/fdgfkebogiimcoedlicjlajpkdmockpc).
+   - Buka website Anda. Ikon ekstensi akan berubah menjadi hijau dan menampilkan Pixel ID `2242382719666891`.
+   - Cek event `PageView` saat halaman dimuat.
+   - Cek event `Lead` dan `Contact` saat tombol WhatsApp diklik.
 
-3. **Google Analytics 4 DebugView:**
-   - Buka Google Analytics &rarr; Menu Admin &rarr; **DebugView**.
-   - Klik tombol WA di website, maka event `generate_lead` akan langsung muncul secara real-time.
+3. **Events Manager di Meta Ads (Facebook Business Manager):**
+   - Buka **Meta Events Manager** &rarr; Pilih Pixel ID `2242382719666891` &rarr; Tab **Test Events**.
+   - Di kolom sumber data, Anda akan melihat event masuk dengan label **Browser and Server** (artinya deduplikasi Pixel + CAPI aktif).
+
+

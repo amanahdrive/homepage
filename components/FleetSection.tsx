@@ -5,7 +5,11 @@ import { FLEET, generateWhatsAppUrl } from "@/lib/constants";
 import { Car, ShieldCheck, CheckCircle2, MessageCircle } from "lucide-react";
 import { trackWhatsAppLead } from "@/lib/gtm";
 
-export default function FleetSection() {
+interface FleetSectionProps {
+  fleet?: typeof FLEET;
+}
+
+export default function FleetSection({ fleet = FLEET }: FleetSectionProps) {
   return (
     <section id="armada" className="py-10 sm:py-24 relative bg-white border-t border-[rgba(33,34,38,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,7 +30,7 @@ export default function FleetSection() {
 
         {/* Fleet Grid (Clean 12px container, no pill badges) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6">
-          {FLEET.map((car, idx) => (
+          {fleet.map((car, idx) => (
             <div
               key={idx}
               className="antigravity-card p-4 sm:p-6 flex flex-col justify-between"

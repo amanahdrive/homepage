@@ -2,13 +2,17 @@
 
 import React, { useState } from "react";
 import { Check, Star, MessageCircle, Sparkles, ArrowRight, ShieldCheck } from "lucide-react";
-import { PACKAGES, generateWhatsAppUrl } from "@/lib/constants";
+import { PACKAGES, PackageItem, generateWhatsAppUrl } from "@/lib/constants";
 import { trackWhatsAppLead, trackPackageFilter } from "@/lib/gtm";
 
-export default function PricingSection() {
+interface PricingSectionProps {
+  packages?: PackageItem[];
+}
+
+export default function PricingSection({ packages = PACKAGES }: PricingSectionProps) {
   const [filter, setFilter] = useState<"all" | "sim" | "nosim">("all");
 
-  const filteredPackages = PACKAGES.filter((pkg) => {
+  const filteredPackages = packages.filter((pkg) => {
     if (filter === "sim") return pkg.hasSim;
     if (filter === "nosim") return !pkg.hasSim && pkg.id !== "custom";
     return true;
@@ -155,7 +159,7 @@ export default function PricingSection() {
                       Fasilitas Termasuk:
                     </p>
                     <ul className="space-y-1.5 sm:space-y-2">
-                      {pkg.features.map((feat, fIdx) => (
+                      {pkg.features.map((feat: string, fIdx: number) => (
                         <li key={fIdx} className="flex items-start gap-2 text-xs text-[#45474d]">
                           <Check className="w-3.5 h-3.5 text-[#0F7A73] stroke-[2.5] shrink-0 mt-0.5" />
                           <span className="font-medium leading-snug">{feat}</span>
