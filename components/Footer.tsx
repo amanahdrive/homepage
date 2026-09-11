@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { AmanahLogo } from "./Logo";
 import { CONTACT_INFO, STUDENT_CARE, generateWhatsAppUrl } from "@/lib/constants";
-import { MessageCircle, Phone, MapPin, Shield, Lock, ExternalLink, Award, CheckCircle2 } from "lucide-react";
+import { MessageCircle, Phone, MapPin, Shield, Award, CheckCircle2 } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -160,19 +160,6 @@ export default function Footer() {
                 {CONTACT_INFO.bankAccount.bank}: {CONTACT_INFO.bankAccount.number}
               </p>
               <p className="text-[10px] text-slate-500">a.n. {CONTACT_INFO.bankAccount.name}</p>
-            </div>
-
-            <div className="pt-1">
-              <a
-                href="https://management-amanahdrive.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-[11px] text-slate-500 hover:text-slate-300 font-mono transition-colors"
-              >
-                <Lock className="w-3 h-3" />
-                <span>Portal Internal Staff / Admin</span>
-                <ExternalLink className="w-2.5 h-2.5 ml-0.5 opacity-60" />
-              </a>
             </div>
           </div>
 
