@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { MessageCircle, X } from "lucide-react";
 import { STUDENT_CARE, generateWhatsAppUrl } from "@/lib/constants";
+import { trackWhatsAppLead } from "@/lib/gtm";
 
 export default function FloatingWhatsApp() {
   const [showTooltip, setShowTooltip] = useState(false);
@@ -57,6 +58,12 @@ export default function FloatingWhatsApp() {
 
           <a
             href={generateWhatsAppUrl("Halo Kak Lia, saya ingin tanya jadwal & pendaftaran kursus mengemudi.")}
+            onClick={() =>
+              trackWhatsAppLead({
+                lead_source: "floating_whatsapp_popup",
+                button_text: "Chat Langsung di WhatsApp",
+              })
+            }
             target="_blank"
             rel="noopener noreferrer"
             className="antigravity-btn-primary py-1.5 sm:py-2 px-3 text-xs w-full flex items-center justify-center gap-1.5 text-center shadow-sm rounded-lg"
@@ -70,6 +77,12 @@ export default function FloatingWhatsApp() {
       {/* Floating Button with Avatar Badge */}
       <a
         href={generateWhatsAppUrl("Halo Kak Lia, saya ingin tanya informasi kursus Amanah Drive.")}
+        onClick={() =>
+          trackWhatsAppLead({
+            lead_source: "floating_whatsapp_button",
+            button_text: "Chat Kak Lia Floating",
+          })
+        }
         target="_blank"
         rel="noopener noreferrer"
         className="group flex items-center gap-2 sm:gap-2.5 bg-white hover:bg-[#f8f9fc] border border-[rgba(33,34,38,0.12)] p-1 sm:p-1.5 pr-2.5 sm:pr-3.5 rounded-xl shadow-lg transition-all duration-200"

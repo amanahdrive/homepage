@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { TIME_SLOTS, STUDENT_CARE, generateWhatsAppUrl } from "@/lib/constants";
 import { Clock, MessageCircle, Moon, Sun, Sunset, Sparkles } from "lucide-react";
+import { trackWhatsAppLead, trackSlotSelect } from "@/lib/gtm";
 
 export default function SlotSchedule() {
   const [selectedSlot, setSelectedSlot] = useState(TIME_SLOTS[3]); // Slot 4 default (Sore)
@@ -41,7 +42,10 @@ export default function SlotSchedule() {
             return (
               <div
                 key={slot.id}
-                onClick={() => setSelectedSlot(slot)}
+                onClick={() => {
+                  setSelectedSlot(slot);
+                  trackSlotSelect(slot.label, slot.time);
+                }}
                 className={`antigravity-card p-3.5 sm:p-5 cursor-pointer transition-all ${
                   isSelected
                     ? "border-[#121317] shadow-md ring-1 ring-[#121317]"
@@ -101,6 +105,14 @@ export default function SlotSchedule() {
             href={generateWhatsAppUrl(
               `Halo Kak Lia Admin Amanah Drive, saya ingin reservasi jadwal untuk *${selectedSlot.label} (${selectedSlot.time})*. Apakah slot ini masih tersedia?`
             )}
+            onClick={() =>
+              trackWhatsAppLead({
+                lead_source: "slot_schedule",
+                button_text: "Kunci Slot via WhatsApp",
+                selected_slot: selectedSlot.label,
+                slot_time: selectedSlot.time,
+              })
+            }
             target="_blank"
             rel="noopener noreferrer"
             className="antigravity-btn-primary py-2.5 px-5 sm:px-6 text-xs gap-2 rounded-lg shadow-sm"

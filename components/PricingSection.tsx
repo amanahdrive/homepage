@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Check, Star, MessageCircle, Sparkles, ArrowRight, ShieldCheck } from "lucide-react";
 import { PACKAGES, generateWhatsAppUrl } from "@/lib/constants";
+import { trackWhatsAppLead, trackPackageFilter } from "@/lib/gtm";
 
 export default function PricingSection() {
   const [filter, setFilter] = useState<"all" | "sim" | "nosim">("all");
@@ -43,7 +44,10 @@ export default function PricingSection() {
           <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 pt-1 sm:pt-2">
             <button
               type="button"
-              onClick={() => setFilter("all")}
+              onClick={() => {
+                setFilter("all");
+                trackPackageFilter("all");
+              }}
               className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-semibold transition-all ${
                 filter === "all"
                   ? "bg-[#121317] text-white shadow-sm"
@@ -54,7 +58,10 @@ export default function PricingSection() {
             </button>
             <button
               type="button"
-              onClick={() => setFilter("sim")}
+              onClick={() => {
+                setFilter("sim");
+                trackPackageFilter("with_sim");
+              }}
               className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-semibold transition-all ${
                 filter === "sim"
                   ? "bg-[#121317] text-white shadow-sm"
@@ -65,7 +72,10 @@ export default function PricingSection() {
             </button>
             <button
               type="button"
-              onClick={() => setFilter("nosim")}
+              onClick={() => {
+                setFilter("nosim");
+                trackPackageFilter("course_only");
+              }}
               className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-semibold transition-all ${
                 filter === "nosim"
                   ? "bg-[#121317] text-white shadow-sm"
@@ -164,6 +174,17 @@ export default function PricingSection() {
 
                   <a
                     href={generateWhatsAppUrl(waMsg)}
+                    onClick={() =>
+                      trackWhatsAppLead({
+                        lead_source: "pricing_card",
+                        button_text: "Daftar via WhatsApp",
+                        package_id: pkg.id,
+                        package_name: pkg.name,
+                        package_price: pkg.price,
+                        sessions: pkg.sessions,
+                        has_sim: pkg.hasSim,
+                      })
+                    }
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`w-full py-2.5 px-4 rounded-lg font-medium text-xs flex items-center justify-center gap-2 transition-all shadow-sm ${
@@ -196,6 +217,14 @@ export default function PricingSection() {
           </div>
           <a
             href={generateWhatsAppUrl("Halo Kak Lia Admin Amanah Drive, saya ingin konsultasi paket khusus / pakai mobil sendiri.")}
+            onClick={() =>
+              trackWhatsAppLead({
+                lead_source: "pricing_custom_banner",
+                button_text: "Konsultasi Gratis via WA",
+                package_name: "Paket Khusus / Privat",
+                package_price: 0,
+              })
+            }
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 text-xs font-bold text-[#0F7A73] hover:text-[#092E2B] underline underline-offset-2"

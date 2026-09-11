@@ -4,12 +4,17 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { FAQS, STUDENT_CARE, generateWhatsAppUrl } from "@/lib/constants";
 import { HelpCircle, ChevronDown, MessageCircle } from "lucide-react";
+import { trackWhatsAppLead, trackFaqToggle } from "@/lib/gtm";
 
 export default function FAQSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(0); // First item open by default
 
   const toggle = (idx: number) => {
-    setOpenIdx(openIdx === idx ? null : idx);
+    const nextState = openIdx === idx ? null : idx;
+    setOpenIdx(nextState);
+    if (nextState !== null && FAQS[idx]) {
+      trackFaqToggle(FAQS[idx].q, true);
+    }
   };
 
   return (
@@ -86,6 +91,12 @@ export default function FAQSection() {
           
           <a
             href={generateWhatsAppUrl("Halo Kak Lia Admin Amanah Drive, saya mau tanya hal lain seputar kursus mengemudi.")}
+            onClick={() =>
+              trackWhatsAppLead({
+                lead_source: "faq_helpdesk",
+                button_text: "Tanya Kak Lia via WhatsApp",
+              })
+            }
             target="_blank"
             rel="noopener noreferrer"
             className="antigravity-btn-primary py-2.5 px-4 sm:px-5 text-xs gap-2 rounded-lg shrink-0 shadow-sm w-full sm:w-auto text-center"

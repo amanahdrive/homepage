@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { AmanahLogoLandscape } from "./Logo";
 import { CONTACT_INFO, STUDENT_CARE, generateWhatsAppUrl } from "@/lib/constants";
 import { MessageCircle, Phone, MapPin, Shield, Award, CheckCircle2 } from "lucide-react";
+import { trackWhatsAppLead } from "@/lib/gtm";
 
 export default function Footer() {
   return (
@@ -145,6 +148,12 @@ export default function Footer() {
               </p>
               <a
                 href={generateWhatsAppUrl("Halo Kak Lia, saya ingin konsultasi jadwal kursus mengemudi.")}
+                onClick={() =>
+                  trackWhatsAppLead({
+                    lead_source: "footer_student_care",
+                    button_text: "Hubungi Kak Lia",
+                  })
+                }
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-xs text-teal-300 hover:text-white font-semibold"

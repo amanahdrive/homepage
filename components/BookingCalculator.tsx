@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { PACKAGES, STUDENT_CARE, generateWhatsAppUrl } from "@/lib/constants";
 import { Calculator, MessageCircle, Sparkles, ArrowRight } from "lucide-react";
+import { trackWhatsAppLead, trackCalculationEvent } from "@/lib/gtm";
 
 export default function BookingCalculator() {
   const [selectedPkgId, setSelectedPkgId] = useState("pro");
@@ -28,6 +29,19 @@ export default function BookingCalculator() {
   const roundedDP = Math.ceil(estimatedDP / 50000) * 50000;
 
   const handleBooking = () => {
+    // Track conversion lead
+    trackWhatsAppLead({
+      lead_source: "booking_calculator",
+      button_text: "Kirim Rencana Kursus ke Kak Lia",
+      student_name: studentName.trim() || undefined,
+      package_name: currentPkg.name,
+      package_price: currentPkg.price,
+      vehicle_type: vehicle,
+      preferred_slot: slotCategory,
+      start_target: targetStart,
+      estimated_dp: roundedDP,
+    });
+
     let msg = `*FORMULIR RESERVASI KURSUS AMANAH DRIVE*\n`;
     if (studentName.trim()) {
       msg += `• *Nama Calon Siswa:* ${studentName.trim()}\n`;

@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { CONTACT_INFO, STUDENT_CARE, generateWhatsAppUrl } from "@/lib/constants";
 import { MapPin, MessageCircle, Clock, CreditCard, CheckCircle2, Building2, ExternalLink } from "lucide-react";
+import { trackWhatsAppLead, trackLocationView } from "@/lib/gtm";
 
 export default function LocationSection() {
   const coverageAreas = [
@@ -22,60 +25,56 @@ export default function LocationSection() {
         <div className="text-left max-w-3xl mb-6 sm:mb-12 space-y-2 sm:space-y-3">
           <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-mono font-semibold uppercase tracking-wider text-[#0F7A73]">
             <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-            <span>Pusat Operasional &amp; Jangkauan Layanan</span>
+            <span>Lokasi Operasional &amp; Antar Jemput</span>
           </div>
           <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#121317] tracking-tight leading-snug">
-            Lokasi Kantor &amp; Peta Jangkauan Palembang
+            Kantor &amp; Area Antar-Jemput Gratis Palembang
           </h2>
           <p className="text-[#45474d] text-xs sm:text-base leading-relaxed">
-            Amanah Drive melayani kursus mengemudi di seluruh penjuru Kota Palembang. Tersedia penjemputan langsung ke rumah siswa maupun pertemuan di titik kumpul yang strategis.
+            Tidak perlu repot datang ke tempat latihan jika rumah Anda berada dalam area layanan kami. Instruktur kami siap menjemput dan mengantar Anda pulang dengan armada latihan resmi.
           </p>
         </div>
 
-        {/* 2-Column Balanced Architecture */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+        {/* Two Column Bento Grid: Left Details & Right Google Maps */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 items-stretch">
           
-          {/* Left Column: Office & Operational Details (5 cols) */}
+          {/* Left Column: Office info & Pickup coverage (5 cols) */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-4 sm:space-y-6">
-            <div className="space-y-4 sm:space-y-6">
+            <div className="antigravity-card p-4 sm:p-6 bg-[#f8f9fc] border border-[rgba(33,34,38,0.08)] rounded-xl space-y-3.5 sm:space-y-5">
               
-              {/* Office Details */}
-              <div className="space-y-1.5 sm:space-y-2">
-                <span className="text-[10px] sm:text-[11px] font-mono font-bold text-[#0F7A73] uppercase tracking-wider">
-                  Badan Usaha Resmi CV
-                </span>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-[#121317] tracking-tight">
-                  {CONTACT_INFO.companyName}
+              {/* Office Location */}
+              <div className="space-y-1 sm:space-y-1.5">
+                <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#0F7A73]">
+                  <Building2 className="w-3.5 h-3.5" />
+                  <span>Kantor Operasional:</span>
+                </div>
+                <h3 className="text-sm sm:text-base font-bold text-[#121317] leading-snug">
+                  {CONTACT_INFO.address}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#45474d] flex items-start gap-2 pt-0.5 sm:pt-1 leading-relaxed">
-                  <Building2 className="w-4 h-4 text-[#0F7A73] shrink-0 mt-0.5" />
-                  <span>{CONTACT_INFO.address}</span>
+                <p className="text-[11px] sm:text-xs text-[#45474d] leading-relaxed">
+                  (Dekat simpang Bukit Lama &amp; Universitas Sriwijaya Bukit)
                 </p>
               </div>
 
-              {/* Hours & Schedule Info */}
+              {/* Operating Hours */}
               <div className="pt-3 sm:pt-4 border-t border-[rgba(33,34,38,0.08)] space-y-1 sm:space-y-1.5 text-xs text-[#45474d]">
                 <div className="flex items-center gap-2 font-bold text-[#121317]">
                   <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0F7A73]" />
-                  <span>Jam Operasional Sesi Latihan:</span>
+                  <span>Jam Operasional Layanan:</span>
                 </div>
-                <p className="font-mono pl-5 sm:pl-6 text-[#121317] font-semibold text-xs sm:text-sm">
+                <p className="text-[11px] sm:text-xs pl-5 sm:pl-6 text-[#121317] font-mono">
                   {CONTACT_INFO.operationalHours}
                 </p>
-                <p className="text-[10px] sm:text-[11px] text-[#0F7A73] pl-5 sm:pl-6">
-                  *Tersedia 6 slot harian (pagi, siang, sore &amp; malam hingga 22:00 WIB)
+                <p className="text-[10px] sm:text-[11px] pl-5 sm:pl-6 text-[#9aa0a6]">
+                  Latihan tetap berjalan normal setiap hari Sabtu, Minggu, dan tanggal merah.
                 </p>
               </div>
 
-              {/* Coverage List */}
-              <div className="pt-3 sm:pt-4 border-t border-[rgba(33,34,38,0.08)] space-y-2 sm:space-y-2.5">
+              {/* Free Pick-Up Coverage Areas */}
+              <div className="pt-3 sm:pt-4 border-t border-[rgba(33,34,38,0.08)] space-y-1.5 sm:space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] sm:text-xs font-mono font-bold text-[#121317] uppercase tracking-wider">
-                    Area Gratis Antar-Jemput:
-                  </span>
-                  <span className="text-[10px] sm:text-[11px] font-mono text-[#0F7A73] font-semibold">
-                    Kota Palembang
-                  </span>
+                  <span className="text-xs font-bold text-[#121317]">Wilayah Bebas Biaya Antar-Jemput:</span>
+                  <span className="text-[9px] sm:text-[10px] font-mono font-bold text-[#10B981] bg-[#E6F4F2] px-1.5 py-0.5 rounded">GRATIS</span>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2 text-xs text-[#45474d]">
@@ -91,28 +90,18 @@ export default function LocationSection() {
                 </p>
               </div>
 
-              {/* Bank Account */}
-              <div className="pt-3 sm:pt-4 border-t border-[rgba(33,34,38,0.08)] space-y-1 sm:space-y-1.5 text-xs">
-                <div className="flex items-center gap-2 font-bold text-[#121317]">
-                  <CreditCard className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-600" />
-                  <span>Rekening Resmi Pembayaran DP:</span>
-                </div>
-                <div className="pl-5 sm:pl-6 text-[#45474d] space-y-0.5">
-                  <p className="font-mono text-[#121317] text-xs sm:text-sm font-extrabold tracking-wider">
-                    {CONTACT_INFO.bankAccount.bank} {CONTACT_INFO.bankAccount.number}
-                  </p>
-                  <p className="text-[10px] sm:text-[11px]">
-                    a.n. <strong className="text-[#121317]">{CONTACT_INFO.bankAccount.name}</strong> (Student Care Coordinator)
-                  </p>
-                </div>
-              </div>
-
             </div>
 
             {/* Direct WhatsApp CTA Button */}
             <div className="pt-2">
               <a
                 href={generateWhatsAppUrl("Halo Kak Lia, saya ingin bertanya jangkauan antar-jemput atau koordinasi titik temu terdekat.")}
+                onClick={() =>
+                  trackWhatsAppLead({
+                    lead_source: "location_section",
+                    button_text: "Konsultasi Penjemputan via WhatsApp",
+                  })
+                }
                 target="_blank"
                 rel="noopener noreferrer"
                 className="antigravity-btn-primary w-full py-2.5 sm:py-3 px-4 sm:px-5 text-xs gap-2 rounded-lg"
@@ -143,6 +132,7 @@ export default function LocationSection() {
               <span>Google Maps Resmi: Amanah Drive Palembang</span>
               <a
                 href="https://maps.app.goo.gl/yQW2X"
+                onClick={() => trackLocationView("Amanah Drive Palembang Google Maps")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#0F7A73] hover:underline inline-flex items-center gap-1"

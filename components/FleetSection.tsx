@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import { FLEET, generateWhatsAppUrl } from "@/lib/constants";
 import { Car, ShieldCheck, CheckCircle2, MessageCircle } from "lucide-react";
+import { trackWhatsAppLead } from "@/lib/gtm";
 
 export default function FleetSection() {
   return (
@@ -65,6 +68,13 @@ export default function FleetSection() {
 
                 <a
                   href={generateWhatsAppUrl(`Halo Kak Lia, saya ingin tanya ketersediaan armada latihan ${car.name}.`)}
+                  onClick={() =>
+                    trackWhatsAppLead({
+                      lead_source: "fleet_section",
+                      button_text: "Pilih Unit",
+                      vehicle_type: car.name,
+                    })
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs font-semibold text-[#121317] hover:text-[#0F7A73] flex items-center gap-1 transition-colors"

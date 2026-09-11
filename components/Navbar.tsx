@@ -6,6 +6,7 @@ import Image from "next/image";
 import { AmanahLogo } from "./Logo";
 import { MessageCircle, Menu, X, Phone, ShieldCheck } from "lucide-react";
 import { CONTACT_INFO, STUDENT_CARE, generateWhatsAppUrl } from "@/lib/constants";
+import { trackWhatsAppLead, trackPhoneCall } from "@/lib/gtm";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -93,6 +94,7 @@ export default function Navbar() {
           <div className="hidden sm:flex items-center gap-2 xl:gap-3 shrink-0">
             <a
               href={`tel:${CONTACT_INFO.phoneRaw}`}
+              onClick={() => trackPhoneCall("navbar_desktop")}
               className="hidden xl:flex items-center gap-1.5 text-xs text-[#45474d] hover:text-[#121317] font-medium px-2 py-1.5 rounded-lg hover:bg-[#f8f9fc] transition-colors whitespace-nowrap shrink-0"
             >
               <Phone className="w-3.5 h-3.5 text-[#0F7A73] shrink-0" />
@@ -101,6 +103,12 @@ export default function Navbar() {
 
             <a
               href={generateWhatsAppUrl("Halo Kak Lia, saya ingin konsultasi pendaftaran kursus Amanah Drive.")}
+              onClick={() =>
+                trackWhatsAppLead({
+                  lead_source: "navbar_desktop",
+                  button_text: "Chat Kak Lia",
+                })
+              }
               target="_blank"
               rel="noopener noreferrer"
               className="antigravity-btn-primary py-2 px-3.5 xl:px-4 text-xs gap-1.5 rounded-lg shadow-sm whitespace-nowrap shrink-0"
@@ -123,6 +131,12 @@ export default function Navbar() {
           <div className="flex sm:hidden items-center gap-2">
             <a
               href={generateWhatsAppUrl("Halo Kak Lia, saya ingin konsultasi pendaftaran.")}
+              onClick={() =>
+                trackWhatsAppLead({
+                  lead_source: "navbar_mobile_button",
+                  button_text: "WhatsApp Mobile Header",
+                })
+              }
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 bg-[#121317] rounded-lg text-white"
@@ -159,6 +173,12 @@ export default function Navbar() {
               <span className="font-mono">{CONTACT_INFO.phoneDisplay}</span>
               <a
                 href={generateWhatsAppUrl("Halo Kak Lia, saya mau tanya kursus.")}
+                onClick={() =>
+                  trackWhatsAppLead({
+                    lead_source: "navbar_mobile_menu",
+                    button_text: "WhatsApp Resmi Mobile Dropdown",
+                  })
+                }
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#0F7A73] font-bold"

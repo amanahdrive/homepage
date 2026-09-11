@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
-import { ShieldCheck, Calendar, CheckCircle2, Navigation, Sliders, Car, TrendingUp, Moon } from "lucide-react";
+import { ShieldCheck, Calendar, CheckCircle2, Navigation, Sliders, Car, TrendingUp, Moon, Sparkles } from "lucide-react";
+import { pushToDataLayer } from "@/lib/gtm";
 
 export default function Hero() {
   const capabilities = [
@@ -37,6 +40,13 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 pt-1 sm:pt-2">
             <a
               href="#jadwal"
+              onClick={() =>
+                pushToDataLayer({
+                  event: "cta_click",
+                  cta_name: "daftar_slot_latihan",
+                  cta_location: "hero",
+                })
+              }
               className="antigravity-btn-primary w-full sm:w-auto text-xs sm:text-sm py-2.5 px-4 sm:py-3 sm:px-6 shadow-sm gap-2 rounded-lg"
             >
               <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -45,6 +55,13 @@ export default function Hero() {
 
             <a
               href="#kalkulator"
+              onClick={() =>
+                pushToDataLayer({
+                  event: "cta_click",
+                  cta_name: "simulasi_biaya_dp",
+                  cta_location: "hero",
+                })
+              }
               className="antigravity-btn-secondary w-full sm:w-auto text-xs sm:text-sm py-2.5 px-4 sm:py-3 sm:px-6 gap-2 rounded-lg"
             >
               <span>Simulasi Biaya &amp; DP</span>
