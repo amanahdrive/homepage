@@ -15,9 +15,9 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#071513] text-slate-100 flex flex-col selection:bg-teal-600 selection:text-white relative">
-      {/* Background Mesh Grid */}
-      <div className="fixed inset-0 mesh-pattern opacity-40 pointer-events-none -z-20" />
+    <div className="min-h-screen bg-[#ffffff] text-[#121317] flex flex-col selection:bg-[#121317] selection:text-white relative font-sans">
+      {/* Background Antigravity Radial Dot Pattern */}
+      <div className="fixed inset-0 antigravity-grid-pattern opacity-70 pointer-events-none -z-20" />
 
       {/* Navigation */}
       <Navbar />

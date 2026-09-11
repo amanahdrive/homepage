@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -15,23 +15,24 @@ export default function SlotSchedule() {
   };
 
   return (
-    <section id="jadwal" className="py-20 md:py-28 relative bg-[#071513]">
+    <section id="jadwal" className="py-20 sm:py-28 relative bg-white border-t border-[rgba(33,34,38,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
+        {/* Antigravity Section Header */}
         <div className="text-left max-w-3xl mb-12 space-y-3">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[6px] text-xs font-bold uppercase tracking-wider bg-teal-950 text-teal-400 border border-teal-500/30">
-            <Clock className="w-3.5 h-3.5" /> Jadwal Super Fleksibel
+          <span className="antigravity-chip">
+            <Clock className="w-3.5 h-3.5 text-[#0F7A73]" />
+            <span>Jadwal Super Fleksibel</span>
           </span>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#121317] tracking-tight">
             Pilihan 6 Slot Waktu Harian (09.00 - 22.00 WIB)
           </h2>
-          <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+          <p className="text-[#45474d] text-sm sm:text-base leading-relaxed">
             Tidak perlu khawatir terbentur jam kantor atau kuliah. Anda bebas memilih slot pagi yang teduh, sore hari, hingga slot malam hari yang tenang dan bebas macet.
           </p>
         </div>
 
-        {/* Slot Grid (12px console cards) */}
+        {/* Slot Grid in Clean Antigravity Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
           {TIME_SLOTS.map((slot) => {
             const Icon = getSlotIcon(slot.id);
@@ -41,59 +42,59 @@ export default function SlotSchedule() {
               <div
                 key={slot.id}
                 onClick={() => setSelectedSlot(slot)}
-                className={`console-card p-5 border cursor-pointer transition-all ${
+                className={`antigravity-card p-5 cursor-pointer transition-all ${
                   isSelected
-                    ? "border-teal-400 bg-[#0A2421] shadow-sm"
-                    : "border-slate-800 bg-[#0D2320] hover:border-teal-900"
+                    ? "border-[#121317] shadow-md ring-1 ring-[#121317]"
+                    : "border-[rgba(33,34,38,0.08)] bg-white hover:border-[rgba(33,34,38,0.2)]"
                 }`}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2.5">
                     <div
-                      className={`w-8 h-8 rounded-md flex items-center justify-center ${
+                      className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${
                         isSelected
-                          ? "bg-[#0F7A73] text-white"
-                          : "bg-[#091E1C] text-slate-400 border border-slate-800"
+                          ? "bg-[#121317] text-white"
+                          : "bg-[#f8f9fc] text-[#45474d] border border-[rgba(33,34,38,0.06)]"
                       }`}
                     >
                       <Icon className="w-4 h-4" />
                     </div>
-                    <span className="font-bold text-white text-sm">{slot.label}</span>
+                    <span className="font-bold text-[#121317] text-sm">{slot.label}</span>
                   </div>
                   <span
-                    className={`text-[10px] font-semibold px-2 py-0.5 rounded-[4px] border ${
+                    className={`text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full border ${
                       slot.id >= 5
-                        ? "bg-indigo-950 text-indigo-300 border-indigo-500/30"
-                        : "bg-teal-950 text-teal-300 border-teal-500/30"
+                        ? "bg-indigo-50 text-indigo-700 border-indigo-200"
+                        : "bg-[#E6F4F2] text-[#0F7A73] border-[#0F7A73]/20"
                     }`}
                   >
                     {slot.badge}
                   </span>
                 </div>
 
-                <div className="text-xl font-bold text-white mb-1 tracking-tight tabular-nums">
+                <div className="text-xl font-bold text-[#121317] mb-1 tracking-tight tabular-nums">
                   {slot.time}
                 </div>
-                <p className="text-xs text-slate-400 mb-3">{slot.desc}</p>
+                <p className="text-xs text-[#45474d] mb-3">{slot.desc}</p>
 
-                <div className="pt-2.5 border-t border-slate-800/60 flex items-center justify-between text-[11px]">
-                  <span className="text-slate-400">Durasi Sesi:</span>
-                  <span className="text-teal-300 font-semibold">90 Menit Efektif</span>
+                <div className="pt-2.5 border-t border-[rgba(33,34,38,0.06)] flex items-center justify-between text-[11px]">
+                  <span className="text-[#9aa0a6] font-mono">Durasi:</span>
+                  <span className="text-[#0F7A73] font-bold">90 Menit Efektif</span>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Selected Slot Callout */}
-        <div className="max-w-2xl mx-auto console-card p-5 sm:p-6 border border-teal-500/40 bg-[#09221F] text-center space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-[4px] bg-teal-950 text-teal-300 text-xs font-bold border border-teal-500/30">
-            <Sparkles className="w-3 h-3 text-amber-400" /> Slot yang Anda Pilih:
+        {/* Selected Slot Callout Card */}
+        <div className="max-w-2xl mx-auto antigravity-card p-6 sm:p-7 bg-[#f8f9fc] border border-[rgba(33,34,38,0.08)] text-center space-y-4 rounded-2xl">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-[#121317] text-xs font-mono font-bold border border-[rgba(33,34,38,0.08)]">
+            <Sparkles className="w-3.5 h-3.5 text-amber-500" /> Slot Dipilih:
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold text-white tabular-nums">
+          <h3 className="text-2xl font-extrabold text-[#121317] tracking-tight tabular-nums">
             {selectedSlot.label} &mdash; {selectedSlot.time}
           </h3>
-          <p className="text-xs text-slate-300 max-w-md mx-auto">
+          <p className="text-xs sm:text-sm text-[#45474d] max-w-md mx-auto">
             Ingin mengunci slot ini sebelum terisi siswa lain? Hubungi Kak Lia via WhatsApp untuk cek ketersediaan instruktur dan konfirmasi armada.
           </p>
           <a
@@ -102,9 +103,9 @@ export default function SlotSchedule() {
             )}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0F7A73] hover:bg-[#128B83] text-white font-semibold text-xs py-3 px-6 rounded-lg border border-teal-400/40 shadow-sm transition-all"
+            className="antigravity-btn-primary py-2.5 px-6 text-xs gap-2 rounded-full shadow-sm"
           >
-            <div className="relative w-4 h-4 rounded-full overflow-hidden border border-teal-200 shrink-0">
+            <div className="relative w-4 h-4 rounded-full overflow-hidden border border-white/40 shrink-0">
               <Image
                 src={STUDENT_CARE.avatar}
                 alt={STUDENT_CARE.name}
@@ -113,7 +114,7 @@ export default function SlotSchedule() {
                 className="object-cover"
               />
             </div>
-            <span>Kunci Slot {selectedSlot.label} via WhatsApp Kak Lia</span>
+            <span>Kunci Slot {selectedSlot.label} via WhatsApp</span>
           </a>
         </div>
 
@@ -121,4 +122,3 @@ export default function SlotSchedule() {
     </section>
   );
 }
-

@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { ShieldAlert, HeartHandshake, FileCheck2, Clock, Car, Award, Sparkles, CheckCircle2 } from "lucide-react";
 
 export default function FeatureBento() {
@@ -7,15 +7,15 @@ export default function FeatureBento() {
       icon: ShieldAlert,
       title: "Dual Pedal Safety System",
       badge: "Garansi 100% Aman",
-      desc: "Seluruh mobil latihan kami telah dipasang pedal rem & kopling tambahan di sisi instruktur. Menghilangkan risiko panik atau salah injak pedal saat melatih reflek di jalan raya.",
+      desc: "Seluruh mobil latihan kami dilengkapi pedal rem & kopling tambahan di sisi instruktur. Menghilangkan risiko panik atau salah injak pedal saat melatih reflek di jalan raya.",
       points: ["Intervensi rem instan dari instruktur", "Siswa tidak perlu takut menabrak", "Aman untuk simulasi jalan padat"],
     },
     {
       icon: HeartHandshake,
       title: "Instruktur Ramah & Anti-Bentak",
       badge: "Pendekatan Humanis",
-      desc: "Trauma pernah dimarahi saat belajar mengemudi? Di Amanah Drive, instruktur terikat SOP kesabaran tinggi, komunikatif, dan menciptakan suasana tenang agar rasa grogi cepat hilang.",
-      points: ["Instruktur bersertifikasi resmi BNSP", "Metode empati untuk pemula & wanita", "Fokus membina rasa percaya diri"],
+      desc: "Pernah trauma dimarahi saat belajar mengemudi? Di Amanah Drive, instruktur terikat SOP kesabaran tinggi, komunikatif, dan menciptakan suasana tenang agar rasa grogi cepat hilang.",
+      points: ["Instruktur bersertifikasi resmi", "Metode empati untuk pemula & wanita", "Fokus membina rasa percaya diri"],
     },
     {
       icon: FileCheck2,
@@ -48,55 +48,56 @@ export default function FeatureBento() {
   ];
 
   return (
-    <section id="keunggulan" className="py-20 md:py-28 relative">
+    <section id="keunggulan" className="py-20 sm:py-28 relative bg-[#f8f9fc] border-y border-[rgba(33,34,38,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-left max-w-3xl mb-12 space-y-3">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[6px] text-xs font-bold uppercase tracking-wider bg-teal-950 text-teal-400 border border-teal-500/30">
-            <Sparkles className="w-3.5 h-3.5" /> Standar Keunggulan
+        {/* Antigravity Section Header */}
+        <div className="text-left max-w-3xl mb-14 space-y-3">
+          <span className="antigravity-chip">
+            <Sparkles className="w-3.5 h-3.5 text-[#0F7A73]" />
+            <span>Standar Keunggulan</span>
           </span>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#121317] tracking-tight">
             Mengapa Amanah Drive Pilihan Utama di Palembang?
           </h2>
-          <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-            Kami mengutamakan keselamatan fisik, ketenangan mental, dan metode pembelajaran bertahap agar siapa pun dapat mengemudi dengan mandiri tanpa rasa cemas.
+          <p className="text-[#45474d] text-sm sm:text-base leading-relaxed">
+            Kami memadukan keselamatan fisik, ketenangan mental, dan metode pembelajaran bertahap agar siapa pun dapat mengemudi mandiri tanpa rasa cemas di jalan raya.
           </p>
         </div>
 
-        {/* Grid Bento with 12px Container Radius & Hairline Precision */}
+        {/* Antigravity Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="console-card p-6 border border-slate-800 flex flex-col justify-between"
+                className="antigravity-card p-6 sm:p-7 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#091E1C] border border-teal-500/30 flex items-center justify-center text-teal-400">
-                      <Icon className="w-5 h-5" />
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="w-12 h-12 rounded-full bg-[#f8f9fc] border border-[rgba(33,34,38,0.08)] flex items-center justify-center text-[#121317]">
+                      <Icon className="w-5 h-5 text-[#0F7A73]" />
                     </div>
-                    <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-[4px] bg-[#071513] text-teal-300 border border-teal-900">
+                    <span className="text-[11px] font-mono font-bold px-2.5 py-1 rounded-full bg-[#f0f1f5] text-[#45474d] border border-[rgba(33,34,38,0.06)]">
                       {item.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-white mb-2">
+                  <h3 className="text-lg font-bold text-[#121317] mb-2 tracking-tight">
                     {item.title}
                   </h3>
 
-                  <p className="text-xs text-slate-300 leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-[#45474d] leading-relaxed mb-6">
                     {item.desc}
                   </p>
                 </div>
 
-                <ul className="space-y-2 pt-4 border-t border-slate-800/80">
+                <ul className="space-y-2 pt-4 border-t border-[rgba(33,34,38,0.06)]">
                   {item.points.map((pt, pIdx) => (
-                    <li key={pIdx} className="flex items-center gap-2 text-xs text-slate-300">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                      <span>{pt}</span>
+                    <li key={pIdx} className="flex items-center gap-2 text-xs text-[#45474d]">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981] shrink-0" />
+                      <span className="font-medium">{pt}</span>
                     </li>
                   ))}
                 </ul>
@@ -109,4 +110,3 @@ export default function FeatureBento() {
     </section>
   );
 }
-
