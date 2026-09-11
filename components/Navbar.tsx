@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import { AmanahLogo } from "./Logo";
 import { MessageCircle, Menu, X, Phone, ShieldCheck, Sparkles } from "lucide-react";
 import { CONTACT_INFO, generateWhatsAppUrl } from "@/lib/constants";
 
@@ -59,14 +59,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-10 h-10 rounded-xl bg-teal-900/50 border border-teal-500/30 flex items-center justify-center p-1.5 shadow-md shadow-teal-950/50 group-hover:border-teal-400/60 transition-all">
-              <Image
-                src="/assets/logo-amdri-symbol.png"
-                alt="Amanah Drive Logo"
-                width={36}
-                height={36}
-                className="object-contain"
-                priority
-              />
+              <AmanahLogo className="w-8 h-8" />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">

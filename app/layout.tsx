@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     images: ["/assets/amdri-banner.jpg"],
   },
   icons: {
-    icon: "/assets/logo-amdri-symbol.png",
-    apple: "/assets/app-icon-1024.png",
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
   },
 };
 
