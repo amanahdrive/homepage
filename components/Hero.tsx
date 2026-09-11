@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import { AmanahLogo } from "./Logo";
 import { Shield, Award, Calendar, CheckCircle2, Star, ArrowRight, MessageCircle, MapPin, Users, Sparkles } from "lucide-react";
 import { CONTACT_INFO, generateWhatsAppUrl } from "@/lib/constants";
 
@@ -92,13 +92,7 @@ export default function Hero() {
                 <div className="flex items-center justify-between pb-6 border-b border-slate-800">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-2xl bg-teal-900/60 border border-teal-400/30 flex items-center justify-center p-2">
-                      <Image
-                        src="/assets/logo-amdri-symbol.png"
-                        alt="Amanah Drive Symbol"
-                        width={40}
-                        height={40}
-                        className="object-contain"
-                      />
+                      <AmanahLogo className="w-9 h-9" />
                     </div>
                     <div>
                       <h2 className="text-white font-bold text-base leading-snug">Amanah Drive Palembang</h2>
