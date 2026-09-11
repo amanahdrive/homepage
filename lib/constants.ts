@@ -144,11 +144,11 @@ export const TIME_SLOTS = [
 export const INSTRUCTORS = [
   {
     name: "Kak Syawal",
-    role: "Senior Instructor",
+    role: "Senior Lead Instructor",
     exp: "5+ Tahun Pengalaman",
     speciality: "Spesialis Siswa Pemula, Sangat Ramah & Sabar Tanpa Menekan",
     quote: "Kunci mengemudi itu tenang. Grogi itu wajar, tugas saya mendampingi sampai kamu merasa stir itu bagian dari tubuhmu.",
-    avatar: "/assets/logo-amdri-symbol.png",
+    avatar: "/staff_models/Syawal.png",
   },
   {
     name: "Kak Risky",
@@ -156,7 +156,7 @@ export const INSTRUCTORS = [
     exp: "4+ Tahun Pengalaman",
     speciality: "Ahli Trik Parkir Paralel Sempit, Mall & Tanjakan Ekstrem",
     quote: "Parkir dan tanjakan itu soal rumus dan feeling. Sekali paham ritmenya, kamu nggak akan pernah panik lagi.",
-    avatar: "/assets/logo-amdri-symbol.png",
+    avatar: "/staff_models/Risky.png",
   },
   {
     name: "Kak Alpi",
@@ -164,7 +164,7 @@ export const INSTRUCTORS = [
     exp: "4+ Tahun Pengalaman",
     speciality: "Spesialis Jalan Protokol Padat, Putar Balik & Kecepatan Responsif",
     quote: "Palembang lalu lintasnya dinamis. Saya ajarkan cara membaca gerak kendaraan lain agar selalu selamat.",
-    avatar: "/assets/logo-amdri-symbol.png",
+    avatar: "/staff_models/Alpi.png",
   },
   {
     name: "Kak Alfi",
@@ -172,9 +172,18 @@ export const INSTRUCTORS = [
     exp: "3+ Tahun Pengalaman",
     speciality: "Spesialis Haluan Sempit, Gang Perumahan & Setengah Kopling",
     quote: "Jangan takut mati mesin. Bersama kami, kamu akan paham titik gigit kopling sampai mengemudi terasa seringan nafas.",
-    avatar: "/assets/logo-amdri-symbol.png",
+    avatar: "/staff_models/Alfi.png",
   },
 ];
+
+export const STUDENT_CARE = {
+  name: "Kak Lia (Nur Awalia)",
+  role: "Student Care & Konsultasi Resmi",
+  desc: "Koordinator pendaftaran, pendampingan berkas SIM A, dan jadwal latihan fleksibel siswa Amanah Drive.",
+  avatar: "/staff_models/Lia.png",
+  phoneDisplay: "0822-7909-1096",
+  status: "Online WhatsApp",
+};
 
 export const FLEET = [
   {

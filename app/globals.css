@@ -1,68 +1,120 @@
+/* Hallmark · macrostructure: Split Studio · theme: Teal Console · genre: utilitarian-editorial · nav: N1b · footer: Ft5 */
 @import "tailwindcss";
 
 :root {
-  --primary: #0F7A73;
-  --primary-dark: #092E2B;
-  --primary-light: #14B8A6;
-  --primary-subtle: #E6F4F2;
-  --gold: #F59E0B;
-  --emerald: #10B981;
+  /* Brand Chromas & System from BRANDING_SYSTEM.md */
+  --brand-teal: #0F7A73;
+  --brand-teal-dark: #092E2B;
+  --brand-teal-light: #14B8A6;
+  --brand-teal-subtle: #E6F4F2;
+  --brand-teal-glow: rgba(20, 184, 166, 0.20);
+  
+  /* Status Chromas */
+  --status-emerald: #10B981;
+  --status-amber: #F59E0B;
+  --status-rose: #F43F5E;
+  --status-sky: #38BDF8;
+
+  /* Surfaces */
+  --surface-ground: #071513;
+  --surface-card: #0D2320;
+  --surface-card-hover: #122F2B;
+  --surface-elevated: #163833;
+  
+  /* Borders */
+  --border-hairline: rgba(20, 184, 166, 0.18);
+  --border-hairline-subtle: rgba(255, 255, 255, 0.08);
+  --border-hairline-hover: rgba(20, 184, 166, 0.40);
+
+  /* Typography & Standards */
+  --font-inter: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius-container: 12px;
+  --radius-control: 8px;
+  --radius-badge: 6px;
 }
 
-html {
+html, body {
+  overflow-x: clip;
   scroll-behavior: smooth;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-body {
-  background-color: #071513;
+  font-family: var(--font-inter);
+  background-color: var(--surface-ground);
   color: #E2E8F0;
-  overflow-x: hidden;
-  selection-background-color: #0F7A73;
-  selection-color: #FFFFFF;
 }
 
-/* Glassmorphism Classes */
-.glass-panel {
-  background: rgba(15, 30, 28, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(20, 184, 166, 0.15);
+/* Hallmark Typography: Strictly Roman headings, no italic AI tells */
+h1, h2, h3, h4, h5, h6 {
+  font-style: normal;
+  letter-spacing: -0.025em;
 }
 
-.glass-card {
-  background: rgba(13, 34, 31, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+/* Tabular numbers for financial and time metrics */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' on;
 }
 
-.glass-card:hover {
-  border-color: rgba(20, 184, 166, 0.35);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px -4px rgba(15, 122, 115, 0.2);
+/* Tactile Console Card Standards from BRANDING_SYSTEM.md (12px radius, hairline border, internal padding) */
+.console-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-hairline-subtle);
+  border-radius: var(--radius-container);
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
-.glow-teal {
-  box-shadow: 0 0 25px rgba(20, 184, 166, 0.25);
+.console-card:hover {
+  background-color: var(--surface-card-hover);
+  border-color: var(--border-hairline-hover);
 }
 
-.glow-button {
-  transition: all 0.25s ease;
+.console-card-elevated {
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-container);
 }
 
-.glow-button:hover {
-  box-shadow: 0 0 20px rgba(20, 184, 166, 0.45);
-  transform: translateY(-1px);
+/* Tactile Button Standards (8px radius) */
+.tactile-btn-primary {
+  background-color: var(--brand-teal);
+  color: #FFFFFF;
+  border-radius: var(--radius-control);
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
-/* Subtle Animated Background Gradients */
-.hero-glow {
-  background: radial-gradient(circle at 50% 20%, rgba(15, 122, 115, 0.22) 0%, rgba(9, 46, 43, 0.08) 50%, transparent 75%);
+.tactile-btn-primary:hover {
+  background-color: #128B83;
 }
 
-.mesh-pattern {
-  background-image: radial-gradient(rgba(20, 184, 166, 0.12) 1px, transparent 1px);
-  background-size: 32px 32px;
+.tactile-btn-primary:active {
+  transform: translateY(1px);
 }
+
+.tactile-btn-secondary {
+  background-color: rgba(13, 35, 32, 0.8);
+  color: #E2E8F0;
+  border: 1px solid var(--border-hairline-subtle);
+  border-radius: var(--radius-control);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tactile-btn-secondary:hover {
+  background-color: var(--surface-card-hover);
+  border-color: var(--border-hairline);
+  color: #FFFFFF;
+}
+
+/* Micro badges (6px radius) */
+.console-badge {
+  border-radius: var(--radius-badge);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Clean background grid pattern (not blurry blobs) */
+.console-grid-pattern {
+  background-image: radial-gradient(rgba(20, 184, 166, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+

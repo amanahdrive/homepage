@@ -1,113 +1,93 @@
 import React from "react";
-import { ShieldAlert, HeartHandshake, FileCheck2, Clock, Car, Award, Sparkles, CheckCircle } from "lucide-react";
+import { ShieldAlert, HeartHandshake, FileCheck2, Clock, Car, Award, Sparkles, CheckCircle2 } from "lucide-react";
 
 export default function FeatureBento() {
   const features = [
     {
       icon: ShieldAlert,
       title: "Dual Pedal Safety System",
-      badge: "Keamanan 100%",
-      desc: "Setiap mobil latihan kami telah dimodifikasi dengan pedal rem dan kopling tambahan di sisi kursi instruktur. Anda bisa belajar dengan tenang tanpa takut menabrak atau salah injak pedal.",
-      color: "from-teal-500/20 to-emerald-500/10",
-      border: "border-teal-500/30",
-      iconColor: "text-teal-400",
-      points: ["Kontrol rem instan dari instruktur", "Eliminasi risiko panik saat salah pedal", "Aman untuk rute jalan raya padat"],
+      badge: "Garansi 100% Aman",
+      desc: "Seluruh mobil latihan kami telah dipasang pedal rem & kopling tambahan di sisi instruktur. Menghilangkan risiko panik atau salah injak pedal saat melatih reflek di jalan raya.",
+      points: ["Intervensi rem instan dari instruktur", "Siswa tidak perlu takut menabrak", "Aman untuk simulasi jalan padat"],
     },
     {
       icon: HeartHandshake,
       title: "Instruktur Ramah & Anti-Bentak",
       badge: "Pendekatan Humanis",
-      desc: "Trauma pernah dimarahi saat belajar mengemudi? Di Amanah Drive, instruktur kami terikat SOP ketat: bersikap sabar, sopan, komunikatif, dan menciptakan suasana rileks agar Anda cepat paham.",
-      color: "from-emerald-500/20 to-teal-500/10",
-      border: "border-emerald-500/30",
-      iconColor: "text-emerald-400",
-      points: ["Instruktur bersertifikasi profesional", "Spesialisasi mengatasi siswa grogi & pemula", "Mendukung siswa wanita & ibu rumah tangga"],
+      desc: "Trauma pernah dimarahi saat belajar mengemudi? Di Amanah Drive, instruktur terikat SOP kesabaran tinggi, komunikatif, dan menciptakan suasana tenang agar rasa grogi cepat hilang.",
+      points: ["Instruktur bersertifikasi resmi BNSP", "Metode empati untuk pemula & wanita", "Fokus membina rasa percaya diri"],
     },
     {
       icon: FileCheck2,
       title: "Bimbingan SIM A Resmi Tuntas",
       badge: "Legalitas Terjamin",
-      desc: "Tidak perlu pusing urus SIM A sendiri! Kami membimbing berkas, memberikan tips lulus ujian teori, hingga simulasi lintasan praktik resmi sampai SIM A Anda terbit.",
-      color: "from-amber-500/20 to-teal-500/10",
-      border: "border-amber-500/30",
-      iconColor: "text-amber-400",
-      points: ["Didampingi tim saat ujian praktik", "Simulasi lintasan uji SIM sebelum hari H", "Proses resmi, legal & terpercaya"],
+      desc: "Tidak perlu pusing urus berkas SIM A sendiri. Kami membimbing kelengkapan administrasi, simulasi soal teori, hingga mendampingi simulasi lintasan praktik uji SIM sampai selesai.",
+      points: ["Didampingi tim saat proses resmi", "Simulasi lintasan uji sebelum hari H", "Proses tertib, resmi & terpercaya"],
     },
     {
       icon: Clock,
       title: "6 Pilihan Slot Jadwal Harian",
-      badge: "Fleksibel 09.00 - 22.00 WIB",
-      desc: "Sibuk kerja atau kuliah? Anda bebas memilih jadwal dari pagi hari jam 09.00 WIB sampai sesi malam santai jam 22.00 WIB. Bisa sesuaikan hari kerja maupun weekend.",
-      color: "from-cyan-500/20 to-blue-500/10",
-      border: "border-cyan-500/30",
-      iconColor: "text-cyan-400",
-      points: ["Slot malam cocok untuk pekerja kantoran", "Bisa reschedule jika ada halangan mendadak", "Waktu latihan efektif 90 menit per sesi"],
+      badge: "09.00 - 22.00 WIB",
+      desc: "Fleksibel untuk pekerja kantoran, wiraswasta, atau mahasiswa. Bebas memilih sesi pagi segar, sore hari, atau sesi malam hari yang tenang dan bebas terik matahari.",
+      points: ["Slot malam sangat diminati pekerja", "Bisa reschedule jika ada kendala mendadak", "Durasi efektif 90 menit per pertemuan"],
     },
     {
       icon: Car,
-      title: "Armada Bersih, Dingin & Terawat",
-      badge: "Nyaman Ber-AC",
-      desc: "Pilihan armada terawat: Daihatsu Ayla yang lincah untuk latihan manuver awal, Daihatsu Xenia untuk adaptasi dimensi MPV, atau didampingi langsung menggunakan mobil pribadi Anda.",
-      color: "from-teal-500/20 to-slate-500/10",
-      border: "border-teal-500/30",
-      iconColor: "text-teal-400",
-      points: ["AC dingin & kabin wangi steril", "Servis mesin rutin di bengkel resmi", "Tersedia opsi manual & mobil sendiri"],
+      title: "Armada Nyaman, Dingin & Terawat",
+      badge: "Kabin Bersih Ber-AC",
+      desc: "Pilihan unit city car Daihatsu Ayla yang lincah dan Daihatsu Xenia untuk penguasaan dimensi MPV keluarga, atau pendampingan langsung di mobil pribadi milik Anda.",
+      points: ["AC dingin & kabin steril bersih", "Perawatan mesin berkala di bengkel resmi", "Tersedia opsi manual & mobil pribadi"],
     },
     {
       icon: Award,
-      title: "Sertifikat Kelulusan Resmi",
+      title: "Sertifikat Kelulusan & Nilai",
       badge: "Standar Kompetensi",
-      desc: "Setelah menyelesaikan seluruh sesi kurikulum dan evaluasi mandiri, Anda akan menerima Sertifikat Kelulusan resmi Amanah Drive dengan nomor registrasi unik.",
-      color: "from-emerald-500/20 to-amber-500/10",
-      border: "border-emerald-500/30",
-      iconColor: "text-emerald-400",
-      points: ["Portofolio keahlian menyetir", "Bukti kompetensi kelulusan materi", "Evaluasi menyeluruh dari instruktur"],
+      desc: "Setelah menyelesaikan seluruh materi kurikulum praktik, siswa menerima Sertifikat Kelulusan resmi Amanah Drive berstempel basah beserta lembar evaluasi kompetensi.",
+      points: ["Bukti kelulusan materi praktik", "Buku catatan kemajuan per sesi", "Evaluasi langsung oleh instruktur"],
     },
   ];
 
   return (
-    <section id="keunggulan" className="py-20 relative">
+    <section id="keunggulan" className="py-20 md:py-28 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-500/10 text-teal-400 border border-teal-500/30">
-            <Sparkles className="w-3.5 h-3.5" /> Standar Pelayanan Terbaik
+        <div className="text-left max-w-3xl mb-12 space-y-3">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[6px] text-xs font-bold uppercase tracking-wider bg-teal-950 text-teal-400 border border-teal-500/30">
+            <Sparkles className="w-3.5 h-3.5" /> Standar Keunggulan
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Mengapa Amanah Drive Pilihan Terbaik di Palembang?
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Mengapa Amanah Drive Pilihan Utama di Palembang?
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Kami mengutamakan keselamatan, kenyamanan psikologis, dan kurikulum bertahap agar siapapun bisa menyetir dengan percaya diri tanpa rasa takut.
+          <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Kami mengutamakan keselamatan fisik, ketenangan mental, dan metode pembelajaran bertahap agar siapa pun dapat mengemudi dengan mandiri tanpa rasa cemas.
           </p>
         </div>
 
-        {/* Grid Bento */}
+        {/* Grid Bento with 12px Container Radius & Hairline Precision */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className={`glass-card rounded-3xl p-7 border ${item.border} relative overflow-hidden flex flex-col justify-between group`}
+                className="console-card p-6 border border-slate-800 flex flex-col justify-between"
               >
-                <div className={`absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br ${item.color} rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform`} />
-
                 <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <div className={`w-12 h-12 rounded-2xl bg-slate-900/90 border border-slate-700/80 flex items-center justify-center ${item.iconColor} shadow-md`}>
-                      <Icon className="w-6 h-6" />
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#091E1C] border border-teal-500/30 flex items-center justify-center text-teal-400">
+                      <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-slate-900 text-slate-300 border border-slate-700">
+                    <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-[4px] bg-[#071513] text-teal-300 border border-teal-900">
                       {item.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-2.5 group-hover:text-teal-300 transition-colors">
+                  <h3 className="text-lg font-bold text-white mb-2">
                     {item.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                  <p className="text-xs text-slate-300 leading-relaxed mb-6">
                     {item.desc}
                   </p>
                 </div>
@@ -115,7 +95,7 @@ export default function FeatureBento() {
                 <ul className="space-y-2 pt-4 border-t border-slate-800/80">
                   {item.points.map((pt, pIdx) => (
                     <li key={pIdx} className="flex items-center gap-2 text-xs text-slate-300">
-                      <CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                       <span>{pt}</span>
                     </li>
                   ))}
@@ -129,3 +109,4 @@ export default function FeatureBento() {
     </section>
   );
 }
+
