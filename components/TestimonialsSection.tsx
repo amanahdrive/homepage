@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { TESTIMONIALS } from "@/lib/constants";
 import { Star, Heart, CheckCircle2 } from "lucide-react";
 
@@ -47,9 +48,15 @@ export default function TestimonialsSection() {
               </div>
 
               <div className="pt-2.5 sm:pt-4 border-t border-[rgba(33,34,38,0.06)]">
-                <div className="flex items-center gap-2 sm:gap-2.5">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-md bg-[#E6F4F2] border border-[#0F7A73]/20 flex items-center justify-center font-bold text-[#0F7A73] text-xs">
-                    {t.name.charAt(0)}
+                <div className="flex items-center gap-2.5 sm:gap-3">
+                  <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border border-slate-200/90 bg-[#f1f3f5] shrink-0 shadow-2xs">
+                    <Image
+                      src={t.avatar || "/assets/default-avatar.webp"}
+                      alt={t.name}
+                      width={36}
+                      height={36}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <h3 className="text-xs font-bold text-[#121317] leading-tight">{t.name}</h3>

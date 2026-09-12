@@ -288,7 +288,16 @@ export const CURRICULUM = [
   },
 ];
 
-export const TESTIMONIALS = [
+export interface TestimonialItem {
+  name: string;
+  status: string;
+  pkg: string;
+  rating: number;
+  text: string;
+  avatar?: string;
+}
+
+export const TESTIMONIALS: TestimonialItem[] = [
   {
     name: "Rina Oktavia, S.E.",
     status: "Pegawai BUMN Palembang",
