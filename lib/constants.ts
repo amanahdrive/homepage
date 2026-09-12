@@ -351,7 +351,7 @@ export const CONTACT_INFO = {
   tagline: "Kursus Mengemudi Mobil Palembang Gratis Antar Jemput",
   phoneDisplay: "0813-7790-961",
   phoneRaw: "628137790961",
-  address: "Kota Palembang, Sumatera Selatan (Area Layanan: Bukit, Demang, Sudirman, Gandus, Sukarami, Plaju & sekitarnya)",
+  address: "Jl. Macan Kumbang XVIII, Siring Agung, Kec. Ilir Bar. I, Kota Palembang, Sumatera Selatan 30153",
   instagram: "@amanahdrive.palembang",
   operationalHours: "Senin – Minggu: 08:30 – 22:00 WIB",
   bankAccount: {
@@ -363,8 +363,8 @@ export const CONTACT_INFO = {
 
 export const LOCATION_INFO = {
   title: "Amanah Drive Palembang",
-  address: "Jl. Demang Lebar Daun No. 45, Palembang, Sumatera Selatan",
-  embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45078.95267279368!2d104.69953335300335!3d-2.9714931721378597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b758980fc77a1%3A0x3a59dd8b6033f81b!2sAmanah%20Drive%20Palembang%20-%20KURSUS%20MENGEMUDI%20PALEMBANG!5e0!3m2!1sen!2sid!4v1789146853835!5m2!1sen!2sid",
+  address: "Jl. Macan Kumbang XVIII, Siring Agung, Kec. Ilir Bar. I, Kota Palembang, Sumatera Selatan 30153",
+  embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31875.470275216805!2d104.71889829445799!3d-2.9770358522609737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b758980fc77a1%3A0x3a59dd8b6033f81b!2sAmanah%20Drive%20Palembang%20-%20KURSUS%20MENGEMUDI%20PALEMBANG!5e0!3m2!1sen!2sid!4v1789155812105!5m2!1sen!2sid",
 };
 
 export function generateWhatsAppUrl(message: string): string {

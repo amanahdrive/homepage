@@ -57,10 +57,10 @@ export default function LocationSection({
                   <span>Kantor Operasional:</span>
                 </div>
                 <h3 className="text-sm sm:text-base font-bold text-[#121317] leading-snug">
-                  {location.address || CONTACT_INFO.address}
+                  {location.address || "Jl. Macan Kumbang XVIII, Siring Agung, Kec. Ilir Bar. I, Kota Palembang, Sumatera Selatan 30153"}
                 </h3>
                 <p className="text-[11px] sm:text-xs text-[#45474d] leading-relaxed">
-                  (Dekat simpang Bukit Lama &amp; Universitas Sriwijaya Bukit)
+                  (Area Siring Agung, Macan Kumbang - Melayani Antar-Jemput Siswa Gratis se-Kota Palembang)
                 </p>
               </div>
 

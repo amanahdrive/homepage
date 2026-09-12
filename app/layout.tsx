@@ -84,8 +84,10 @@ export default function RootLayout({
         "currenciesAccepted": "IDR",
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "Jl. Macan Kumbang XVIII, Siring Agung, Kec. Ilir Bar. I",
           "addressLocality": "Palembang",
           "addressRegion": "Sumatera Selatan",
+          "postalCode": "30153",
           "addressCountry": "ID",
         },
         "geo": {
