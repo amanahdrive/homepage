@@ -2,15 +2,17 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { TIME_SLOTS, STUDENT_CARE, generateWhatsAppUrl } from "@/lib/constants";
+import { TIME_SLOTS, STUDENT_CARE, generateWhatsAppUrl, getAvatarStyle } from "@/lib/constants";
 import { Clock, MessageCircle, Moon, Sun, Sunset, Sparkles } from "lucide-react";
 import { trackWhatsAppLead, trackSlotSelect } from "@/lib/gtm";
 
 interface SlotScheduleProps {
   slots?: typeof TIME_SLOTS;
+  care?: typeof STUDENT_CARE;
 }
 
-export default function SlotSchedule({ slots = TIME_SLOTS }: SlotScheduleProps) {
+export default function SlotSchedule({ slots = TIME_SLOTS, care }: SlotScheduleProps) {
+  const activeCare = care || STUDENT_CARE;
   const [selectedSlot, setSelectedSlot] = useState(slots[3] || slots[0]); // Slot 4 default (Sore)
 
   const getSlotIcon = (id: number) => {
@@ -123,11 +125,12 @@ export default function SlotSchedule({ slots = TIME_SLOTS }: SlotScheduleProps) 
           >
             <div className="relative w-4 h-4 rounded-md overflow-hidden border border-white/40 shrink-0">
               <Image
-                src={STUDENT_CARE.avatar}
-                alt={STUDENT_CARE.name}
+                src={activeCare.avatar}
+                alt={activeCare.name}
                 width={16}
                 height={16}
                 className="object-cover"
+                style={getAvatarStyle(activeCare)}
               />
             </div>
             <span>Kunci Slot {selectedSlot.label} via WhatsApp</span>

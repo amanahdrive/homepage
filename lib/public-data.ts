@@ -189,6 +189,9 @@ export async function getPublicSettings() {
         if (row.value.name) care.name = row.value.name;
         if (row.value.role) care.role = row.value.role;
         if (row.value.avatar_url) care.avatar = row.value.avatar_url;
+        if (typeof row.value.avatar_position_x === 'number') care.avatarPosX = row.value.avatar_position_x;
+        if (typeof row.value.avatar_position_y === 'number') care.avatarPosY = row.value.avatar_position_y;
+        if (typeof row.value.avatar_scale === 'number') care.avatarScale = row.value.avatar_scale;
       }
       if (row.key === 'maps_info' && row.value) {
         if (row.value.address) location.address = row.value.address;

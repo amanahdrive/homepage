@@ -2,11 +2,16 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { FAQS, STUDENT_CARE, generateWhatsAppUrl } from "@/lib/constants";
+import { FAQS, STUDENT_CARE, generateWhatsAppUrl, getAvatarStyle } from "@/lib/constants";
 import { HelpCircle, ChevronDown, MessageCircle } from "lucide-react";
 import { trackWhatsAppLead, trackFaqToggle } from "@/lib/gtm";
 
-export default function FAQSection() {
+interface FAQSectionProps {
+  care?: typeof STUDENT_CARE;
+}
+
+export default function FAQSection({ care }: FAQSectionProps) {
+  const activeCare = care || STUDENT_CARE;
   const [openIdx, setOpenIdx] = useState<number | null>(0); // First item open by default
 
   const toggle = (idx: number) => {
@@ -76,16 +81,17 @@ export default function FAQSection() {
           <div className="flex items-center gap-2.5 sm:gap-3 text-left">
             <div className="relative w-9 h-9 sm:w-11 sm:h-11 rounded-lg overflow-hidden border border-[rgba(33,34,38,0.1)] shrink-0 bg-[#f8f9fc]">
               <Image
-                src={STUDENT_CARE.avatar}
-                alt={STUDENT_CARE.name}
+                src={activeCare.avatar}
+                alt={activeCare.name}
                 width={44}
                 height={44}
                 className="object-cover"
+                style={getAvatarStyle(activeCare)}
               />
             </div>
             <div>
               <p className="text-xs sm:text-sm font-bold text-[#121317]">Ada pertanyaan lain yang belum terjawab?</p>
-              <p className="text-[10px] sm:text-[11px] text-[#45474d]">Kak Lia siap menjawab konsultasi pendaftaran &amp; rute latihan secara langsung.</p>
+              <p className="text-[10px] sm:text-[11px] text-[#45474d]">{activeCare.name.split(' ')[0]} {activeCare.name.split(' ')[1] || ''} siap menjawab konsultasi pendaftaran &amp; rute latihan secara langsung.</p>
             </div>
           </div>
           

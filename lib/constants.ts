@@ -172,10 +172,27 @@ export const STUDENT_CARE = {
   name: "Kak Lia (Nur Awalia)",
   role: "Student Care & Konsultasi Resmi",
   desc: "Koordinator pendaftaran, pendampingan berkas SIM A, dan jadwal latihan fleksibel siswa Amanah Drive.",
-  avatar: "/staff_models/Lia.webp",
+  avatar: "https://yhwwhqqffgtiavapgjvc.supabase.co/storage/v1/object/public/assets/staff_models/Lia.webp",
   phoneDisplay: "0813-7790-961",
   status: "Online WhatsApp",
+  avatarPosX: 50,
+  avatarPosY: 20,
+  avatarScale: 100,
 };
+
+export function getAvatarStyle(care?: {
+  avatarPosX?: number;
+  avatarPosY?: number;
+  avatarScale?: number;
+}): React.CSSProperties {
+  const posX = care?.avatarPosX ?? 50;
+  const posY = care?.avatarPosY ?? 20;
+  const scale = (care?.avatarScale ?? 100) / 100;
+  return {
+    objectPosition: `${posX}% ${posY}%`,
+    transform: `scale(${scale})`,
+  };
+}
 
 export const FLEET = [
   {

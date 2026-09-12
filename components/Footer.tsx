@@ -4,11 +4,16 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { AmanahLogoLandscape } from "./Logo";
-import { CONTACT_INFO, STUDENT_CARE, generateWhatsAppUrl } from "@/lib/constants";
+import { CONTACT_INFO, STUDENT_CARE, generateWhatsAppUrl, getAvatarStyle } from "@/lib/constants";
 import { MessageCircle, Phone, MapPin, Shield, Award, CheckCircle2 } from "lucide-react";
 import { trackWhatsAppLead } from "@/lib/gtm";
 
-export default function Footer() {
+interface FooterProps {
+  care?: typeof STUDENT_CARE;
+}
+
+export default function Footer({ care }: FooterProps) {
+  const activeCare = care || STUDENT_CARE;
   return (
     <footer className="bg-[#121317] border-t border-[#212226] pt-10 pb-8 sm:pt-16 sm:pb-12 relative text-slate-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -132,14 +137,15 @@ export default function Footer() {
               <div className="flex items-center gap-2.5">
                 <div className="relative w-9 h-9 rounded-lg overflow-hidden shrink-0 border border-white/20">
                   <Image
-                    src={STUDENT_CARE.avatar}
-                    alt={STUDENT_CARE.name}
+                    src={activeCare.avatar}
+                    alt={activeCare.name}
                     fill
-                    className="object-cover object-top"
+                    className="object-cover"
+                    style={getAvatarStyle(activeCare)}
                   />
                 </div>
                 <div className="text-xs">
-                  <p className="font-bold text-white leading-none">{STUDENT_CARE.name}</p>
+                  <p className="font-bold text-white leading-none">{activeCare.name}</p>
                   <span className="text-[10px] text-teal-400 font-mono">Student Care Officer</span>
                 </div>
               </div>

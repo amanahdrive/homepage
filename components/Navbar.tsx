@@ -5,10 +5,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { AmanahLogo } from "./Logo";
 import { MessageCircle, Menu, X, Phone, ShieldCheck } from "lucide-react";
-import { CONTACT_INFO, STUDENT_CARE, generateWhatsAppUrl } from "@/lib/constants";
+import { CONTACT_INFO, STUDENT_CARE, generateWhatsAppUrl, getAvatarStyle } from "@/lib/constants";
 import { trackWhatsAppLead, trackPhoneCall } from "@/lib/gtm";
 
-export default function Navbar() {
+interface NavbarProps {
+  care?: typeof STUDENT_CARE;
+}
+
+export default function Navbar({ care }: NavbarProps) {
+  const activeCare = care || STUDENT_CARE;
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -115,14 +120,15 @@ export default function Navbar() {
             >
               <div className="relative w-4 h-4 rounded-md overflow-hidden border border-white/40 shrink-0">
                 <Image
-                  src={STUDENT_CARE.avatar}
-                  alt={STUDENT_CARE.name}
+                  src={activeCare.avatar}
+                  alt={activeCare.name}
                   width={16}
                   height={16}
                   className="object-cover w-full h-full"
+                  style={getAvatarStyle(activeCare)}
                 />
               </div>
-              <span className="whitespace-nowrap font-medium">Chat Kak Lia</span>
+              <span className="whitespace-nowrap font-medium">Chat {activeCare.name.split(' ')[0]} {activeCare.name.split(' ')[1] || ''}</span>
               <MessageCircle className="w-3.5 h-3.5 fill-white text-transparent shrink-0" />
             </a>
           </div>

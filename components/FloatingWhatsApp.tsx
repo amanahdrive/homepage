@@ -3,10 +3,15 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { MessageCircle, X } from "lucide-react";
-import { STUDENT_CARE, generateWhatsAppUrl } from "@/lib/constants";
+import { STUDENT_CARE, generateWhatsAppUrl, getAvatarStyle } from "@/lib/constants";
 import { trackWhatsAppLead } from "@/lib/gtm";
 
-export default function FloatingWhatsApp() {
+interface FloatingWhatsAppProps {
+  care?: typeof STUDENT_CARE;
+}
+
+export default function FloatingWhatsApp({ care }: FloatingWhatsAppProps) {
+  const activeCare = care || STUDENT_CARE;
   const [showTooltip, setShowTooltip] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
 
@@ -38,14 +43,15 @@ export default function FloatingWhatsApp() {
           <div className="flex items-center gap-2 sm:gap-2.5 mb-1.5 sm:mb-2">
             <div className="relative w-7 h-7 sm:w-8 sm:h-8 rounded-lg overflow-hidden shrink-0 border border-[rgba(33,34,38,0.1)] bg-[#f8f9fc]">
               <Image
-                src={STUDENT_CARE.avatar}
-                alt={STUDENT_CARE.name}
+                src={activeCare.avatar}
+                alt={activeCare.name}
                 fill
-                className="object-cover object-top"
+                className="object-cover"
+                style={getAvatarStyle(activeCare)}
               />
             </div>
             <div>
-              <p className="text-xs font-bold text-[#121317] leading-none">{STUDENT_CARE.name}</p>
+              <p className="text-xs font-bold text-[#121317] leading-none">{activeCare.name}</p>
               <div className="flex items-center gap-1.5 mt-0.5">
                 <span className="text-[9px] sm:text-[10px] font-mono text-[#0F7A73] font-semibold">Online Siap Bantu</span>
               </div>
@@ -90,15 +96,16 @@ export default function FloatingWhatsApp() {
       >
         <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-lg overflow-hidden shrink-0 border border-[rgba(33,34,38,0.1)] bg-[#f8f9fc]">
           <Image
-            src={STUDENT_CARE.avatar}
-            alt={STUDENT_CARE.name}
+            src={activeCare.avatar}
+            alt={activeCare.name}
             fill
-            className="object-cover object-top"
+            className="object-cover"
+            style={getAvatarStyle(activeCare)}
           />
         </div>
         <div className="text-left hidden sm:block">
           <span className="text-[10px] font-mono text-[#0F7A73] block leading-none font-bold">Student Care</span>
-          <span className="text-xs font-bold text-[#121317] group-hover:text-[#0F7A73] transition-colors">Chat Kak Lia</span>
+          <span className="text-xs font-bold text-[#121317] group-hover:text-[#0F7A73] transition-colors">Chat {activeCare.name.split(' ')[0]} {activeCare.name.split(' ')[1] || ''}</span>
         </div>
         <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-[#E6F4F2] border border-[#0F7A73]/20 flex items-center justify-center shrink-0 ml-0.5">
           <MessageCircle className="w-3.5 h-3.5 text-[#0F7A73] fill-[#0F7A73]" />

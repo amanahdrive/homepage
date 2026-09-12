@@ -2,11 +2,16 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { PACKAGES, STUDENT_CARE, generateWhatsAppUrl } from "@/lib/constants";
+import { PACKAGES, STUDENT_CARE, generateWhatsAppUrl, getAvatarStyle } from "@/lib/constants";
 import { Calculator, MessageCircle, Sparkles, ArrowRight } from "lucide-react";
 import { trackWhatsAppLead, trackCalculationEvent } from "@/lib/gtm";
 
-export default function BookingCalculator() {
+interface BookingCalculatorProps {
+  care?: typeof STUDENT_CARE;
+}
+
+export default function BookingCalculator({ care }: BookingCalculatorProps) {
+  const activeCare = care || STUDENT_CARE;
   const [selectedPkgId, setSelectedPkgId] = useState("pro");
   const [vehicle, setVehicle] = useState("Ayla (Manual)");
   const [slotCategory, setSlotCategory] = useState("Sore (15:30 - 17:00)");
@@ -264,14 +269,15 @@ export default function BookingCalculator() {
               >
                 <div className="relative w-4 h-4 rounded-md overflow-hidden border border-black/20 shrink-0">
                   <Image
-                    src={STUDENT_CARE.avatar}
-                    alt={STUDENT_CARE.name}
+                    src={activeCare.avatar}
+                    alt={activeCare.name}
                     width={16}
                     height={16}
                     className="object-cover"
+                    style={getAvatarStyle(activeCare)}
                   />
                 </div>
-                <span>Kirim Rencana Kursus ke Kak Lia</span>
+                <span>Kirim Rencana Kursus ke {activeCare.name.split(' ')[0]} {activeCare.name.split(' ')[1] || ''}</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
               </button>
 

@@ -24,7 +24,7 @@ import {
 export const revalidate = 60;
 
 export default async function HomePage() {
-  const [packages, fleet, slots, { contact, location }] = await Promise.all([
+  const [packages, fleet, slots, { contact, care, location }] = await Promise.all([
     getPublicPackages(),
     getPublicFleet(),
     getPublicScheduleSlots(),
@@ -37,7 +37,7 @@ export default async function HomePage() {
       <div className="fixed inset-0 antigravity-grid-pattern opacity-70 pointer-events-none -z-20" />
 
       {/* Navigation */}
-      <Navbar />
+      <Navbar care={care} />
 
       {/* Main Sections — Structured Information Architecture */}
       <main className="flex-grow">
@@ -46,8 +46,8 @@ export default async function HomePage() {
         <PricingSection packages={packages} />
         <CurriculumRoadmap />
         <FleetSection fleet={fleet as any} />
-        <SlotSchedule slots={slots as any} />
-        <BookingCalculator />
+        <SlotSchedule slots={slots as any} care={care} />
+        <BookingCalculator care={care} />
         <RegistrationFormSection
           packages={packages}
           fleet={fleet as any}
@@ -55,14 +55,14 @@ export default async function HomePage() {
         />
         <TestimonialsSection />
         <LocationSection location={location} contact={contact} />
-        <FAQSection />
+        <FAQSection care={care} />
       </main>
 
       {/* Sticky Bottom Actions */}
-      <FloatingWhatsApp />
+      <FloatingWhatsApp care={care} />
 
       {/* Footer */}
-      <Footer />
+      <Footer care={care} />
     </div>
   );
 }
