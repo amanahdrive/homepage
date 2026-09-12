@@ -54,17 +54,17 @@ export default function Hero() {
             </a>
 
             <a
-              href="#kalkulator"
+              href="#paket"
               onClick={() =>
                 pushToDataLayer({
                   event: "cta_click",
-                  cta_name: "simulasi_biaya_dp",
+                  cta_name: "lihat_pilihan_paket",
                   cta_location: "hero",
                 })
               }
               className="antigravity-btn-secondary w-full sm:w-auto text-xs sm:text-sm py-2.5 px-4 sm:py-3 sm:px-6 gap-2 rounded-lg"
             >
-              <span>Simulasi Biaya &amp; DP</span>
+              <span>Lihat Pilihan Paket</span>
               <span className="text-[#0F7A73] font-bold">&rarr;</span>
             </a>
           </div>

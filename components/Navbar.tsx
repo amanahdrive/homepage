@@ -31,7 +31,7 @@ export default function Navbar({ care }: NavbarProps) {
     { name: "Kurikulum", href: "#kurikulum" },
     { name: "Armada", href: "#armada" },
     { name: "Jadwal", href: "#jadwal" },
-    { name: "Kalkulator", href: "#kalkulator" },
+    { name: "Daftar", href: "#daftar" },
     { name: "Testimoni", href: "#testimoni" },
     { name: "Lokasi", href: "#lokasi" },
   ];

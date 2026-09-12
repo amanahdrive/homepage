@@ -6,7 +6,6 @@ import PricingSection from "@/components/PricingSection";
 import CurriculumRoadmap from "@/components/CurriculumRoadmap";
 import SlotSchedule from "@/components/SlotSchedule";
 import FleetSection from "@/components/FleetSection";
-import BookingCalculator from "@/components/BookingCalculator";
 import RegistrationFormSection from "@/components/RegistrationFormSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import LocationSection from "@/components/LocationSection";
@@ -47,7 +46,6 @@ export default async function HomePage() {
         <CurriculumRoadmap />
         <FleetSection fleet={fleet as any} />
         <SlotSchedule slots={slots as any} care={care} />
-        <BookingCalculator care={care} />
         <RegistrationFormSection
           packages={packages}
           fleet={fleet as any}

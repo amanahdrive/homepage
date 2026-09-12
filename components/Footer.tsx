@@ -70,7 +70,7 @@ export default function Footer({ care }: FooterProps) {
                 <a href="#jadwal" className="hover:text-teal-300 transition-colors">Pilihan Slot Waktu</a>
               </li>
               <li>
-                <a href="#kalkulator" className="hover:text-teal-300 transition-colors">Simulasi Biaya &amp; DP</a>
+                <a href="#daftar" className="hover:text-teal-300 transition-colors">Form Pendaftaran</a>
               </li>
               <li>
                 <a href="#testimoni" className="hover:text-teal-300 transition-colors">Ulasan Siswa</a>
