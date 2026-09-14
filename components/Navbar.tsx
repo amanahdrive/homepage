@@ -37,73 +37,69 @@ export default function Navbar({ care }: NavbarProps) {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      {/* Antigravity Notice Strip */}
-      <div className="bg-[#f8f9fc] text-[#45474d] text-[11px] sm:text-xs py-1 sm:py-1.5 px-3 sm:px-4 text-center border-b border-[rgba(33,34,38,0.06)] flex items-center justify-center gap-2 whitespace-nowrap overflow-hidden">
-        <span className="inline-flex items-center px-1.5 sm:px-2 py-0.5 rounded-md text-[9px] sm:text-[10px] font-semibold bg-[#E6F4F2] text-[#0F7A73] border border-[#0F7A73]/20 shrink-0">
-          <ShieldCheck className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-1 shrink-0" /> Standar Resmi Palembang
-        </span>
-        <span className="hidden sm:inline font-medium text-[12px] whitespace-nowrap">
-          Kursus Mengemudi Mobil Palembang • Fasilitas Gratis Antar-Jemput ke Rumah • Instruktur Sabar &amp; Berpengalaman
-        </span>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-[0_1px_0_rgba(17,18,21,0.08)]" : "bg-white/90 backdrop-blur-sm"}`}>
+      {/* Precision Notice Strip */}
+      <div className="bg-[#f8f9fc] text-[#45474d] text-[11px] sm:text-xs py-1.5 px-4 text-center border-b border-[rgba(17,18,21,0.06)] flex items-center justify-between sm:justify-center gap-3 whitespace-nowrap overflow-hidden">
+        <div className="flex items-center gap-2">
+          <span className="tech-tag tech-tag-brand">
+            <ShieldCheck className="w-3 h-3 text-[#0F7A73]" /> Resmi Palembang
+          </span>
+          <span className="hidden md:inline text-[11px] text-[#45474d] font-normal">
+            Gratis Antar-Jemput ke Rumah &bull; Instruktur Sabar Bersertifikat &bull; AC Dingin
+          </span>
+        </div>
         <a
           href={generateWhatsAppUrl("Halo Kak Lia, saya ingin tanya ketersediaan jadwal & promo kursus minggu ini.")}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#0F7A73] hover:text-[#092E2B] font-semibold underline underline-offset-2 ml-1 text-[11px] sm:text-[12px] shrink-0 whitespace-nowrap"
+          className="text-[#0F7A73] hover:text-[#092E2B] font-semibold text-[11px] sm:text-xs flex items-center gap-1 shrink-0"
         >
-          Konsultasi Jadwal &rarr;
+          <span>Konsultasi Jadwal</span>
+          <span>&rarr;</span>
         </a>
       </div>
 
-      {/* Floating Sleek Nav */}
-      <nav
-        className={`transition-all duration-300 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-1.5 sm:pt-2.5`}
-      >
-        <div
-          className={`flex items-center justify-between px-3 sm:px-5 py-1.5 sm:py-2 rounded-xl transition-all duration-300 ${
-            scrolled
-              ? "bg-white/95 backdrop-blur-md border border-[rgba(33,34,38,0.1)] shadow-sm"
-              : "bg-white/80 backdrop-blur-sm border border-[rgba(33,34,38,0.06)]"
-          }`}
-        >
+      {/* Main Architectural Nav Bar */}
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Brand Identity */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 group shrink-0 whitespace-nowrap">
-            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#f8f9fc] border border-[rgba(33,34,38,0.08)] flex items-center justify-center p-1 transition-all group-hover:border-[#0F7A73] shrink-0">
-              <AmanahLogo className="w-4 h-4 sm:w-5 sm:h-5" variant="symbol" />
+          <Link href="/" className="flex items-center gap-2.5 group shrink-0">
+            <div className="w-8 h-8 rounded-[4px] bg-[#111215] flex items-center justify-center p-1.5 text-white transition-colors group-hover:bg-[#0F7A73] shrink-0">
+              <AmanahLogo className="w-5 h-5" variant="symbol" />
             </div>
-            <div className="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap shrink-0">
-              <span className="font-extrabold text-xs sm:text-base tracking-tight text-[#121317] whitespace-nowrap leading-none">
+            <div className="flex items-baseline gap-2">
+              <span className="font-extrabold text-sm sm:text-base tracking-tight text-[#111215] whitespace-nowrap leading-none">
                 AMANAH <span className="text-[#0F7A73]">DRIVE</span>
               </span>
-              <span className="text-[9px] uppercase font-bold tracking-wider bg-[#f0f1f5] text-[#45474d] px-1.5 py-0.5 rounded-md border border-[rgba(33,34,38,0.06)] shrink-0 hidden md:inline-block">
-                Palembang
+              <span className="tech-tag hidden sm:inline-block">
+                PLG
               </span>
             </div>
           </Link>
 
-          {/* Nav Links (Clean Segmented Strip) */}
-          <div className="hidden lg:flex items-center gap-0.5 xl:gap-1 bg-[#f8f9fc] px-1.5 py-1 rounded-lg border border-[rgba(33,34,38,0.06)] shrink-0">
-            {navLinks.map((link) => (
+          {/* Desktop Nav Links (Clean Segmented Editorial Row) */}
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+            {navLinks.map((link, idx) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-xs font-medium text-[#45474d] hover:text-[#121317] px-2.5 xl:px-3 py-1 rounded-md hover:bg-white transition-all whitespace-nowrap"
+                className="text-xs font-medium text-[#45474d] hover:text-[#111215] transition-colors whitespace-nowrap flex items-baseline gap-1"
               >
-                {link.name}
+                <span className="font-mono text-[9px] text-[#9aa0a6]">0{idx + 1}</span>
+                <span>{link.name}</span>
               </Link>
             ))}
           </div>
 
-          {/* Right Action Touchpoints */}
-          <div className="hidden sm:flex items-center gap-2 xl:gap-3 shrink-0">
+          {/* Desktop Right Action Touchpoints */}
+          <div className="hidden sm:flex items-center gap-4 shrink-0">
             <a
               href={`tel:${CONTACT_INFO.phoneRaw}`}
               onClick={() => trackPhoneCall("navbar_desktop")}
-              className="hidden xl:flex items-center gap-1.5 text-xs text-[#45474d] hover:text-[#121317] font-medium px-2 py-1.5 rounded-lg hover:bg-[#f8f9fc] transition-colors whitespace-nowrap shrink-0"
+              className="hidden xl:flex items-center gap-1.5 text-xs text-[#45474d] hover:text-[#111215] font-mono tracking-tight transition-colors whitespace-nowrap"
             >
-              <Phone className="w-3.5 h-3.5 text-[#0F7A73] shrink-0" />
-              <span className="font-mono text-[11px] whitespace-nowrap">{CONTACT_INFO.phoneDisplay}</span>
+              <Phone className="w-3.5 h-3.5 text-[#0F7A73]" />
+              <span>{CONTACT_INFO.phoneDisplay}</span>
             </a>
 
             <a
@@ -116,9 +112,9 @@ export default function Navbar({ care }: NavbarProps) {
               }
               target="_blank"
               rel="noopener noreferrer"
-              className="antigravity-btn-primary py-2 px-3.5 xl:px-4 text-xs gap-1.5 rounded-lg shadow-sm whitespace-nowrap shrink-0"
+              className="tech-btn-primary gap-2"
             >
-              <div className="relative w-4 h-4 rounded-md overflow-hidden border border-white/40 shrink-0">
+              <div className="relative w-4 h-4 rounded-[2px] overflow-hidden border border-white/30 shrink-0">
                 <Image
                   src={activeCare.avatar}
                   alt={activeCare.name}
@@ -128,12 +124,12 @@ export default function Navbar({ care }: NavbarProps) {
                   style={getAvatarStyle(activeCare)}
                 />
               </div>
-              <span className="whitespace-nowrap font-medium">Chat {activeCare.name.split(' ')[0]} {activeCare.name.split(' ')[1] || ''}</span>
+              <span>Chat {activeCare.name.split(' ')[0]} {activeCare.name.split(' ')[1] || ''}</span>
               <MessageCircle className="w-3.5 h-3.5 fill-white text-transparent shrink-0" />
             </a>
           </div>
 
-          {/* Mobile Hamburger */}
+          {/* Mobile Action Touchpoints */}
           <div className="flex sm:hidden items-center gap-2">
             <a
               href={generateWhatsAppUrl("Halo Kak Lia, saya ingin konsultasi pendaftaran.")}
@@ -145,52 +141,60 @@ export default function Navbar({ care }: NavbarProps) {
               }
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 bg-[#121317] rounded-lg text-white"
+              className="p-2 bg-[#111215] text-white rounded-[4px]"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-4 h-4 fill-white text-transparent" />
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 text-[#45474d] hover:text-[#121317] rounded-lg hover:bg-[#f8f9fc] focus:outline-none"
+              className="p-2 text-[#111215] border border-[rgba(17,18,21,0.12)] rounded-[4px] hover:bg-[#f8f9fc] transition-colors focus:outline-none"
               aria-label="Menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-[#121317]" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Dropdown */}
+        {/* Mobile Fullscreen Minimalist Drawer */}
         {mobileMenuOpen && (
-          <div className="sm:hidden mt-1.5 bg-white/95 backdrop-blur-md rounded-xl border border-[rgba(33,34,38,0.1)] p-3 shadow-xl space-y-1">
-            <div className="grid grid-cols-2 gap-1">
-              {navLinks.map((link) => (
+          <div className="sm:hidden border-t border-[rgba(17,18,21,0.08)] bg-white py-4 px-2 space-y-4 animate-in fade-in slide-in-from-top-2 duration-150">
+            <div className="grid grid-cols-2 gap-2">
+              {navLinks.map((link, idx) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block text-xs font-medium text-[#45474d] hover:text-[#121317] py-1.5 px-2.5 rounded-lg hover:bg-[#f8f9fc] transition-colors"
+                  className="p-2.5 rounded-[4px] hover:bg-[#f8f9fc] border border-[rgba(17,18,21,0.06)] text-xs font-medium text-[#111215] flex items-center justify-between"
                 >
-                  {link.name}
+                  <span>{link.name}</span>
+                  <span className="font-mono text-[9px] text-[#9aa0a6]">0{idx + 1}</span>
                 </Link>
               ))}
             </div>
-            <div className="pt-2 border-t border-[rgba(33,34,38,0.06)] flex items-center justify-between text-[11px] text-[#45474d] px-1">
-              <span className="font-mono">{CONTACT_INFO.phoneDisplay}</span>
+
+            <div className="pt-3 border-t border-[rgba(17,18,21,0.08)] space-y-2">
               <a
-                href={generateWhatsAppUrl("Halo Kak Lia, saya mau tanya kursus.")}
-                onClick={() =>
+                href={generateWhatsAppUrl("Halo Kak Lia, saya ingin konsultasi pendaftaran.")}
+                onClick={() => {
                   trackWhatsAppLead({
                     lead_source: "navbar_mobile_menu",
-                    button_text: "WhatsApp Resmi Mobile Dropdown",
-                  })
-                }
+                    button_text: "WhatsApp Resmi Mobile Drawer",
+                  });
+                  setMobileMenuOpen(false);
+                }}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#0F7A73] font-bold"
+                className="tech-btn-teal w-full gap-2 text-xs"
               >
-                WhatsApp Resmi &rarr;
+                <MessageCircle className="w-4 h-4 fill-white text-transparent" />
+                <span>Konsultasi WhatsApp dengan {activeCare.name.split(' ')[0]}</span>
               </a>
+
+              <div className="flex items-center justify-between text-[11px] font-mono text-[#45474d] px-1 pt-1">
+                <span>Hotline: {CONTACT_INFO.phoneDisplay}</span>
+                <span className="text-[#0F7A73] font-semibold">09.00 - 22.00 WIB</span>
+              </div>
             </div>
           </div>
         )}

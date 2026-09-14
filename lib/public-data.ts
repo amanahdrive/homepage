@@ -105,6 +105,7 @@ export async function getPublicFleet() {
         name: row.nama_kendaraan,
         type: (row.tipe_transmisi || 'manual').toUpperCase(),
         tag: 'Unit Latihan Resmi',
+        color: row.warna || match?.color || 'Silver / Putih',
         desc: match?.desc || `Unit ${row.nama_kendaraan} transmisi ${row.tipe_transmisi}, bersih dan terawat.`,
         features: match?.features || [
           'Air Conditioner (AC) Dingin & Wangi',

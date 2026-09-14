@@ -132,44 +132,46 @@ export default function RegistrationFormSection({
   };
 
   return (
-    <section id="daftar" className="py-10 sm:py-24 relative bg-[#f8f9fa] border-t border-[#e2e4e9]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="daftar" className="py-14 sm:py-28 relative bg-[#f8f9fc] border-t border-[rgba(17,18,21,0.08)]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2 sm:space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0F7A73]/10 text-[#0F7A73] text-[11px] sm:text-xs font-mono font-semibold uppercase tracking-wider">
-            <FileCheck className="w-3.5 h-3.5" />
-            <span>Formulir Pendaftaran &amp; Reservasi Resmi</span>
+        <div className="text-left max-w-3xl mb-8 sm:mb-14 space-y-2.5 sm:space-y-3">
+          <div className="flex items-center gap-2">
+            <span className="tech-tag tech-tag-brand">
+              <FileCheck className="w-3 h-3 text-[#0F7A73]" />
+              Reservasi Resmi
+            </span>
           </div>
-          <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#121317] tracking-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#111215] tracking-tight leading-tight">
             Kunci Slot Latihan Mengemudi Anda
           </h2>
-          <p className="text-[#45474d] text-xs sm:text-sm leading-relaxed">
+          <p className="text-[#45474d] text-xs sm:text-base leading-relaxed">
             Isi formulir pendaftaran singkat di bawah ini. Tim konsultan resmi Amanah Drive akan segera menyiapkan jadwal dan memandu proses belajar Anda hingga mahir.
           </p>
         </div>
 
-        {/* Card Form */}
-        <div className="bg-white rounded-2xl shadow-sm border border-[#e2e4e9] p-5 sm:p-8 lg:p-10 relative overflow-hidden">
+        {/* Architectural Split Console (Live Summary + Technical Form) */}
+        <div className="border border-[rgba(17,18,21,0.08)] bg-white rounded-[4px] overflow-hidden">
           
           {successData ? (
-            <div className="text-center py-6 sm:py-10 space-y-4">
-              <div className="w-16 h-16 bg-[#e6f4f2] text-[#0F7A73] rounded-full flex items-center justify-center mx-auto mb-2">
-                <CheckCircle2 className="w-9 h-9" />
+            <div className="text-center p-8 sm:p-14 space-y-4 max-w-xl mx-auto">
+              <div className="w-12 h-12 bg-[#e6f4f2] text-[#0F7A73] rounded-[4px] flex items-center justify-center mx-auto mb-2 border border-[#0F7A73]/20">
+                <CheckCircle2 className="w-6 h-6" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#121317]">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111215] tracking-tight">
                 Pendaftaran Berhasil Dikirim!
               </h3>
-              <p className="text-xs sm:text-sm text-[#45474d] max-w-md mx-auto leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#45474d] leading-relaxed">
                 Terima kasih, <strong>{successData.nama}</strong>. Data rencana kursus untuk <strong>{successData.paket_nama}</strong> telah berhasil kami terima.
               </p>
 
-              <div className="p-4 bg-[#f8f9fa] rounded-xl border border-[#e2e4e9] max-w-md mx-auto text-left space-y-1.5 text-xs text-[#45474d]">
-                <div className="flex items-center gap-2 font-semibold text-[#121317]">
+              <div className="p-4 bg-[#f8f9fc] rounded-[4px] border border-[rgba(17,18,21,0.08)] text-left space-y-1.5 text-xs text-[#45474d]">
+                <div className="flex items-center gap-2 font-semibold text-[#111215]">
                   <Sparkles className="w-4 h-4 text-[#0F7A73]" />
                   <span>Langkah Terakhir:</span>
                 </div>
-                <p>Klik tombol hijau di bawah untuk terhubung langsung dengan Kak Lia di WhatsApp dan mengonfirmasi ketersediaan instruktur Anda.</p>
+                <p>Klik tombol di bawah untuk terhubung langsung dengan Kak Lia di WhatsApp dan mengonfirmasi ketersediaan instruktur Anda.</p>
               </div>
 
               <div className="pt-2">
@@ -177,7 +179,7 @@ export default function RegistrationFormSection({
                   href={successData.whatsapp_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-md transition-all active:scale-[0.98]"
+                  className="tech-btn-teal w-full gap-2 text-sm py-3 font-bold"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>Konfirmasi via WhatsApp Sekarang</span>
@@ -206,193 +208,252 @@ export default function RegistrationFormSection({
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-[rgba(17,18,21,0.08)]">
               
-              {/* Anti-spam Honeypot (Hidden) */}
-              <div className="hidden" aria-hidden="true">
-                <input
-                  type="text"
-                  name="company_website"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  value={formData.company_website}
-                  onChange={(e) => setFormData({ ...formData, company_website: e.target.value })}
-                />
+              {/* Left Column: Live Reservation Summary Console (4 cols) */}
+              <div className="lg:col-span-4 bg-[#f8f9fc] p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                <div className="space-y-5">
+                  <div className="border-b border-[rgba(17,18,21,0.08)] pb-4">
+                    <span className="tech-tag tech-tag-brand mb-2">
+                      Ringkasan Pilihan
+                    </span>
+                    <h3 className="text-lg font-bold text-[#111215] tracking-tight">
+                      {selectedPkg?.name || "Paket Kursus"}
+                    </h3>
+                    <div className="text-2xl font-extrabold text-[#111215] tabular-nums mt-1">
+                      {selectedPkg?.price && selectedPkg.price > 0
+                        ? `Rp ${(selectedPkg.price).toLocaleString("id-ID")}`
+                        : "Konsultasi Khusus"}
+                    </div>
+                  </div>
+
+                  {/* Summary Spec Points */}
+                  <div className="space-y-3 text-xs text-[#45474d]">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-[#9aa0a6]">UNIT MOBIL:</span>
+                      <span className="font-semibold text-[#111215]">{selectedVehicle?.name || "Ayla / Xenia"}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-[#9aa0a6]">JAM LATIHAN:</span>
+                      <span className="font-semibold text-[#111215]">{selectedSlot?.time || "Pagi / Sore"}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-[#9aa0a6]">ANTAR-JEMPUT:</span>
+                      <span className={`font-semibold ${formData.antar_jemput ? "text-[#0F7A73]" : "text-[#9aa0a6]"}`}>
+                        {formData.antar_jemput ? "Ya (Gratis)" : "Tidak"}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Trust Callouts */}
+                  <div className="pt-4 border-t border-[rgba(17,18,21,0.08)] space-y-2 text-[11px] text-[#45474d]">
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981] shrink-0" />
+                      <span>Instruktur Sabar &amp; Bersertifikat</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981] shrink-0" />
+                      <span>Sertifikat Kelulusan Resmi CV</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981] shrink-0" />
+                      <span>Tanpa Biaya Tambahan Bensin</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-[11px] font-mono text-[#9aa0a6]">
+                  Amanah Drive &bull; Official Registration Console
+                </div>
               </div>
 
-              {/* Error Alert */}
-              {error && (
-                <div className="flex items-center gap-2.5 p-3 sm:p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs sm:text-sm">
-                  <AlertCircle className="w-4 h-4 shrink-0 text-rose-600" />
-                  <span>{error}</span>
-                </div>
-              )}
-
-              {/* Grid 1: Identitas */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                <div>
-                  <label className="block text-xs sm:text-sm font-semibold text-[#121317] mb-1.5">
-                    Nama Lengkap Siswa <span className="text-rose-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Contoh: Ahmad Fadilah"
-                    value={formData.nama}
-                    onChange={(e) => setFormData({ ...formData, nama: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#d1d5db] focus:border-[#0F7A73] focus:ring-2 focus:ring-[#0F7A73]/20 text-xs sm:text-sm text-[#121317] outline-none transition-all"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs sm:text-sm font-semibold text-[#121317] mb-1.5">
-                    Nomor WhatsApp Aktif <span className="text-rose-500">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    placeholder="Contoh: 081234567890"
-                    value={formData.whatsapp}
-                    onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#d1d5db] focus:border-[#0F7A73] focus:ring-2 focus:ring-[#0F7A73]/20 text-xs sm:text-sm text-[#121317] outline-none transition-all"
-                  />
-                  <p className="text-[10px] sm:text-xs text-[#71747d] mt-1">
-                    Jadwal &amp; rincian pendaftaran akan dikirim ke WhatsApp ini.
-                  </p>
-                </div>
-              </div>
-
-              {/* Grid 2: Pilihan Kursus Dinamis */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-                
-                {/* Paket */}
-                <div>
-                  <label className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#121317] mb-1.5">
-                    <Package className="w-3.5 h-3.5 text-[#0F7A73]" />
-                    <span>Pilihan Paket</span>
-                  </label>
-                  <select
-                    value={formData.paket_id}
-                    onChange={(e) => setFormData({ ...formData, paket_id: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#d1d5db] focus:border-[#0F7A73] focus:ring-2 focus:ring-[#0F7A73]/20 text-xs sm:text-sm text-[#121317] bg-white outline-none transition-all"
-                  >
-                    {packages.map((pkg) => (
-                      <option key={pkg.id} value={pkg.id}>
-                        {pkg.name} ({pkg.price > 0 ? `Rp ${(pkg.price / 1000).toLocaleString('id-ID')}rb` : 'Khusus'})
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Armada */}
-                <div>
-                  <label className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#121317] mb-1.5">
-                    <Car className="w-3.5 h-3.5 text-[#0F7A73]" />
-                    <span>Unit Mobil</span>
-                  </label>
-                  <select
-                    value={formData.kendaraan_id}
-                    onChange={(e) => setFormData({ ...formData, kendaraan_id: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#d1d5db] focus:border-[#0F7A73] focus:ring-2 focus:ring-[#0F7A73]/20 text-xs sm:text-sm text-[#121317] bg-white outline-none transition-all"
-                  >
-                    {fleet.map((veh) => (
-                      <option key={veh.id} value={veh.id}>
-                        {veh.name} ({veh.type})
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Jam Sesi */}
-                <div>
-                  <label className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#121317] mb-1.5">
-                    <Clock className="w-3.5 h-3.5 text-[#0F7A73]" />
-                    <span>Preferensi Jam Latihan</span>
-                  </label>
-                  <select
-                    value={formData.slot_waktu_id}
-                    onChange={(e) => setFormData({ ...formData, slot_waktu_id: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#d1d5db] focus:border-[#0F7A73] focus:ring-2 focus:ring-[#0F7A73]/20 text-xs sm:text-sm text-[#121317] bg-white outline-none transition-all"
-                  >
-                    {slots.map((s) => (
-                      <option key={s.id} value={s.id}>
-                        {s.time} - {s.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-              </div>
-
-              {/* Antar Jemput Option */}
-              <div className="p-4 rounded-xl bg-[#f0f9f8] border border-[#d2ebe7] space-y-3">
-                <label className="flex items-center gap-2.5 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={formData.antar_jemput}
-                    onChange={(e) => setFormData({ ...formData, antar_jemput: e.target.checked })}
-                    className="w-4 h-4 rounded text-[#0F7A73] focus:ring-[#0F7A73] border-gray-300"
-                  />
-                  <span className="text-xs sm:text-sm font-bold text-[#0F7A73]">
-                    Saya Membutuhkan Layanan Antar-Jemput Siswa
-                  </span>
-                </label>
-
-                {formData.antar_jemput && (
-                  <div className="pt-1">
-                    <label className="block text-xs font-medium text-[#45474d] mb-1">
-                      Alamat / Patokan Lokasi Penjemputan <span className="text-rose-500">*</span>
-                    </label>
+              {/* Right Column: Interactive Form (8 cols) */}
+              <div className="lg:col-span-8 p-6 sm:p-8">
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  
+                  {/* Anti-spam Honeypot (Hidden) */}
+                  <div className="hidden" aria-hidden="true">
                     <input
                       type="text"
-                      placeholder="Contoh: Jl. Angkatan 45 No. 12, dekat RS Siloam Palembang"
-                      value={formData.alamat_jemput}
-                      onChange={(e) => setFormData({ ...formData, alamat_jemput: e.target.value })}
-                      className="w-full px-3 py-2 rounded-lg border border-[#c4e2dc] bg-white text-xs text-[#121317] outline-none focus:border-[#0F7A73]"
+                      name="company_website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={formData.company_website}
+                      onChange={(e) => setFormData({ ...formData, company_website: e.target.value })}
                     />
                   </div>
-                )}
-              </div>
 
-              {/* Catatan Tambahan */}
-              <div>
-                <label className="block text-xs sm:text-sm font-semibold text-[#121317] mb-1.5">
-                  Catatan Belajar / Kebutuhan Khusus (Opsional)
-                </label>
-                <textarea
-                  rows={2}
-                  placeholder="Contoh: Pernah coba stir tapi masih grogi tanjakan, butuh instruktur yang sangat sabar..."
-                  value={formData.catatan}
-                  onChange={(e) => setFormData({ ...formData, catatan: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#d1d5db] focus:border-[#0F7A73] focus:ring-2 focus:ring-[#0F7A73]/20 text-xs sm:text-sm text-[#121317] outline-none transition-all resize-none"
-                />
-              </div>
-
-              {/* Submit Button */}
-              <div className="pt-2">
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-[#0F7A73] hover:bg-[#0d6862] text-white font-bold text-sm sm:text-base shadow-md transition-all active:scale-[0.99] disabled:opacity-60 cursor-pointer"
-                >
-                  {loading ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Memproses Pendaftaran...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4" />
-                      <span>Kirim Formulir Pendaftaran Sekarang</span>
-                    </>
+                  {/* Error Alert */}
+                  {error && (
+                    <div className="flex items-center gap-2.5 p-3.5 rounded-[4px] bg-rose-50 border border-rose-200 text-rose-700 text-xs sm:text-sm">
+                      <AlertCircle className="w-4 h-4 shrink-0 text-rose-600" />
+                      <span>{error}</span>
+                    </div>
                   )}
-                </button>
-                <p className="text-center text-[10px] sm:text-xs text-[#71747d] mt-2">
-                  🔒 Data Anda aman &amp; hanya digunakan untuk konfirmasi jadwal kursus resmi Amanah Drive.
-                </p>
+
+                  {/* Field 1: Identitas */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-[#111215] mb-1.5">
+                        Nama Lengkap Siswa <span className="text-rose-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Contoh: Ahmad Fadilah"
+                        value={formData.nama}
+                        onChange={(e) => setFormData({ ...formData, nama: e.target.value })}
+                        className="w-full px-3.5 py-2.5 rounded-[4px] border border-[rgba(17,18,21,0.15)] focus:border-[#0F7A73] text-xs sm:text-sm text-[#111215] outline-none transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-[#111215] mb-1.5">
+                        Nomor WhatsApp Aktif <span className="text-rose-500">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        placeholder="Contoh: 081234567890"
+                        value={formData.whatsapp}
+                        onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
+                        className="w-full px-3.5 py-2.5 rounded-[4px] border border-[rgba(17,18,21,0.15)] focus:border-[#0F7A73] text-xs sm:text-sm text-[#111215] outline-none transition-colors"
+                      />
+                      <p className="text-[10px] text-[#9aa0a6] mt-1 font-mono">
+                        Jadwal &amp; rincian pendaftaran akan dikirim ke nomor ini.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Field 2: Pilihan Kursus Dinamis */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div>
+                      <label className="flex items-center gap-1.5 text-xs font-semibold text-[#111215] mb-1.5">
+                        <Package className="w-3.5 h-3.5 text-[#0F7A73]" />
+                        <span>Pilihan Paket</span>
+                      </label>
+                      <select
+                        value={formData.paket_id}
+                        onChange={(e) => setFormData({ ...formData, paket_id: e.target.value })}
+                        className="w-full px-3.5 py-2.5 rounded-[4px] border border-[rgba(17,18,21,0.15)] focus:border-[#0F7A73] text-xs sm:text-sm text-[#111215] bg-white outline-none transition-colors"
+                      >
+                        {packages.map((pkg) => (
+                          <option key={pkg.id} value={pkg.id}>
+                            {pkg.name} ({pkg.price > 0 ? `Rp ${(pkg.price / 1000).toLocaleString('id-ID')}rb` : 'Khusus'})
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="flex items-center gap-1.5 text-xs font-semibold text-[#111215] mb-1.5">
+                        <Car className="w-3.5 h-3.5 text-[#0F7A73]" />
+                        <span>Unit Mobil</span>
+                      </label>
+                      <select
+                        value={formData.kendaraan_id}
+                        onChange={(e) => setFormData({ ...formData, kendaraan_id: e.target.value })}
+                        className="w-full px-3.5 py-2.5 rounded-[4px] border border-[rgba(17,18,21,0.15)] focus:border-[#0F7A73] text-xs sm:text-sm text-[#111215] bg-white outline-none transition-colors"
+                      >
+                        {fleet.map((veh) => (
+                          <option key={veh.id} value={veh.id}>
+                            {veh.name} ({veh.type})
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="flex items-center gap-1.5 text-xs font-semibold text-[#111215] mb-1.5">
+                        <Clock className="w-3.5 h-3.5 text-[#0F7A73]" />
+                        <span>Jam Latihan</span>
+                      </label>
+                      <select
+                        value={formData.slot_waktu_id}
+                        onChange={(e) => setFormData({ ...formData, slot_waktu_id: e.target.value })}
+                        className="w-full px-3.5 py-2.5 rounded-[4px] border border-[rgba(17,18,21,0.15)] focus:border-[#0F7A73] text-xs sm:text-sm text-[#111215] bg-white outline-none transition-colors"
+                      >
+                        {slots.map((s) => (
+                          <option key={s.id} value={s.id}>
+                            {s.time} - {s.label}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Antar Jemput Option */}
+                  <div className="p-4 rounded-[4px] bg-[#f8f9fc] border border-[rgba(17,18,21,0.08)] space-y-3">
+                    <label className="flex items-center gap-2.5 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={formData.antar_jemput}
+                        onChange={(e) => setFormData({ ...formData, antar_jemput: e.target.checked })}
+                        className="w-4 h-4 rounded text-[#0F7A73] focus:ring-[#0F7A73] border-gray-300"
+                      />
+                      <span className="text-xs sm:text-sm font-bold text-[#0F7A73]">
+                        Saya Membutuhkan Layanan Antar-Jemput Siswa (Gratis)
+                      </span>
+                    </label>
+
+                    {formData.antar_jemput && (
+                      <div className="pt-1">
+                        <label className="block text-xs font-medium text-[#45474d] mb-1">
+                          Alamat / Patokan Lokasi Penjemputan <span className="text-rose-500">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="Contoh: Jl. Angkatan 45 No. 12, dekat RS Siloam Palembang"
+                          value={formData.alamat_jemput}
+                          onChange={(e) => setFormData({ ...formData, alamat_jemput: e.target.value })}
+                          className="w-full px-3 py-2 rounded-[4px] border border-[rgba(17,18,21,0.15)] bg-white text-xs text-[#111215] outline-none focus:border-[#0F7A73]"
+                        />
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Catatan Tambahan */}
+                  <div>
+                    <label className="block text-xs font-semibold text-[#111215] mb-1.5">
+                      Catatan Belajar / Kebutuhan Khusus (Opsional)
+                    </label>
+                    <textarea
+                      rows={2}
+                      placeholder="Contoh: Pernah coba stir tapi masih grogi tanjakan, butuh instruktur yang sangat sabar..."
+                      value={formData.catatan}
+                      onChange={(e) => setFormData({ ...formData, catatan: e.target.value })}
+                      className="w-full px-3.5 py-2.5 rounded-[4px] border border-[rgba(17,18,21,0.15)] focus:border-[#0F7A73] text-xs sm:text-sm text-[#111215] outline-none transition-colors resize-none"
+                    />
+                  </div>
+
+                  {/* Submit Button */}
+                  <div className="pt-2">
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="tech-btn-teal w-full text-sm py-3 font-bold gap-2 cursor-pointer"
+                    >
+                      {loading ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          <span>Memproses Pendaftaran...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4" />
+                          <span>Kirim Formulir Pendaftaran Sekarang</span>
+                        </>
+                      )}
+                    </button>
+                    <p className="text-center text-[10px] font-mono text-[#9aa0a6] mt-2">
+                      PRIVASI TERJAMIN &bull; DATA HANYA DIGUNAKAN UNTUK KONFIRMASI JADWAL
+                    </p>
+                  </div>
+
+                </form>
               </div>
 
-            </form>
+            </div>
           )}
 
         </div>

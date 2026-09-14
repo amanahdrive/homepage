@@ -15,16 +15,16 @@ interface FooterProps {
 export default function Footer({ care }: FooterProps) {
   const activeCare = care || STUDENT_CARE;
   return (
-    <footer className="bg-[#121317] border-t border-[#212226] pt-10 pb-8 sm:pt-16 sm:pb-12 relative text-slate-300">
+    <footer className="bg-[#111215] border-t border-white/10 pt-12 pb-8 sm:pt-16 sm:pb-12 relative text-slate-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-10 pb-8 sm:pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-10 border-b border-white/10">
           
           {/* Col 1: Brand & Credibility (4 cols) */}
-          <div className="lg:col-span-4 space-y-5">
+          <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="inline-block">
-              <AmanahLogoLandscape variant="landscape-white" className="h-9 w-auto" alt="Amanah Drive Palembang" />
+              <AmanahLogoLandscape variant="landscape-white" className="h-8 w-auto" alt="Amanah Drive Palembang" />
             </Link>
 
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
@@ -32,17 +32,17 @@ export default function Footer({ care }: FooterProps) {
             </p>
 
             <div className="flex flex-wrap items-center gap-2 pt-1">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/10 text-teal-300 text-[11px] font-mono border border-white/15">
-                <Shield className="w-3.5 h-3.5 text-[#14B8A6]" />
-                <span>Instruktur Sabar</span>
+              <span className="tech-tag border-white/15 bg-white/5 text-teal-300">
+                <Shield className="w-3 h-3 text-[#14B8A6]" />
+                Instruktur Sabar
               </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/5 text-slate-300 text-[11px] font-mono border border-white/10">
-                <Award className="w-3.5 h-3.5 text-amber-400" />
-                <span>Sertifikat Resmi CV</span>
+              <span className="tech-tag border-white/10 bg-white/5 text-slate-300">
+                <Award className="w-3 h-3 text-amber-400" />
+                Sertifikat Resmi CV
               </span>
             </div>
 
-            <div className="text-[11px] text-slate-400 space-y-1 pt-2 font-mono">
+            <div className="text-[11px] text-slate-400 space-y-1 pt-1 font-mono">
               <p>Operasional Sesi: <strong className="text-white">09:00 - 22:00 WIB</strong> (Setiap Hari)</p>
               <p>Hotline Siswa: <strong className="text-white">{CONTACT_INFO.phoneDisplay}</strong></p>
             </div>
@@ -133,9 +133,9 @@ export default function Footer({ care }: FooterProps) {
               Student Care &amp; Pembayaran
             </h3>
             
-            <div className="bg-[#18191d] p-4 rounded-xl border border-white/10 space-y-2.5">
+            <div className="bg-[#16171c] p-4 rounded-[4px] border border-white/10 space-y-3">
               <div className="flex items-center gap-2.5">
-                <div className="relative w-9 h-9 rounded-lg overflow-hidden shrink-0 border border-white/20">
+                <div className="relative w-8 h-8 rounded-[4px] overflow-hidden shrink-0 border border-white/20">
                   <Image
                     src={activeCare.avatar}
                     alt={activeCare.name}
@@ -165,12 +165,12 @@ export default function Footer({ care }: FooterProps) {
                 className="inline-flex items-center gap-1.5 text-xs text-teal-300 hover:text-white font-semibold"
               >
                 <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Hubungi Kak Lia</span>
+                <span>Hubungi Kak Lia &rarr;</span>
               </a>
             </div>
 
-            <div className="bg-[#18191d] p-3.5 rounded-xl border border-white/10 text-xs space-y-1">
-              <p className="text-[11px] text-slate-400 font-mono">Rekening Resmi DP:</p>
+            <div className="bg-[#16171c] p-3.5 rounded-[4px] border border-white/10 text-xs space-y-1">
+              <p className="text-[10px] text-slate-400 font-mono">Rekening Resmi DP:</p>
               <p className="font-mono text-white text-xs font-bold">
                 {CONTACT_INFO.bankAccount.bank}: {CONTACT_INFO.bankAccount.number}
               </p>
@@ -183,9 +183,9 @@ export default function Footer({ care }: FooterProps) {
         {/* Bottom copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-slate-500">
           <p>{new Date().getFullYear()} Amanah Drive Palembang. Seluruh Hak Cipta Dilindungi.</p>
-          <p className="flex items-center gap-1.5">
-            <span>Standar Keselamatan Berkendara Kota Palembang</span>
-            <span className="inline-block w-1 h-1 rounded-full bg-slate-600"></span>
+          <p className="flex items-center gap-2">
+            <span>Standar Resmi Palembang</span>
+            <span>&bull;</span>
             <span>Anti Emosi &amp; Beretika</span>
           </p>
         </div>

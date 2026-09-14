@@ -1,8 +1,8 @@
-/* Hallmark · macrostructure: Antigravity Feature Explorer · theme: Google Antigravity · genre: technical-minimal · nav: N5 · footer: Ft5 */
+/* Hallmark · macrostructure: Architectural Spec · theme: Google Antigravity · genre: technical-minimal · nav: N1b · footer: Ft4 */
 @import "tailwindcss";
 
 :root {
-  /* Google Antigravity Official Surface & Grey Palette */
+  /* Google Antigravity Official Surface & Monochromatic Palette */
   --palette-grey-0: #ffffff;
   --palette-grey-10: #f8f9fc;
   --palette-grey-15: #f0f1f5;
@@ -11,37 +11,35 @@
   --palette-grey-100: #e1e6ec;
   --palette-grey-200: #cdd4dc;
   --palette-grey-300: #b2bbc5;
-  --palette-grey-400: #b7bfd9;
+  --palette-grey-400: #9aa0a6;
   --palette-grey-800: #45474d;
   --palette-grey-900: #2f3034;
   --palette-grey-1000: #212226;
   --palette-grey-1100: #18191d;
-  --palette-grey-1200: #121317;
+  --palette-grey-1200: #111215;
 
-  /* Brand Chromas & System */
+  /* Single Brand Anchor Chroma */
   --brand-teal: #0F7A73;
   --brand-teal-dark: #092E2B;
   --brand-teal-light: #14B8A6;
   --brand-teal-subtle: #E6F4F2;
-  --brand-blue: #1a73e8;
 
-  /* Status Chromas */
+  /* Status Accents */
   --status-emerald: #10B981;
   --status-amber: #F59E0B;
   --status-rose: #F43F5E;
-  --status-sky: #38BDF8;
 
-  /* Outlines & Borders (Google Antigravity Standard) */
-  --theme-outline: rgba(33, 34, 38, 0.12);
-  --theme-outline-variant: rgba(33, 34, 38, 0.08);
-  --theme-outline-subtle: rgba(33, 34, 38, 0.04);
+  /* Hairline Precision Borders (Clean 1px Architecture) */
+  --hairline: rgba(17, 18, 21, 0.08);
+  --hairline-strong: rgba(17, 18, 21, 0.16);
+  --hairline-subtle: rgba(17, 18, 21, 0.04);
+  --hairline-dark: rgba(255, 255, 255, 0.1);
 
-  /* Typography & Standards */
-  /* Typography & Standards (12px container, 8px control, 6px badge - BRANDING_SYSTEM.md) */
+  /* Typography & Architectural Standards */
   --font-inter: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --radius-container: 12px;
-  --radius-control: 8px;
-  --radius-badge: 6px;
+  --radius-control: 4px;
+  --radius-surface: 6px;
+  --radius-badge: 2px;
 }
 
 html, body {
@@ -65,166 +63,167 @@ h1, h2, h3, h4, h5, h6 {
   font-feature-settings: 'tnum' on;
 }
 
-/* Google Antigravity Card Standard (12px radius, no boxy bloat) */
+/* Precision Hairline Grid Architecture (replaces heavy card containers) */
+.hairline-border {
+  border: 1px solid var(--hairline);
+}
+
+.hairline-border-t {
+  border-top: 1px solid var(--hairline);
+}
+
+.hairline-border-b {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.hairline-divide-y > * + * {
+  border-top: 1px solid var(--hairline);
+}
+
+.hairline-divide-x > * + * {
+  border-left: 1px solid var(--hairline);
+}
+
+/* Backward-compatible card styling now rendered clean without puffy shadows */
 .antigravity-card {
   background-color: #ffffff;
-  border: 1px solid var(--theme-outline-variant);
-  border-radius: var(--radius-container);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.015);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-surface);
+  transition: border-color 150ms ease, background-color 150ms ease;
 }
 
 .antigravity-card:hover {
-  border-color: rgba(33, 34, 38, 0.18);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-color: var(--hairline-strong);
 }
 
 .antigravity-card-container {
   background-color: var(--palette-grey-10);
-  border: 1px solid var(--theme-outline-variant);
-  border-radius: var(--radius-container);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-surface);
 }
 
 .antigravity-card-inverse {
   background-color: var(--palette-grey-1200);
   color: #ffffff;
-  border-radius: var(--radius-container);
+  border-radius: var(--radius-surface);
 }
 
-/* Google Antigravity Button Standards (8px radius, responsive density) */
-.antigravity-btn-primary {
+/* Architectural Button Standards (Crisp, rectangular, single-line affordances) */
+.tech-btn-primary, .antigravity-btn-primary {
   background-color: var(--palette-grey-1200);
   color: #ffffff;
+  border: 1px solid var(--palette-grey-1200);
   border-radius: var(--radius-control);
   font-weight: 500;
   font-size: 13px;
-  padding: 8px 16px;
-  transition: all 0.2s ease;
+  padding: 9px 18px;
+  transition: background-color 150ms ease, border-color 150ms ease, transform 100ms ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
 }
 
-@media (min-width: 640px) {
-  .antigravity-btn-primary {
-    font-size: 14px;
-    padding: 10px 20px;
-  }
-}
-
-.antigravity-btn-primary:hover {
+.tech-btn-primary:hover, .antigravity-btn-primary:hover {
   background-color: var(--palette-grey-900);
+  border-color: var(--palette-grey-900);
 }
 
-.antigravity-btn-primary:active {
-  transform: scale(0.98);
+.tech-btn-primary:active, .antigravity-btn-primary:active {
+  transform: translateY(1px);
 }
 
-.antigravity-btn-teal {
+.tech-btn-teal, .antigravity-btn-teal {
   background-color: var(--brand-teal);
   color: #ffffff;
+  border: 1px solid var(--brand-teal);
   border-radius: var(--radius-control);
   font-weight: 500;
   font-size: 13px;
-  padding: 8px 16px;
-  transition: all 0.2s ease;
+  padding: 9px 18px;
+  transition: background-color 150ms ease, border-color 150ms ease, transform 100ms ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
 }
 
-@media (min-width: 640px) {
-  .antigravity-btn-teal {
-    font-size: 14px;
-    padding: 10px 20px;
-  }
-}
-
-.antigravity-btn-teal:hover {
+.tech-btn-teal:hover, .antigravity-btn-teal:hover {
   background-color: #0c6761;
+  border-color: #0c6761;
 }
 
-.antigravity-btn-teal:active {
-  transform: scale(0.98);
+.tech-btn-teal:active, .antigravity-btn-teal:active {
+  transform: translateY(1px);
 }
 
-.antigravity-btn-secondary {
-  background-color: rgba(183, 191, 217, 0.08);
+.tech-btn-ghost, .antigravity-btn-secondary {
+  background-color: transparent;
   color: var(--palette-grey-1200);
-  border: 1px solid var(--theme-outline-variant);
+  border: 1px solid var(--hairline-strong);
   border-radius: var(--radius-control);
   font-weight: 500;
   font-size: 13px;
-  padding: 8px 16px;
-  backdrop-filter: blur(6px);
-  transition: all 0.2s ease;
+  padding: 9px 18px;
+  transition: background-color 150ms ease, border-color 150ms ease, transform 100ms ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
 }
 
-@media (min-width: 640px) {
-  .antigravity-btn-secondary {
-    font-size: 14px;
-    padding: 10px 20px;
-  }
+.tech-btn-ghost:hover, .antigravity-btn-secondary:hover {
+  background-color: var(--palette-grey-10);
+  border-color: var(--palette-grey-1200);
 }
 
-.antigravity-btn-secondary:hover {
-  background-color: var(--palette-grey-15);
-  border-color: rgba(33, 34, 38, 0.16);
+.tech-btn-ghost:active, .antigravity-btn-secondary:active {
+  transform: translateY(1px);
 }
 
-.antigravity-btn-secondary:active {
-  transform: scale(0.98);
-}
-
-/* Antigravity Capability Tiles (Clean 12px tiles, no circular bubble) */
-.antigravity-bouncer {
-  border: 1px solid var(--theme-outline-variant);
-  aspect-ratio: 1;
-  border-radius: var(--radius-container);
-  background: #f8f9fc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.antigravity-bouncer:hover {
-  transform: translateY(-2px);
-  background: #f0f1f5;
-  border-color: rgba(33, 34, 38, 0.2);
-}
-
-/* Eyebrow Label (6px crisp badge, compact on mobile) */
-.antigravity-chip {
+/* Sharp Technical Micro-Tags (replaces bubble pill tags) */
+.tech-tag, .antigravity-chip {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 2px 7px;
-  border-radius: var(--radius-badge);
+  padding: 2px 6px;
+  border-radius: 2px;
   background-color: var(--palette-grey-15);
-  border: 1px solid var(--theme-outline-variant);
+  border: 1px solid var(--hairline);
   color: var(--palette-grey-800);
+  font-family: monospace;
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
-@media (min-width: 640px) {
-  .antigravity-chip {
-    gap: 6px;
-    padding: 3px 8px;
-    font-size: 11px;
-  }
+.tech-tag-brand {
+  background-color: var(--brand-teal-subtle);
+  border-color: rgba(15, 122, 115, 0.2);
+  color: var(--brand-teal);
 }
 
-/* Clean background grid pattern */
+/* Subtle architectural grid pattern */
 .antigravity-grid-pattern {
-  background-image: radial-gradient(rgba(33, 34, 38, 0.05) 1px, transparent 1px);
-  background-size: 28px 28px;
+  background-image: radial-gradient(rgba(17, 18, 21, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Scrollbar hide for mobile swipe snap tracks */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Focus visibility ring discipline */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--brand-teal);
+  outline-offset: 2px;
 }
 
 

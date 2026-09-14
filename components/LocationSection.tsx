@@ -26,16 +26,18 @@ export default function LocationSection({
   ];
 
   return (
-    <section id="lokasi" className="py-10 sm:py-24 relative bg-white border-t border-[rgba(33,34,38,0.06)]">
+    <section id="lokasi" className="py-14 sm:py-28 relative bg-[#f8f9fc] border-t border-[rgba(17,18,21,0.08)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-left max-w-3xl mb-6 sm:mb-12 space-y-2 sm:space-y-3">
-          <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-mono font-semibold uppercase tracking-wider text-[#0F7A73]">
-            <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-            <span>Lokasi Operasional &amp; Antar Jemput</span>
+        <div className="text-left max-w-3xl mb-8 sm:mb-14 space-y-2.5 sm:space-y-3">
+          <div className="flex items-center gap-2">
+            <span className="tech-tag tech-tag-brand">
+              <MapPin className="w-3 h-3 text-[#0F7A73]" />
+              Jangkauan Palembang
+            </span>
           </div>
-          <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#121317] tracking-tight leading-snug">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#111215] tracking-tight leading-tight">
             Kantor &amp; Area Antar-Jemput Gratis Palembang
           </h2>
           <p className="text-[#45474d] text-xs sm:text-base leading-relaxed">
@@ -43,57 +45,57 @@ export default function LocationSection({
           </p>
         </div>
 
-        {/* Two Column Bento Grid: Left Details & Right Google Maps */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 items-stretch">
+        {/* Architectural Split Console: Left Details & Right Google Maps */}
+        <div className="border border-[rgba(17,18,21,0.08)] bg-white rounded-[4px] overflow-hidden grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-[rgba(17,18,21,0.08)]">
           
           {/* Left Column: Office info & Pickup coverage (5 cols) */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-4 sm:space-y-6">
-            <div className="antigravity-card p-4 sm:p-6 bg-[#f8f9fc] border border-[rgba(33,34,38,0.08)] rounded-xl space-y-3.5 sm:space-y-5">
+          <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+            <div className="space-y-6">
               
               {/* Office Location */}
-              <div className="space-y-1 sm:space-y-1.5">
+              <div className="space-y-1.5">
                 <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#0F7A73]">
                   <Building2 className="w-3.5 h-3.5" />
                   <span>Kantor Operasional:</span>
                 </div>
-                <h3 className="text-sm sm:text-base font-bold text-[#121317] leading-snug">
+                <h3 className="text-sm sm:text-base font-bold text-[#111215] leading-snug">
                   {location.address || "Jl. Macan Kumbang XVIII, Siring Agung, Kec. Ilir Bar. I, Kota Palembang, Sumatera Selatan 30153"}
                 </h3>
-                <p className="text-[11px] sm:text-xs text-[#45474d] leading-relaxed">
+                <p className="text-xs text-[#45474d] leading-relaxed">
                   (Area Siring Agung, Macan Kumbang - Melayani Antar-Jemput Siswa Gratis se-Kota Palembang)
                 </p>
               </div>
 
               {/* Operating Hours */}
-              <div className="pt-3 sm:pt-4 border-t border-[rgba(33,34,38,0.08)] space-y-1 sm:space-y-1.5 text-xs text-[#45474d]">
-                <div className="flex items-center gap-2 font-bold text-[#121317]">
-                  <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0F7A73]" />
+              <div className="pt-4 border-t border-[rgba(17,18,21,0.08)] space-y-1 text-xs text-[#45474d]">
+                <div className="flex items-center gap-2 font-bold text-[#111215]">
+                  <Clock className="w-3.5 h-3.5 text-[#0F7A73]" />
                   <span>Jam Operasional Layanan:</span>
                 </div>
-                <p className="text-[11px] sm:text-xs pl-5 sm:pl-6 text-[#121317] font-mono">
+                <p className="text-xs pl-5 text-[#111215] font-mono">
                   {CONTACT_INFO.operationalHours}
                 </p>
-                <p className="text-[10px] sm:text-[11px] pl-5 sm:pl-6 text-[#9aa0a6]">
+                <p className="text-[11px] pl-5 text-[#9aa0a6]">
                   Latihan tetap berjalan normal setiap hari Sabtu, Minggu, dan tanggal merah.
                 </p>
               </div>
 
               {/* Free Pick-Up Coverage Areas */}
-              <div className="pt-3 sm:pt-4 border-t border-[rgba(33,34,38,0.08)] space-y-1.5 sm:space-y-2">
+              <div className="pt-4 border-t border-[rgba(17,18,21,0.08)] space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-[#121317]">Wilayah Bebas Biaya Antar-Jemput:</span>
-                  <span className="text-[9px] sm:text-[10px] font-mono font-bold text-[#10B981] bg-[#E6F4F2] px-1.5 py-0.5 rounded">GRATIS</span>
+                  <span className="text-xs font-bold text-[#111215]">Wilayah Bebas Biaya Antar-Jemput:</span>
+                  <span className="tech-tag tech-tag-brand">GRATIS</span>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2 text-xs text-[#45474d]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#45474d]">
                   {coverageAreas.map((area, idx) => (
-                    <div key={idx} className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs">
+                    <div key={idx} className="flex items-center gap-1.5 text-xs">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981] shrink-0" />
                       <span>{area}</span>
                     </div>
                   ))}
                 </div>
-                <p className="text-[10px] sm:text-[11px] text-[#9aa0a6] pt-0.5 sm:pt-1">
+                <p className="text-[11px] text-[#9aa0a6] pt-1">
                   *Lokasi rumah Anda di luar daftar? Koordinasikan titik kumpul terdekat dengan tim kami.
                 </p>
               </div>
@@ -101,7 +103,7 @@ export default function LocationSection({
             </div>
 
             {/* Direct WhatsApp CTA Button */}
-            <div className="pt-2">
+            <div className="pt-4 border-t border-[rgba(17,18,21,0.08)]">
               <a
                 href={generateWhatsAppUrl("Halo Kak Lia, saya ingin bertanya jangkauan antar-jemput atau koordinasi titik temu terdekat.")}
                 onClick={() =>
@@ -112,7 +114,7 @@ export default function LocationSection({
                 }
                 target="_blank"
                 rel="noopener noreferrer"
-                className="antigravity-btn-primary w-full py-2.5 sm:py-3 px-4 sm:px-5 text-xs gap-2 rounded-lg"
+                className="tech-btn-primary w-full gap-2 text-xs"
               >
                 <MessageCircle className="w-4 h-4 fill-white text-transparent" />
                 <span>Konsultasi Penjemputan via WhatsApp</span>
@@ -121,29 +123,29 @@ export default function LocationSection({
           </div>
 
           {/* Right Column: Google Maps Embed (7 cols) */}
-          <div className="lg:col-span-7 flex flex-col justify-between">
-            <div className="w-full h-full min-h-[280px] sm:min-h-[420px] rounded-xl overflow-hidden border border-[rgba(33,34,38,0.08)] bg-[#f8f9fc] shadow-sm relative">
+          <div className="lg:col-span-7 flex flex-col justify-between bg-[#f8f9fc]">
+            <div className="w-full h-full min-h-[300px] sm:min-h-[440px] relative">
               <iframe
                 src={location.embedUrl}
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: "280px" }}
+                style={{ border: 0, minHeight: "300px" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
                 title="Peta Lokasi Amanah Drive Palembang"
-                className="w-full h-full min-h-[280px] sm:min-h-[420px] block"
+                className="w-full h-full min-h-[300px] sm:min-h-[440px] block"
               />
             </div>
 
-            <div className="mt-2 flex items-center justify-between text-[11px] font-mono text-[#9aa0a6] px-1">
-              <span>Google Maps Resmi: Amanah Drive Palembang</span>
+            <div className="p-3 border-t border-[rgba(17,18,21,0.08)] bg-white flex items-center justify-between text-[11px] font-mono text-[#9aa0a6]">
+              <span>GOOGLE MAPS: AMANAH DRIVE PALEMBANG</span>
               <a
                 href="https://maps.app.goo.gl/yQW2X"
                 onClick={() => trackLocationView("Amanah Drive Palembang Google Maps")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#0F7A73] hover:underline inline-flex items-center gap-1"
+                className="text-[#0F7A73] hover:underline inline-flex items-center gap-1 font-semibold"
               >
                 <span>Buka di Google Maps</span>
                 <ExternalLink className="w-3 h-3" />
