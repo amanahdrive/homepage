@@ -181,27 +181,27 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(1px);
 }
 
-/* Sharp Technical Micro-Tags (replaces bubble pill tags) */
+/* Sharp Technical Micro-Labels (Clean monospace metadata without bubble pill styling) */
 .tech-tag, .antigravity-chip {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 2px 6px;
+  gap: 4px;
+  padding: 1px 5px;
   border-radius: 2px;
-  background-color: var(--palette-grey-15);
+  background-color: var(--palette-grey-10);
   border: 1px solid var(--hairline);
   color: var(--palette-grey-800);
   font-family: monospace;
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
 .tech-tag-brand {
-  background-color: var(--brand-teal-subtle);
-  border-color: rgba(15, 122, 115, 0.2);
+  background-color: transparent;
+  border-color: rgba(15, 122, 115, 0.25);
   color: var(--brand-teal);
 }
 
@@ -224,6 +224,78 @@ h1, h2, h3, h4, h5, h6 {
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline: 2px solid var(--brand-teal);
   outline-offset: 2px;
+}
+
+/* Infinite Marquee Keyframes (High-Performance GPU Transform) */
+@keyframes marquee-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Waterfall Vertical Scroll Animations */
+@keyframes waterfall-down {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@keyframes waterfall-up {
+  0% {
+    transform: translate3d(0, -50%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-left 38s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-right 38s linear infinite;
+}
+
+.animate-waterfall-down {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  will-change: transform;
+  animation: waterfall-down 45s linear infinite;
+}
+
+.animate-waterfall-up {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  will-change: transform;
+  animation: waterfall-up 45s linear infinite;
+}
+
+.pause-hover:hover {
+  animation-play-state: paused;
 }
 
 

@@ -57,7 +57,7 @@ export function AmanahLogoLandscape({
         return "/assets/logo-amdri-landscape-black.webp";
       case "landscape":
       default:
-        return "/assets/logo-amdri-landscape.webp";
+        return "/assets/logo-amdri-landscape-clean.webp";
     }
   };
 

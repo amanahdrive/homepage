@@ -31,13 +31,13 @@ export default function Footer({ care }: FooterProps) {
               Lembaga pelatihan mengemudi profesional di bawah naungan CV Amanah Drive, Kota Palembang. Mengedepankan keselamatan melalui instruktur sabar beretika tinggi, armada nyaman terawat, dan pendampingan pembuatan SIM A resmi sampai tuntas.
             </p>
 
-            <div className="flex flex-wrap items-center gap-2 pt-1">
-              <span className="tech-tag border-white/15 bg-white/5 text-teal-300">
-                <Shield className="w-3 h-3 text-[#14B8A6]" />
+            <div className="flex flex-wrap items-center gap-4 pt-1 font-mono text-[10px] uppercase tracking-wider">
+              <span className="flex items-center gap-1.5 text-teal-300">
+                <Shield className="w-3.5 h-3.5 text-[#14B8A6]" />
                 Instruktur Sabar
               </span>
-              <span className="tech-tag border-white/10 bg-white/5 text-slate-300">
-                <Award className="w-3 h-3 text-amber-400" />
+              <span className="flex items-center gap-1.5 text-slate-300">
+                <Award className="w-3.5 h-3.5 text-amber-400" />
                 Sertifikat Resmi CV
               </span>
             </div>

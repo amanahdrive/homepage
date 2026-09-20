@@ -3,8 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { AmanahLogo } from "./Logo";
-import { MessageCircle, Menu, X, Phone, ShieldCheck } from "lucide-react";
+import { MessageCircle, Menu, X, Phone } from "lucide-react";
 import { CONTACT_INFO, STUDENT_CARE, generateWhatsAppUrl, getAvatarStyle } from "@/lib/constants";
 import { trackWhatsAppLead, trackPhoneCall } from "@/lib/gtm";
 
@@ -19,7 +18,7 @@ export default function Navbar({ care }: NavbarProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 15);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -37,45 +36,63 @@ export default function Navbar({ care }: NavbarProps) {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-[0_1px_0_rgba(17,18,21,0.08)]" : "bg-white/90 backdrop-blur-sm"}`}>
-      {/* Precision Notice Strip */}
-      <div className="bg-[#f8f9fc] text-[#45474d] text-[11px] sm:text-xs py-1.5 px-4 text-center border-b border-[rgba(17,18,21,0.06)] flex items-center justify-between sm:justify-center gap-3 whitespace-nowrap overflow-hidden">
-        <div className="flex items-center gap-2">
-          <span className="tech-tag tech-tag-brand">
-            <ShieldCheck className="w-3 h-3 text-[#0F7A73]" /> Resmi Palembang
-          </span>
-          <span className="hidden md:inline text-[11px] text-[#45474d] font-normal">
-            Gratis Antar-Jemput ke Rumah &bull; Instruktur Sabar Bersertifikat &bull; AC Dingin
-          </span>
-        </div>
-        <a
-          href={generateWhatsAppUrl("Halo Kak Lia, saya ingin tanya ketersediaan jadwal & promo kursus minggu ini.")}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#0F7A73] hover:text-[#092E2B] font-semibold text-[11px] sm:text-xs flex items-center gap-1 shrink-0"
-        >
-          <span>Konsultasi Jadwal</span>
-          <span>&rarr;</span>
-        </a>
-      </div>
-
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 border-b border-[rgba(17,18,21,0.08)] ${scrolled ? "bg-white/95 backdrop-blur-md shadow-[0_2px_16px_rgba(0,0,0,0.03)]" : "bg-white/90 backdrop-blur-sm"}`}>
       {/* Main Architectural Nav Bar */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16">
-          {/* Brand Identity */}
-          <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-            <div className="w-8 h-8 rounded-[4px] bg-[#111215] flex items-center justify-center p-1.5 text-white transition-colors group-hover:bg-[#0F7A73] shrink-0">
-              <AmanahLogo className="w-5 h-5" variant="symbol" />
-            </div>
-            <div className="flex items-baseline gap-2">
-              <span className="font-extrabold text-sm sm:text-base tracking-tight text-[#111215] whitespace-nowrap leading-none">
-                AMANAH <span className="text-[#0F7A73]">DRIVE</span>
-              </span>
-              <span className="tech-tag hidden sm:inline-block">
-                PLG
-              </span>
-            </div>
+        <div className="relative flex items-center justify-between h-14 sm:h-16">
+          
+          {/* Desktop Logo (Left-aligned as primary home anchor) */}
+          <Link
+            href="/"
+            aria-label="Amanah Drive Palembang"
+            className="hidden sm:flex items-center shrink-0 focus:outline-none transition-opacity hover:opacity-90"
+          >
+            <Image
+              src="/assets/logo-amdri-landscape-clean.webp"
+              alt="Amanah Drive Palembang"
+              width={145}
+              height={36}
+              priority
+              className="h-8 sm:h-9 w-auto object-contain"
+            />
           </Link>
+
+          {/* Mobile Left Quick Action (WhatsApp icon to balance header) */}
+          <div className="sm:hidden flex items-center">
+            <a
+              href={generateWhatsAppUrl("Halo Kak Lia, saya ingin tanya informasi kursus Amanah Drive.")}
+              onClick={() =>
+                trackWhatsAppLead({
+                  lead_source: "navbar_mobile_left_wa",
+                  button_text: "WhatsApp Mobile Header Left",
+                })
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-[#45474d] hover:text-[#0F7A73] transition-colors focus:outline-none"
+              aria-label="Chat WhatsApp"
+            >
+              <MessageCircle className="w-5 h-5 text-[#0F7A73]" />
+            </a>
+          </div>
+
+          {/* Mobile Center Logo (Dead Center in Mobile Viewport) */}
+          <div className="sm:hidden absolute left-1/2 -translate-x-1/2 flex items-center">
+            <Link
+              href="/"
+              aria-label="Amanah Drive Palembang"
+              className="flex items-center focus:outline-none"
+            >
+              <Image
+                src="/assets/logo-amdri-landscape-clean.webp"
+                alt="Amanah Drive Palembang"
+                width={128}
+                height={32}
+                priority
+                className="h-7 w-auto object-contain"
+              />
+            </Link>
+          </div>
 
           {/* Desktop Nav Links (Clean Segmented Editorial Row) */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
@@ -129,29 +146,15 @@ export default function Navbar({ care }: NavbarProps) {
             </a>
           </div>
 
-          {/* Mobile Action Touchpoints */}
-          <div className="flex sm:hidden items-center gap-2">
-            <a
-              href={generateWhatsAppUrl("Halo Kak Lia, saya ingin konsultasi pendaftaran.")}
-              onClick={() =>
-                trackWhatsAppLead({
-                  lead_source: "navbar_mobile_button",
-                  button_text: "WhatsApp Mobile Header",
-                })
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 bg-[#111215] text-white rounded-[4px]"
-              aria-label="WhatsApp"
-            >
-              <MessageCircle className="w-4 h-4 fill-white text-transparent" />
-            </a>
+          {/* Mobile Right: Hamburger Toggle Button */}
+          <div className="sm:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-[#111215] border border-[rgba(17,18,21,0.12)] rounded-[4px] hover:bg-[#f8f9fc] transition-colors focus:outline-none"
-              aria-label="Menu"
+              aria-label="Buka Menu Navigasi"
+              aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>

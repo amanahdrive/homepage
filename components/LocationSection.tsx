@@ -31,11 +31,9 @@ export default function LocationSection({
         
         {/* Section Header */}
         <div className="text-left max-w-3xl mb-8 sm:mb-14 space-y-2.5 sm:space-y-3">
-          <div className="flex items-center gap-2">
-            <span className="tech-tag tech-tag-brand">
-              <MapPin className="w-3 h-3 text-[#0F7A73]" />
-              Jangkauan Palembang
-            </span>
+          <div className="flex items-center gap-2 font-mono text-[11px] sm:text-xs text-[#0F7A73] uppercase tracking-wider font-semibold">
+            <MapPin className="w-3.5 h-3.5 text-[#0F7A73]" />
+            <span>Jangkauan Palembang</span>
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#111215] tracking-tight leading-tight">
             Kantor &amp; Area Antar-Jemput Gratis Palembang
@@ -84,7 +82,7 @@ export default function LocationSection({
               <div className="pt-4 border-t border-[rgba(17,18,21,0.08)] space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-[#111215]">Wilayah Bebas Biaya Antar-Jemput:</span>
-                  <span className="tech-tag tech-tag-brand">GRATIS</span>
+                  <span className="font-mono text-[10px] text-[#0F7A73] font-bold uppercase tracking-wider">BEBAS BIAYA</span>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#45474d]">

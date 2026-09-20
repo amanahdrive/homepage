@@ -33,11 +33,9 @@ export default function PricingSection({ packages = PACKAGES }: PricingSectionPr
         
         {/* Section Header */}
         <div className="text-left max-w-3xl mb-8 sm:mb-14 space-y-2.5 sm:space-y-3">
-          <div className="flex items-center gap-2">
-            <span className="tech-tag tech-tag-brand">
-              <Sparkles className="w-3 h-3 text-[#0F7A73]" />
-              Biaya Transparan Resmi
-            </span>
+          <div className="flex items-center gap-2 font-mono text-[11px] sm:text-xs text-[#0F7A73] uppercase tracking-wider font-semibold">
+            <Sparkles className="w-3.5 h-3.5 text-[#0F7A73]" />
+            <span>Biaya Transparan Resmi</span>
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#111215] tracking-tight leading-tight">
             Pilihan Paket Kursus &amp; Biaya Resmi
@@ -113,8 +111,8 @@ export default function PricingSection({ packages = PACKAGES }: PricingSectionPr
                 {/* Popular Indicator Tag */}
                 {isPopular && (
                   <div className="mb-3">
-                    <span className="tech-tag bg-[#111215] text-white border-[#111215] flex items-center gap-1 w-fit">
-                      <Star className="w-2.5 h-2.5 fill-amber-400 text-amber-400" /> Rekomendasi Utama
+                    <span className="font-mono text-[10px] text-[#0F7A73] font-bold uppercase tracking-wider flex items-center gap-1.5">
+                      <Star className="w-3 h-3 fill-amber-400 text-amber-400" /> Pilihan Siswa Terfavorit
                     </span>
                   </div>
                 )}
@@ -122,8 +120,8 @@ export default function PricingSection({ packages = PACKAGES }: PricingSectionPr
                 <div>
                   {/* Top Metadata */}
                   <div className="flex items-center justify-between mb-3">
-                    <span className="tech-tag tech-tag-brand">
-                      {pkg.tag}
+                    <span className="font-mono text-[10px] text-[#0F7A73] uppercase tracking-wider font-semibold">
+                      // {pkg.tag}
                     </span>
                     {pkg.sessions > 0 && (
                       <span className="text-xs font-mono font-medium text-[#45474d]">

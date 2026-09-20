@@ -16,14 +16,14 @@ export default function Hero() {
   ];
 
   return (
-    <section className="pt-24 pb-12 sm:pt-32 sm:pb-20 relative overflow-x-clip bg-white">
+    <section className="pt-20 pb-12 sm:pt-28 sm:pb-20 relative overflow-x-clip bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Welcome Header */}
         <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-14 space-y-4 sm:space-y-6">
-          <div className="flex justify-center">
-            <span className="tech-tag tech-tag-brand">
-              <ShieldCheck className="w-3 h-3 text-[#0F7A73]" />
+          <div className="flex items-center justify-center">
+            <span className="font-mono text-[11px] sm:text-xs text-[#0F7A73] font-semibold tracking-wider uppercase flex items-center gap-1.5">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#0F7A73]" />
               <span>Standar Pelatihan Resmi &bull; Gratis Antar-Jemput Palembang</span>
             </span>
           </div>

@@ -326,6 +326,34 @@ export const TESTIMONIALS: TestimonialItem[] = [
     rating: 5,
     text: "Sudah punya SIM tapi mobil nganggur di garasi 2 tahun karena takut macet Palembang. Ambil 3 sesi refresh, langsung dipraktekkan rute rumah sakit dan tanjakan flyover. Instrukturnya profesional & beretika tinggi.",
   },
+  {
+    name: "Kriswanto, S.T.",
+    status: "Field Engineer (Plaju)",
+    pkg: "Paket Pro (10 Sesi)",
+    rating: 5,
+    text: "Latihan manuver tanjakan flyover dan mundur garasi sempit diajarkan tuntas dengan rumus yang gampang diingat. Sertifikat kelulusan resmi dan materi evaluasi belajar sangat jelas & terstruktur.",
+  },
+  {
+    name: "Fitria Arum Mulia",
+    status: "Alumni Politeknik Negeri Sriwijaya",
+    pkg: "Paket Pro + SIM A",
+    rating: 5,
+    text: "Sebagai pemula dari nol yang sempat grogi parah, Kak Alpi bimbing dengan super santai dan tenang. Fasilitas gratis antar-jemput ke rumah di Macan Kumbang tepat waktu banget!",
+  },
+  {
+    name: "Ahmad Fauzan",
+    status: "Wiraswasta (Demang Lebar Daun)",
+    pkg: "Paket Refresh (3 Sesi)",
+    rating: 5,
+    text: "Ambil sesi refresh mobil matic untuk asah feeling haluan jalan sempit. Dalam 3 sesi rasa takut hilang total, langsung pede bawa mobil keluarga sendiri ke jalan protokol Sudirman.",
+  },
+  {
+    name: "Nabila Choirunnisa, S.Pd.",
+    status: "Guru SMA Negeri Palembang",
+    pkg: "Paket Basic (5 Sesi)",
+    rating: 5,
+    text: "Instruktur sangat sopan, tepat waktu, dan mobil selalu wangi ber-AC dingin. Bimbingan teknik parkir paralelnya juara, sekali coba langsung hafal patokan spion!",
+  },
 ];
 
 export const FAQS = [

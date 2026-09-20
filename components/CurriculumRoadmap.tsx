@@ -10,11 +10,9 @@ export default function CurriculumRoadmap() {
         
         {/* Section Header */}
         <div className="text-left max-w-3xl mb-8 sm:mb-14 space-y-2.5 sm:space-y-3">
-          <div className="flex items-center gap-2">
-            <span className="tech-tag tech-tag-brand">
-              <BookOpen className="w-3 h-3 text-[#0F7A73]" />
-              Silabus Praktik Terstruktur
-            </span>
+          <div className="flex items-center gap-2 font-mono text-[11px] sm:text-xs text-[#0F7A73] uppercase tracking-wider font-semibold">
+            <BookOpen className="w-3.5 h-3.5 text-[#0F7A73]" />
+            <span>Silabus Praktik Terstruktur</span>
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#111215] tracking-tight leading-tight">
             Kurikulum Praktik 10 Sesi Menyeluruh
@@ -33,7 +31,7 @@ export default function CurriculumRoadmap() {
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="tech-tag tech-tag-brand">
+                  <span className="font-mono text-[11px] text-[#0F7A73] font-bold uppercase tracking-wider">
                     {item.session}
                   </span>
                   <span className="text-[10px] font-mono text-[#9aa0a6]">
@@ -66,11 +64,9 @@ export default function CurriculumRoadmap() {
         {/* Certificate & Evaluation Split Showcase (Zero Boxy Nesting) */}
         <div className="border border-[rgba(17,18,21,0.08)] bg-white p-6 sm:p-10 flex flex-col lg:flex-row items-center justify-between gap-8 rounded-[4px]">
           <div className="space-y-3 text-left max-w-2xl">
-            <div className="flex items-center gap-2">
-              <span className="tech-tag">
-                <Award className="w-3 h-3 text-amber-500" />
-                Bukti Keahlian &amp; Standar Kelulusan
-              </span>
+            <div className="flex items-center gap-2 font-mono text-[11px] sm:text-xs text-amber-600 uppercase tracking-wider font-semibold">
+              <Award className="w-3.5 h-3.5 text-amber-500" />
+              <span>Bukti Keahlian &amp; Standar Kelulusan</span>
             </div>
             <h3 className="text-xl sm:text-3xl font-extrabold text-[#111215] tracking-tight leading-snug">
               Sertifikat Kelulusan Resmi CV Amanah Drive

@@ -28,11 +28,9 @@ export default function FAQSection({ care }: FAQSectionProps) {
         
         {/* Section Header */}
         <div className="text-left max-w-3xl mb-8 sm:mb-14 space-y-2.5 sm:space-y-3">
-          <div className="flex items-center gap-2">
-            <span className="tech-tag tech-tag-brand">
-              <HelpCircle className="w-3 h-3 text-[#0F7A73]" />
-              Pertanyaan Umum (FAQ)
-            </span>
+          <div className="flex items-center gap-2 font-mono text-[11px] sm:text-xs text-[#0F7A73] uppercase tracking-wider font-semibold">
+            <HelpCircle className="w-3.5 h-3.5 text-[#0F7A73]" />
+            <span>Pertanyaan Umum (FAQ)</span>
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#111215] tracking-tight leading-tight">
             Jawaban Lengkap untuk Calon Siswa

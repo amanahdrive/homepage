@@ -27,11 +27,9 @@ export default function SlotSchedule({ slots = TIME_SLOTS, care }: SlotScheduleP
         
         {/* Section Header */}
         <div className="text-left max-w-3xl mb-8 sm:mb-14 space-y-2.5 sm:space-y-3">
-          <div className="flex items-center gap-2">
-            <span className="tech-tag tech-tag-brand">
-              <Clock className="w-3 h-3 text-[#0F7A73]" />
-              Pilihan Jam Latihan Fleksibel
-            </span>
+          <div className="flex items-center gap-2 font-mono text-[11px] sm:text-xs text-[#0F7A73] uppercase tracking-wider font-semibold">
+            <Clock className="w-3.5 h-3.5 text-[#0F7A73]" />
+            <span>Pilihan Jam Latihan Fleksibel</span>
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#111215] tracking-tight leading-tight">
             Pilihan 6 Slot Waktu Harian (09.00 - 22.00 WIB)
@@ -74,15 +72,11 @@ export default function SlotSchedule({ slots = TIME_SLOTS, care }: SlotScheduleP
                     <span className="font-bold text-xs sm:text-sm">{slot.label}</span>
                   </div>
                   <span
-                    className={`tech-tag ${
-                      isSelected
-                        ? "bg-white/15 text-white border-white/20"
-                        : slot.id >= 5
-                        ? "bg-indigo-50 text-indigo-700 border-indigo-200"
-                        : "tech-tag-brand"
+                    className={`font-mono text-[10px] uppercase tracking-wider font-semibold ${
+                      isSelected ? "text-teal-300" : "text-[#0F7A73]"
                     }`}
                   >
-                    {slot.badge}
+                    // {slot.badge}
                   </span>
                 </div>
 
@@ -108,11 +102,9 @@ export default function SlotSchedule({ slots = TIME_SLOTS, care }: SlotScheduleP
 
         {/* Selected Slot Architectural Console Bar */}
         <div className="max-w-3xl mx-auto border border-[rgba(17,18,21,0.08)] p-6 sm:p-8 bg-white text-center space-y-4 rounded-[4px]">
-          <div className="flex justify-center">
-            <span className="tech-tag tech-tag-brand">
-              <Sparkles className="w-3 h-3 text-amber-500" />
-              SLOT TERPILIH SAAT INI
-            </span>
+          <div className="flex items-center justify-center gap-2 font-mono text-[11px] text-[#0F7A73] uppercase tracking-wider font-semibold">
+            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+            <span>SLOT TERPILIH SAAT INI</span>
           </div>
           <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111215] tracking-tight tabular-nums">
             {selectedSlot.label} &mdash; {selectedSlot.time}

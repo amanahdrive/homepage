@@ -53,11 +53,9 @@ export default function FeatureBento() {
         
         {/* Section Header */}
         <div className="text-left max-w-3xl mb-8 sm:mb-14 space-y-2.5 sm:space-y-3">
-          <div className="flex items-center gap-2">
-            <span className="tech-tag tech-tag-brand">
-              <Sparkles className="w-3 h-3 text-[#0F7A73]" />
-              Standar Keunggulan Belajar
-            </span>
+          <div className="flex items-center gap-2 font-mono text-[11px] sm:text-xs text-[#0F7A73] uppercase tracking-wider font-semibold">
+            <Sparkles className="w-3.5 h-3.5 text-[#0F7A73]" />
+            <span>Standar Keunggulan Belajar</span>
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#111215] tracking-tight leading-tight">
             Mengapa Amanah Drive Pilihan Utama di Palembang?
@@ -81,8 +79,8 @@ export default function FeatureBento() {
                     <div className="w-8 h-8 rounded-[4px] bg-[#f8f9fc] border border-[rgba(17,18,21,0.08)] flex items-center justify-center text-[#111215]">
                       <Icon className="w-4 h-4 text-[#0F7A73]" />
                     </div>
-                    <span className="tech-tag">
-                      {item.badge}
+                    <span className="font-mono text-[10px] text-[#9aa0a6] uppercase tracking-wider font-medium">
+                      0{idx + 1} &bull; {item.badge}
                     </span>
                   </div>
 

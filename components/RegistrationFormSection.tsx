@@ -137,11 +137,9 @@ export default function RegistrationFormSection({
         
         {/* Header */}
         <div className="text-left max-w-3xl mb-8 sm:mb-14 space-y-2.5 sm:space-y-3">
-          <div className="flex items-center gap-2">
-            <span className="tech-tag tech-tag-brand">
-              <FileCheck className="w-3 h-3 text-[#0F7A73]" />
-              Reservasi Resmi
-            </span>
+          <div className="flex items-center gap-2 font-mono text-[11px] sm:text-xs text-[#0F7A73] uppercase tracking-wider font-semibold">
+            <FileCheck className="w-3.5 h-3.5 text-[#0F7A73]" />
+            <span>Reservasi Resmi</span>
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#111215] tracking-tight leading-tight">
             Kunci Slot Latihan Mengemudi Anda
@@ -214,9 +212,9 @@ export default function RegistrationFormSection({
               <div className="lg:col-span-4 bg-[#f8f9fc] p-6 sm:p-8 flex flex-col justify-between space-y-6">
                 <div className="space-y-5">
                   <div className="border-b border-[rgba(17,18,21,0.08)] pb-4">
-                    <span className="tech-tag tech-tag-brand mb-2">
-                      Ringkasan Pilihan
-                    </span>
+                    <p className="font-mono text-[10px] text-[#0F7A73] uppercase tracking-wider font-semibold mb-1">
+                      // RINGKASAN PILIHAN
+                    </p>
                     <h3 className="text-lg font-bold text-[#111215] tracking-tight">
                       {selectedPkg?.name || "Paket Kursus"}
                     </h3>

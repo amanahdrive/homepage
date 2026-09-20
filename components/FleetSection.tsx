@@ -27,11 +27,9 @@ export default function FleetSection({ fleet = FLEET }: FleetSectionProps) {
         
         {/* Editorial Section Header */}
         <div className="text-left max-w-3xl mb-8 sm:mb-14 space-y-2.5 sm:space-y-3">
-          <div className="flex items-center gap-2">
-            <span className="tech-tag tech-tag-brand">
-              <Car className="w-3 h-3 text-[#0F7A73]" />
-              Kategori Armada Latihan Resmi
-            </span>
+          <div className="flex items-center gap-2 font-mono text-[11px] sm:text-xs text-[#0F7A73] uppercase tracking-wider font-semibold">
+            <Car className="w-3.5 h-3.5 text-[#0F7A73]" />
+            <span>Kategori Armada Latihan Resmi</span>
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#111215] tracking-tight leading-tight">
             Pilihan Armada Latihan Nyaman &amp; Terawat
@@ -49,11 +47,11 @@ export default function FleetSection({ fleet = FLEET }: FleetSectionProps) {
               className="w-[85vw] sm:w-auto shrink-0 snap-start border sm:border-t-0 sm:border-l-0 border-r border-b border-[rgba(17,18,21,0.08)] bg-white p-6 sm:p-7 flex flex-col justify-between hover:bg-[#fafbfc] transition-colors"
             >
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="tech-tag tech-tag-brand">
-                    {car.type}
+                <div className="flex items-center justify-between mb-3 text-[11px] font-mono">
+                  <span className="text-[#0F7A73] font-semibold uppercase tracking-wider">
+                    // {car.type}
                   </span>
-                  <span className="tech-tag">
+                  <span className="text-[#9aa0a6] uppercase tracking-wider font-medium">
                     {car.plate || car.tag || "UNIT RESMI"}
                   </span>
                 </div>
