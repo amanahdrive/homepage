@@ -37,27 +37,30 @@
 
   /* Strict Single Font Architecture: 100% Inter */
   --font-inter: var(--font-inter, 'Inter'), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-inter);
   --radius-control: 4px;
   --radius-surface: 6px;
   --radius-badge: 2px;
 }
 
-html, body, *, .font-mono, .font-sans {
+html, body {
   overflow-x: clip;
   scroll-behavior: smooth;
-  font-family: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  background-color: var(--palette-grey-0);
   color: var(--palette-grey-1200);
+  font-family: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-body {
-  background-color: var(--palette-grey-0);
+/* Enforce Inter across mono and sans without overriding text colors */
+.font-mono, .font-sans, button, input, select, textarea {
+  font-family: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
 /* Hallmark Typography: Strictly Roman headings, no italic AI tells */
 h1, h2, h3, h4, h5, h6 {
   font-style: normal;
   letter-spacing: -0.025em;
-  color: var(--palette-grey-1200);
 }
 
 /* Tabular numbers for financial, session, and slot metrics */

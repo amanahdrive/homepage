@@ -73,10 +73,10 @@ export default function FloatingWhatsApp({ care }: FloatingWhatsAppProps) {
             }
             target="_blank"
             rel="noopener noreferrer"
-            className="tech-btn-primary py-2 px-3 text-xs w-full flex items-center justify-center gap-2 text-center rounded-[4px]"
+            className="tech-btn-primary text-white py-2 px-3 text-xs w-full flex items-center justify-center gap-2 text-center rounded-[4px] font-medium"
           >
-            <MessageCircle className="w-3.5 h-3.5 fill-white text-transparent" />
-            <span>Chat WhatsApp</span>
+            <MessageCircle className="w-3.5 h-3.5 fill-white text-white" />
+            <span className="text-white">Chat WhatsApp</span>
           </a>
         </div>
       )}

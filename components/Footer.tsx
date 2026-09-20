@@ -93,20 +93,20 @@ export default function Footer({ care }: FooterProps) {
               <AmanahLogoLandscape variant="landscape-white" className="h-8 w-auto" alt="Amanah Drive Palembang" />
             </Link>
 
-            <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
+            <p className="text-xs text-slate-300 leading-relaxed max-w-sm">
               Lembaga kursus mengemudi resmi berizin di bawah naungan CV Amanah Drive, Kota Palembang. Mengutamakan kenyamanan belajar dengan instruktur sabar tanpa emosi, armada terawat ber-AC dingin, dan pendampingan pembuatan SIM A resmi sampai tuntas.
             </p>
 
             {/* Social Media Section */}
             <div className="pt-2 space-y-2.5">
               <div className="flex items-center gap-2">
-                <span className="font-mono text-[10px] uppercase tracking-wider text-slate-400">
+                <span className="font-mono text-[10px] uppercase tracking-wider text-slate-300 font-medium">
                   // Media Sosial Resmi
                 </span>
-                <span className="h-px flex-1 bg-white/10" />
+                <span className="h-px flex-1 bg-white/15" />
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5">
                 {SOCIAL_LINKS.map((item) => (
                   <a
                     key={item.id}
@@ -122,40 +122,40 @@ export default function Footer({ care }: FooterProps) {
                         destination_url: item.url,
                       });
                     }}
-                    className="w-9 h-9 flex items-center justify-center rounded-[4px] border border-white/10 bg-white/[0.03] text-slate-300 hover:text-white hover:bg-white/10 hover:border-teal-400/50 hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-teal-400"
+                    className="w-10 h-10 flex items-center justify-center rounded-[4px] border border-white/20 bg-white/[0.06] text-white hover:text-teal-300 hover:bg-white/15 hover:border-teal-400/60 hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-teal-400"
                   >
                     {getSocialIcon(item.id)}
                   </a>
                 ))}
               </div>
-              <p className="text-[11px] text-slate-400 font-mono">
-                Official Account: <span className="text-white font-medium">@amanahdrive.plg</span>
+              <p className="text-[11px] text-slate-300 font-mono">
+                Official Account: <span className="text-white font-semibold">@amanahdrive.plg</span>
               </p>
             </div>
 
             <div className="flex flex-wrap items-center gap-4 pt-1 font-mono text-[10px] uppercase tracking-wider">
-              <span className="flex items-center gap-1.5 text-teal-300">
-                <Shield className="w-3.5 h-3.5 text-[#14B8A6]" />
+              <span className="flex items-center gap-1.5 text-teal-300 font-medium">
+                <Shield className="w-3.5 h-3.5 text-teal-400 shrink-0" />
                 Instruktur Sabar Bersertifikat
               </span>
-              <span className="flex items-center gap-1.5 text-slate-300">
-                <Award className="w-3.5 h-3.5 text-amber-400" />
+              <span className="flex items-center gap-1.5 text-amber-300 font-medium">
+                <Award className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                 Sertifikat Resmi CV
               </span>
             </div>
 
-            <div className="text-[11px] text-slate-400 space-y-1.5 pt-1 font-mono">
+            <div className="text-[11px] text-slate-300 space-y-2 pt-1 font-mono">
               <p className="flex items-center gap-2">
-                <Clock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                <span>Operasional: <strong className="text-white">08:30 – 22:00 WIB</strong> (Setiap Hari)</span>
+                <Clock className="w-3.5 h-3.5 text-teal-400 shrink-0" />
+                <span>Operasional: <strong className="text-white font-semibold">08:30 – 22:00 WIB</strong> (Setiap Hari)</span>
               </p>
               <p className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                <span>Hotline Resmi: <strong className="text-white">{CONTACT_INFO.phoneDisplay}</strong></span>
+                <Phone className="w-3.5 h-3.5 text-teal-400 shrink-0" />
+                <span>Hotline Resmi: <strong className="text-white font-semibold">{CONTACT_INFO.phoneDisplay}</strong></span>
               </p>
               <p className="flex items-start gap-2 pt-0.5">
-                <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0 mt-0.5" />
-                <span className="leading-snug">Jl. Macan Kumbang XVIII, Ilir Barat I, Palembang</span>
+                <MapPin className="w-3.5 h-3.5 text-teal-400 shrink-0 mt-0.5" />
+                <span className="leading-snug text-slate-300">Jl. Macan Kumbang XVIII, Ilir Barat I, Palembang</span>
               </p>
             </div>
           </div>
@@ -165,33 +165,33 @@ export default function Footer({ care }: FooterProps) {
             <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-white">
               // Navigasi
             </h3>
-            <ul className="space-y-2 text-xs text-slate-400">
+            <ul className="space-y-2 text-xs">
               <li>
-                <a href="#paket" className="hover:text-teal-300 transition-colors">Paket &amp; Biaya</a>
+                <a href="#paket" className="text-slate-300 hover:text-teal-300 transition-colors inline-block">Paket &amp; Biaya</a>
               </li>
               <li>
-                <a href="#keunggulan" className="hover:text-teal-300 transition-colors">Keunggulan Modul</a>
+                <a href="#keunggulan" className="text-slate-300 hover:text-teal-300 transition-colors inline-block">Keunggulan Modul</a>
               </li>
               <li>
-                <a href="#kurikulum" className="hover:text-teal-300 transition-colors">Kurikulum 10 Sesi</a>
+                <a href="#kurikulum" className="text-slate-300 hover:text-teal-300 transition-colors inline-block">Kurikulum 10 Sesi</a>
               </li>
               <li>
-                <a href="#armada" className="hover:text-teal-300 transition-colors">Pilihan Armada</a>
+                <a href="#armada" className="text-slate-300 hover:text-teal-300 transition-colors inline-block">Pilihan Armada</a>
               </li>
               <li>
-                <a href="#jadwal" className="hover:text-teal-300 transition-colors">Pilihan Slot Waktu</a>
+                <a href="#jadwal" className="text-slate-300 hover:text-teal-300 transition-colors inline-block">Pilihan Slot Waktu</a>
               </li>
               <li>
-                <a href="#daftar" className="hover:text-teal-300 transition-colors">Formulir Pendaftaran</a>
+                <a href="#daftar" className="text-slate-300 hover:text-teal-300 transition-colors inline-block">Formulir Pendaftaran</a>
               </li>
               <li>
-                <a href="#testimoni" className="hover:text-teal-300 transition-colors">Ulasan Siswa</a>
+                <a href="#testimoni" className="text-slate-300 hover:text-teal-300 transition-colors inline-block">Ulasan Siswa</a>
               </li>
               <li>
-                <a href="#lokasi" className="hover:text-teal-300 transition-colors">Area Jangkauan</a>
+                <a href="#lokasi" className="text-slate-300 hover:text-teal-300 transition-colors inline-block">Area Jangkauan</a>
               </li>
               <li>
-                <a href="#faq" className="hover:text-teal-300 transition-colors">Tanya Jawab (FAQ)</a>
+                <a href="#faq" className="text-slate-300 hover:text-teal-300 transition-colors inline-block">Tanya Jawab (FAQ)</a>
               </li>
             </ul>
           </div>
@@ -201,42 +201,42 @@ export default function Footer({ care }: FooterProps) {
             <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-white">
               // Jangkauan Palembang
             </h3>
-            <p className="text-[11px] text-slate-400">
+            <p className="text-[11px] text-slate-300">
               Fasilitas gratis antar-jemput ke rumah siswa untuk area:
             </p>
-            <ul className="space-y-1.5 text-xs text-slate-300">
+            <ul className="space-y-2 text-xs text-slate-200">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#14B8A6] shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0" />
                 <span>Bukit Lama &amp; Siguntang</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#14B8A6] shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0" />
                 <span>Macan Kumbang &amp; Demang</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#14B8A6] shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0" />
                 <span>Gandus, Polygon &amp; Lubuk Bakung</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#14B8A6] shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0" />
                 <span>Sudirman, KM 5 s/d KM 9</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#14B8A6] shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0" />
                 <span>Sukarami, H. Burlian &amp; Sekip</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#14B8A6] shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0" />
                 <span>Plaju &amp; Seberang Ulu / Jakabaring</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#14B8A6] shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0" />
                 <span>Sako &amp; Kenten (Titik Temu Strategis)</span>
               </li>
             </ul>
 
             <div className="pt-2">
-              <span className="text-[11px] text-teal-300/90 font-mono leading-relaxed block">
+              <span className="text-[11px] text-teal-300 font-mono leading-relaxed block">
                 *Area luar jangkauan difasilitasi meeting point terdekat.
               </span>
             </div>
@@ -249,7 +249,7 @@ export default function Footer({ care }: FooterProps) {
             </h3>
             
             {/* Student Care Officer Box */}
-            <div className="bg-[#16171c] p-4 rounded-[4px] border border-white/10 space-y-3">
+            <div className="bg-[#181920] p-4 rounded-[4px] border border-white/15 space-y-3">
               <div className="flex items-center gap-3">
                 <div className="relative w-9 h-9 rounded-[4px] overflow-hidden shrink-0 border border-white/20 bg-slate-800">
                   <Image
@@ -262,10 +262,10 @@ export default function Footer({ care }: FooterProps) {
                 </div>
                 <div className="text-xs">
                   <p className="font-bold text-white leading-none">{activeCare.name}</p>
-                  <span className="text-[10px] text-teal-400 font-mono">Student Care Officer</span>
+                  <span className="text-[10px] text-teal-300 font-mono">Student Care Officer</span>
                 </div>
               </div>
-              <p className="text-[11px] text-slate-400 leading-snug">
+              <p className="text-[11px] text-slate-300 leading-snug">
                 Konsultasi jadwal &amp; pendaftaran langsung via WhatsApp.
               </p>
               <a
@@ -278,24 +278,24 @@ export default function Footer({ care }: FooterProps) {
                 }
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs text-teal-300 hover:text-white font-semibold transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs text-emerald-400 hover:text-emerald-300 font-semibold transition-colors"
               >
-                <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                <MessageCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                 <span>Hubungi Kak Lia &rarr;</span>
               </a>
             </div>
 
             {/* Bank Account Verification */}
-            <div className="bg-[#16171c] p-3.5 rounded-[4px] border border-white/10 text-xs space-y-1">
-              <div className="flex items-center justify-between text-[10px] text-slate-400 font-mono">
+            <div className="bg-[#181920] p-3.5 rounded-[4px] border border-white/15 text-xs space-y-1.5">
+              <div className="flex items-center justify-between text-[10px] text-slate-300 font-mono">
                 <span>Rekening Resmi CV:</span>
-                <span className="text-emerald-400 font-medium">Terverifikasi</span>
+                <span className="text-emerald-400 font-semibold">Terverifikasi</span>
               </div>
-              <p className="font-mono text-white text-xs font-bold">
+              <p className="font-mono text-white text-xs font-bold tracking-wider">
                 {CONTACT_INFO.bankAccount.bank}: {CONTACT_INFO.bankAccount.number}
               </p>
-              <p className="text-[10px] text-slate-400">a.n. {CONTACT_INFO.bankAccount.name}</p>
-              <p className="text-[9px] text-slate-400 pt-1 leading-tight">
+              <p className="text-[10px] text-slate-300">a.n. {CONTACT_INFO.bankAccount.name}</p>
+              <p className="text-[9px] text-slate-400 pt-1 leading-tight border-t border-white/10 mt-1">
                 *Waspada penipuan, kami hanya menerima transfer melalui rekening resmi di atas.
               </p>
             </div>
@@ -304,17 +304,17 @@ export default function Footer({ care }: FooterProps) {
         </div>
 
         {/* Bottom copyright & legal status */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-slate-400">
-          <p>&copy; {new Date().getFullYear()} Amanah Drive Palembang (CV Amanah Drive). Seluruh Hak Cipta Dilindungi.</p>
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-slate-300">
+          <p className="text-slate-300">&copy; {new Date().getFullYear()} Amanah Drive Palembang (CV Amanah Drive). Seluruh Hak Cipta Dilindungi.</p>
           <div className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 text-emerald-400">
+            <span className="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               Layanan Aktif Palembang
             </span>
-            <span>&bull;</span>
-            <span>Instruktur Sabar &amp; Beretika</span>
-            <span>&bull;</span>
-            <span>Sertifikat Resmi</span>
+            <span className="text-slate-600">&bull;</span>
+            <span className="text-slate-300">Instruktur Sabar &amp; Beretika</span>
+            <span className="text-slate-600">&bull;</span>
+            <span className="text-slate-300">Sertifikat Resmi CV</span>
           </div>
         </div>
 
