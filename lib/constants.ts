@@ -389,7 +389,7 @@ export const CONTACT_INFO = {
   phoneDisplay: "0813-7790-961",
   phoneRaw: "628137790961",
   address: "Jl. Macan Kumbang XVIII, Siring Agung, Kec. Ilir Bar. I, Kota Palembang, Sumatera Selatan 30153",
-  instagram: "@amanahdrive.palembang",
+  instagram: "@amanahdrive.plg",
   operationalHours: "Senin – Minggu: 08:30 – 22:00 WIB",
   bankAccount: {
     bank: "BRI",
@@ -397,6 +397,46 @@ export const CONTACT_INFO = {
     name: "Nur Awalia Rianti",
   },
 };
+
+export interface SocialLinkItem {
+  id: string;
+  name: string;
+  handle: string;
+  url: string;
+}
+
+export const SOCIAL_LINKS: SocialLinkItem[] = [
+  {
+    id: "instagram",
+    name: "Instagram",
+    handle: "@amanahdrive.plg",
+    url: "https://www.instagram.com/amanahdrive.plg/",
+  },
+  {
+    id: "facebook",
+    name: "Facebook Page",
+    handle: "amanahdrive.plg",
+    url: "https://web.facebook.com/amanahdrive.plg",
+  },
+  {
+    id: "tiktok",
+    name: "TikTok",
+    handle: "@amanahdrive.plg",
+    url: "https://www.tiktok.com/@amanahdrive.plg",
+  },
+  {
+    id: "threads",
+    name: "Threads",
+    handle: "@amanahdrive.plg",
+    url: "https://www.threads.com/@amanahdrive.plg",
+  },
+  {
+    id: "youtube",
+    name: "YouTube",
+    handle: "CV Amanah Drive",
+    url: "https://www.youtube.com/channel/UCLaGw4BfRuVY-czsCxeGoYQ",
+  },
+];
 
 export const LOCATION_INFO = {
   title: "Amanah Drive Palembang",
