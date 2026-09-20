@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "Amanah Drive — Kursus Mengemudi Mobil Palembang Gratis Antar Jemput",
@@ -131,7 +138,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="id" className="scroll-smooth">
+    <html lang="id" className={`scroll-smooth ${inter.variable}`}>
       <head>
         {/* Google Tag Manager */}
         <script
@@ -149,7 +156,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased bg-[#ffffff] text-[#121317]">
+      <body className={`${inter.className} antialiased bg-[#ffffff] text-[#121317]`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
