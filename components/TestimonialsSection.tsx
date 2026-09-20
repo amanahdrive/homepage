@@ -13,21 +13,22 @@ export default function TestimonialsSection() {
   const row1Items = [...row1, ...row1, ...row1];
   const row2Items = [...row2, ...row2, ...row2];
 
-  // Waterfall certificate and graduate images
-  const certImages = [
-    "/assets/graduates/grad-1.webp",
-    "/assets/graduates/grad-2.webp",
-    "/assets/sertifikat-resmi.webp",
-    "/assets/graduates/grad-3.webp",
-    "/assets/graduates/grad-4.webp",
-  ];
+  // All 17 authentic student certificate photos from assets/testimoni
+  const allPhotos = Array.from({ length: 17 }, (_, i) => `/assets/testimoni/${i + 1}.webp`);
 
-  // Repeat for vertical waterfall flow
-  const stream1 = [...certImages, ...certImages];
-  const stream2 = [...certImages.slice(2), ...certImages.slice(0, 2), ...certImages];
-  const stream3 = [...certImages.slice(3), ...certImages.slice(0, 3), ...certImages];
-  const stream4 = [...certImages.slice(1), ...certImages.slice(0, 1), ...certImages];
-  const stream5 = [...certImages.slice(4), ...certImages.slice(0, 4), ...certImages];
+  // Distribute all 17 photos across 5 waterfall columns
+  const col1 = [allPhotos[0], allPhotos[5], allPhotos[10], allPhotos[15]];
+  const col2 = [allPhotos[1], allPhotos[6], allPhotos[11], allPhotos[16]];
+  const col3 = [allPhotos[2], allPhotos[7], allPhotos[12], allPhotos[3]];
+  const col4 = [allPhotos[3], allPhotos[8], allPhotos[13], allPhotos[0]];
+  const col5 = [allPhotos[4], allPhotos[9], allPhotos[14], allPhotos[1]];
+
+  // Repeat for continuous vertical waterfall flow
+  const stream1 = [...col1, ...col1];
+  const stream2 = [...col2, ...col2];
+  const stream3 = [...col3, ...col3];
+  const stream4 = [...col4, ...col4];
+  const stream5 = [...col5, ...col5];
 
   return (
     <section id="testimoni" className="py-16 sm:py-28 relative bg-white border-t border-[rgba(17,18,21,0.08)] overflow-hidden">
