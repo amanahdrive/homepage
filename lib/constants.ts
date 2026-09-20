@@ -172,7 +172,7 @@ export const STUDENT_CARE = {
   name: "Kak Lia (Nur Awalia)",
   role: "Student Care & Konsultasi Resmi",
   desc: "Koordinator pendaftaran, pendampingan berkas SIM A, dan jadwal latihan fleksibel siswa Amanah Drive.",
-  avatar: "https://yhwwhqqffgtiavapgjvc.supabase.co/storage/v1/object/public/assets/staff_models/Lia.webp",
+  avatar: "/staff_models/Lia.webp",
   phoneDisplay: "0813-7790-961",
   status: "Online WhatsApp",
   avatarPosX: 50,
