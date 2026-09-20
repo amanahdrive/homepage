@@ -72,11 +72,12 @@ export default function SlotSchedule({ slots = TIME_SLOTS, care }: SlotScheduleP
                     <span className="font-bold text-xs sm:text-sm">{slot.label}</span>
                   </div>
                   <span
-                    className={`font-mono text-[10px] uppercase tracking-wider font-semibold ${
+                    className={`inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider font-semibold ${
                       isSelected ? "text-teal-300" : "text-[#0F7A73]"
                     }`}
                   >
-                    // {slot.badge}
+                    <span className={`w-1.5 h-1.5 rounded-full ${isSelected ? "bg-teal-300" : "bg-[#0F7A73]"}`} />
+                    <span>{slot.badge}</span>
                   </span>
                 </div>
 

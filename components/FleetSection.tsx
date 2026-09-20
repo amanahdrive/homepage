@@ -48,8 +48,9 @@ export default function FleetSection({ fleet = FLEET }: FleetSectionProps) {
             >
               <div>
                 <div className="flex items-center justify-between mb-3 text-[11px] font-mono">
-                  <span className="text-[#0F7A73] font-semibold uppercase tracking-wider">
-                    // {car.type}
+                  <span className="inline-flex items-center gap-1.5 text-[#0F7A73] font-semibold uppercase tracking-wider">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0F7A73]" />
+                    <span>{car.type}</span>
                   </span>
                   <span className="text-[#9aa0a6] uppercase tracking-wider font-medium">
                     {car.plate || car.tag || "UNIT RESMI"}

@@ -120,8 +120,9 @@ export default function PricingSection({ packages = PACKAGES }: PricingSectionPr
                 <div>
                   {/* Top Metadata */}
                   <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono text-[10px] text-[#0F7A73] uppercase tracking-wider font-semibold">
-                      // {pkg.tag}
+                    <span className="inline-flex items-center gap-1.5 font-mono text-[10px] text-[#0F7A73] uppercase tracking-wider font-semibold">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#0F7A73]" />
+                      <span>{pkg.tag}</span>
                     </span>
                     {pkg.sessions > 0 && (
                       <span className="text-xs font-mono font-medium text-[#45474d]">

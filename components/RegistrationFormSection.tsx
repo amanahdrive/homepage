@@ -212,8 +212,9 @@ export default function RegistrationFormSection({
               <div className="lg:col-span-4 bg-[#f8f9fc] p-6 sm:p-8 flex flex-col justify-between space-y-6">
                 <div className="space-y-5">
                   <div className="border-b border-[rgba(17,18,21,0.08)] pb-4">
-                    <p className="font-mono text-[10px] text-[#0F7A73] uppercase tracking-wider font-semibold mb-1">
-                      // RINGKASAN PILIHAN
+                    <p className="inline-flex items-center gap-1.5 font-mono text-[10px] text-[#0F7A73] uppercase tracking-wider font-semibold mb-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#0F7A73]" />
+                      <span>Ringkasan Pilihan</span>
                     </p>
                     <h3 className="text-lg font-bold text-[#111215] tracking-tight">
                       {selectedPkg?.name || "Paket Kursus"}

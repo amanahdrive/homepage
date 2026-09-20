@@ -101,7 +101,7 @@ export default function Footer({ care }: FooterProps) {
             <div className="pt-2 space-y-2.5">
               <div className="flex items-center gap-2">
                 <span className="font-mono text-[10px] uppercase tracking-wider text-slate-300 font-medium">
-                  // Media Sosial Resmi
+                  Media Sosial Resmi
                 </span>
                 <span className="h-px flex-1 bg-white/15" />
               </div>
@@ -163,7 +163,7 @@ export default function Footer({ care }: FooterProps) {
           {/* Col 2: Navigation Links (2 cols) */}
           <div className="lg:col-span-2 space-y-3">
             <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-white">
-              // Navigasi
+              Navigasi Cepat
             </h3>
             <ul className="space-y-2 text-xs">
               <li>
@@ -199,7 +199,7 @@ export default function Footer({ care }: FooterProps) {
           {/* Col 3: Area Layanan Antar-Jemput (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
             <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-white">
-              // Jangkauan Palembang
+              Jangkauan Palembang
             </h3>
             <p className="text-[11px] text-slate-300">
               Fasilitas gratis antar-jemput ke rumah siswa untuk area:
@@ -245,7 +245,7 @@ export default function Footer({ care }: FooterProps) {
           {/* Col 4: Student Care & Official Account (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
             <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-white">
-              // Student Care &amp; Transaksi
+              Student Care &amp; Transaksi
             </h3>
             
             {/* Student Care Officer Box */}
